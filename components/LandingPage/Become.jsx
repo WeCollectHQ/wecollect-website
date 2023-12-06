@@ -5,7 +5,7 @@ import happy from "../../assets/png/happy-girl.png"
 import ReuseModal from "../../components/modals/ReuseModal"
 import { Cancel } from "../../assets/svg";
 const Become = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <ContainerLayout>
       <div className="flex flex-col relative mt-[120px]  ">
@@ -43,7 +43,7 @@ const Become = () => {
               Become WeCollect campus ambasador
             </h1>
             <button
-              className="bg-[#4747D6] text-white text-base py-[10px] px-5 rounded-[30px] font-bold mt-8 w-fit"
+              className="bg-[#4747D6] text-white text-base py-[10px] px-5 rounded-[30px] font-bold mt-8 w-fit border-none outline-none"
               onClick={() => setOpen(!open)}
             >
               Apply now
@@ -52,9 +52,9 @@ const Become = () => {
         </div>
       </div>
       <ReuseModal open={open} setOpen={setOpen}>
-        <div className="w-full bg-white">
-          <div className="flex justify-end ">
-            <span>
+        <div className="w-full bg-white max-h-[70vh] overflow-y-scroll pb-5">
+          <div className="flex justify-end pr-4 ">
+            <span className="cursor-pointer" onClick={() => setOpen(false)}>
               <Cancel />
             </span>
           </div>
@@ -81,7 +81,7 @@ const Become = () => {
             </div>
             {/* end of box session */}
             {/* form session */}
-            <div className="mt-10 lg:mt-14 flex flex-col space-y-[25px]">
+            <div className="mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-2 gap-[25px]">
               {/* single input */}
               <div className="flex flex-col">
                 <label className="text-[#333] text-sm lg:text-base font-semibold">
@@ -92,36 +92,6 @@ const Become = () => {
                   className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
                   placeholder="enter full name"
                 />
-              </div>
-              {/* end of single input */}
-              {/* single input */}
-              <div className="flex flex-col">
-                <label className="text-[#333] text-sm lg:text-base font-semibold">
-                  Campus(institutions)
-                </label>
-                <select
-                  id="myDropdown"
-                  className="mt-1 block w-full py-2 px-3 border  bg-white rounded-md shadow-sm focus:outline-none   focus:border-[#333] border-opacity-30 sm:text-sm "
-                >
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
-                </select>
-              </div>
-              {/* end of single input */}
-              {/* single input */}
-              <div className="flex flex-col">
-                <label className="text-[#333] text-sm lg:text-base font-semibold">
-                  Departmemt
-                </label>
-                <select
-                  id="myDropdown"
-                  className="mt-1 block w-full py-2 px-3 border  bg-white rounded-md shadow-sm focus:outline-none   focus:border-[#333] border-opacity-30 sm:text-sm "
-                >
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
-                </select>
               </div>
               {/* end of single input */}
               {/* single input */}
@@ -140,6 +110,36 @@ const Become = () => {
               {/* single input */}
               <div className="flex flex-col">
                 <label className="text-[#333] text-sm lg:text-base font-semibold">
+                  Gender
+                </label>
+                <select
+                  id="myDropdown"
+                  className="mt-2 block w-full py-2 px-3 border h-[42px]  bg-white rounded-md shadow-sm focus:outline-none   focus:border-[#333] border-opacity-30 sm:text-sm "
+                >
+                  <option value="option1">Select Gender</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+              {/* end of single input */}
+              {/* single input */}
+              <div className="flex flex-col">
+                <label className="text-[#333] text-sm lg:text-base font-semibold">
+                  Age range
+                </label>
+                <select
+                  id="myDropdown"
+                  className="mt-2 block w-full h-[42px] py-2 px-3 border  bg-white rounded-md shadow-sm focus:outline-none   focus:border-[#333] border-opacity-30 sm:text-sm "
+                >
+                  <option value="option1">select range</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </div>
+              {/* end of single input */}
+              {/* single input */}
+              <div className="flex flex-col">
+                <label className="text-[#333] text-sm lg:text-base font-semibold">
                   Phone number
                 </label>
                 <input
@@ -149,17 +149,80 @@ const Become = () => {
                 />
               </div>
               {/* end of single input */}
-              <div className="flex space-x-4 items-center">
-                <input type="checkbox" className="w-8 h-8" name="check" id="" />
-                <p className="text-[#001A25]">
-                  I agree to terms and conditions
-                </p>
+              {/* single input */}
+              <div className="flex flex-col">
+                <label className="text-[#333] text-sm lg:text-base font-semibold">
+                  Cuurent Academic level
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                  placeholder="enter accademic level"
+                />
               </div>
-              <button className="w-full bg-[#4747D6] rounded-[30px] py-[10px] px-5 mt-10 flex items-center justify-center text-white font-semibold">
-Submit
-              </button>
+              {/* end of single input */}
+              {/* single input */}
+              <div className="flex flex-col">
+                <label className="text-[#333] text-sm lg:text-base font-semibold">
+                  Curent School of study
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                  placeholder="enter school of study"
+                />
+              </div>
+              {/* end of single input */}
+              {/* single input */}
+              <div className="flex flex-col">
+                <label className="text-[#333] text-sm lg:text-base font-semibold">
+                  Where have you volunteered before?
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                  placeholder="enter past volunteering details"
+                />
+              </div>
+              {/* end of single input */}
+              {/* single input */}
+              <div className="flex flex-col">
+                <label className="text-[#333] text-sm lg:text-base font-semibold">
+                  LinkedIn profile link
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                  placeholder="eg:linkedin.com"
+                />
+              </div>
+              {/* end of single input */}
+              {/* single input */}
+              <div className="flex flex-col">
+                <label className="text-[#333] text-sm lg:text-base font-semibold">
+                  X profile link
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                  placeholder="eg:twiiter.com"
+                />
+              </div>
+              {/* end of single input */}
             </div>
             {/* end of form session */}
+            <div className="flex space-x-4 items-center mt-6">
+              <input type="checkbox" className="w-6 h-6" name="check" id="" />
+              <p className="text-[#001A25]">I agree to terms and conditions</p>
+            </div>
+            <button className="w-full bg-[#4747D6] rounded-[30px] py-[10px] px-5 mt-10 flex items-center justify-center text-white font-semibold">
+              Submit
+            </button>
           </div>
         </div>
       </ReuseModal>
