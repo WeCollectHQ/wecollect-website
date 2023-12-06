@@ -1,0 +1,42 @@
+import ContainerLayout from "../../layouts/ContainerLayout"
+
+const Featured = () => {
+  return (
+    <ContainerLayout>
+      <div className="w-full overflow-x-hidden bg-feat my-10 lg:flex overflow-y-hidden space-x-4 justify-between hidden  ">
+        <div className="w-4/12 relative">
+          <div className="absolute top-[75px] left-[50px] z-50">
+            <h1 className="text-white text-[40px] font-bold">Featured:</h1>
+          </div>
+          <div className="w-[500px] h-[200px] -ml-12 skewy  bg-[#4747D6] "></div>
+        </div>
+        <div className="w-7/12 flex flex-col justify-center h-full ">
+          <h1 className="max-w-[639px] text-[#333] font-bold text-[40px]">
+            Food Price Monitoring Project in Nigeria
+          </h1>
+          <button className="bg-[#4747D6] text-white text-xl py-[10px] px-5 rounded-[30px] mt-1 w-fit">
+            Learn more
+          </button>
+        </div>
+      </div>
+      <div className="flex lg:hidden bg-feat-2  flex-col overflow-x-hidden overflow-y-hidden ">
+        <div className="w-full h-[71px] relative">
+          <div className="w-[348px] h-[71px] -ml-8 skewy  bg-[#4747D6] "></div>
+          <div className="flex absolute top-0 bottom-0 right-0 left-0 items-center justify-center">
+            <h1 className=" text-white text-2xl font-bold">Featured:</h1>
+          </div>
+        </div>
+        <div className="flex flex-col h-[256px] justify-center px-5">
+          <h1 className=" text-[#333] font-bold text-2xl">
+            Food Price Monitoring Project in Nigeria
+          </h1>
+          <button className="bg-[#4747D6] text-white text-base py-[10px] px-5 rounded-[30px] mt-4 w-fit">
+            Learn more
+          </button>
+        </div>
+      </div>
+    </ContainerLayout>
+  );
+}
+
+export default Featured

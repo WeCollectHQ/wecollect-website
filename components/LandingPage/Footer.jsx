@@ -8,6 +8,7 @@ import facebook from "../../assets/svg/face.svg";
 import linkedin from "../../assets/svg/linkedin.svg";
 import msg from "../../assets/svg/msg.svg";
 import log from "../../assets/svg/logg.svg"
+import {ArrowUp} from "../../assets/svg/index"
 const Footer = () => {
 
    
@@ -24,20 +25,25 @@ const Footer = () => {
           COMING SOON
         </h1>
         <div
-          className="flex space-x-6 mt-4 pl-8"
+          className="flex space-x-6 mt-4 pl-8 relative"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
           <Image
             src={google}
             alt="google"
-            className="w-fit h-auto cursor-pointer"
+            className="w-[120px]  lg:w-fit h-auto cursor-pointer"
           />
           <Image
             src={apple}
             alt="apple"
-            className="w-fit h-auto cursor-pointer"
+            className="w-[120px] lg:w-fit h-auto cursor-pointer"
           />
+          <div className="absolute right-0 top-0">
+            <span onClick={() =>  window.scrollTo(0,0)} className='cursor-pointer scale-50 lg:scale-100'>
+              <ArrowUp />
+            </span>
+          </div>
         </div>
 
         <div
@@ -48,10 +54,10 @@ const Footer = () => {
           <div className="w-full lg:w-10/12 flex lg:flex-row lg:space-x-8 flex-col">
             <div className="flex-col w-full lg:w-4/12">
               <h1 className="text-white font-semibold lg:leading-8 text-md lg:text-xl">
-                Stay Connected.
+                Be First to 
               </h1>
               <h1 className="text-white font-semibold lg:leading-8 text-md lg:text-xl mt-2 mb-2 md:mb-0">
-                Be First To Know.
+                know when we launch
               </h1>
             </div>
             <div className="flex bg-white h-[56px] rounded-[20px] justify-between  items-center px-2  lg:w-8/12">

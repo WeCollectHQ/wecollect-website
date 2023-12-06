@@ -5,6 +5,8 @@ import Features from '../components/LandingPage/Features';
 import Dashboard from '../components/LandingPage/Dashboard';
 import Paid from '../components/LandingPage/Paid';
 import Footer from '../components/LandingPage/Footer';
+import Featured from '../components/LandingPage/Featured';
+import Become from '../components/LandingPage/Become';
 
 
 export default function Home() {
@@ -36,10 +38,12 @@ const [active, setActive] = useState(false);
         <Hero active={active} />
         <div >
 
-        <Features />
+          <Features />
+          <Featured />
         </div>
         <Dashboard />
         <Paid />
+        <Become />
         <Footer />
       </div>
     </>
