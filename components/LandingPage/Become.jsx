@@ -106,7 +106,7 @@ const Become = () => {
           })}  
           onSubmit={async (values) => {
             try {
-              const response = await axios.post("http://localhost:5002/createAmbassador/", {
+              const response = await axios.post("https://api.wecollect.tech/createAmbassador/", {
                 name: values.name, 
                 email: values.email, 
                 gender: values.gender, 
