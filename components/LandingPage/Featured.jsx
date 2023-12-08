@@ -1,5 +1,5 @@
 import ContainerLayout from "../../layouts/ContainerLayout"
-
+import Link from "next/link"
 const Featured = () => {
   return (
     <ContainerLayout>
@@ -14,9 +14,13 @@ const Featured = () => {
           <h1 className="max-w-[639px] text-[#333] font-bold text-[40px]">
             Food Price Monitoring Project in Nigeria
           </h1>
-          <button className="bg-[#4747D6] text-white text-xl py-[10px] px-5 rounded-[30px] mt-1 w-fit">
+          <Link
+            href="https://website-we.vercel.app"
+            target="_blank"
+            className="bg-[#4747D6] text-white text-xl py-[10px] px-5 rounded-[30px] mt-1 w-fit"
+          >
             Learn more
-          </button>
+          </Link>
         </div>
       </div>
       <div className="flex lg:hidden bg-feat-2  flex-col overflow-x-hidden overflow-y-hidden ">
@@ -30,9 +34,13 @@ const Featured = () => {
           <h1 className=" text-[#333] font-bold text-2xl">
             Food Price Monitoring Project in Nigeria
           </h1>
-          <button className="bg-[#4747D6] text-white text-base py-[10px] px-5 rounded-[30px] mt-4 w-fit">
+          <Link
+            href="https://website-we.vercel.app"
+            target="_blank"
+            className="bg-[#4747D6] text-white text-base py-[10px] px-5 rounded-[30px] mt-4 w-fit"
+          >
             Learn more
-          </button>
+          </Link>
         </div>
       </div>
     </ContainerLayout>
