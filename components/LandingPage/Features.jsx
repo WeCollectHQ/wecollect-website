@@ -6,22 +6,25 @@ import offline from "../../assets/svg/offline.svg"
 import Image from 'next/image'
 
 const data = [
-    {
-        img: cases,
-        title: "Case Management",
-        story:"Wecollect helps you consolidate your data, allowing you to analyse them seamlessly."
-    },
-    {
-        img: gps,
-        title: "GPS Coordinates",
-        story:"With the GPS feature, agents can easily navigate, locate, and track effortlessly, therefore increasing productivity."
-    },
-    {
-        img: offline,
-        title: "Offline Data Collection",
-        story:"With the GPS feature, agents can easily navigate, locate, and track effortlessly, therefore increasing productivity."
-    },
-]
+  {
+    img: cases,
+    title: "Case Management",
+    story:
+      "Wecollect helps you consolidate your data, allowing you to analyse them seamlessly.",
+  },
+  {
+    img: gps,
+    title: "GPS Coordinates",
+    story:
+      "With the GPS feature, agents can easily navigate, locate, and track effortlessly, therefore increasing productivity.",
+  },
+  {
+    img: offline,
+    title: "Offline Data Collection",
+    story:
+      "Harness the power of seamless offline data collection, anytime, anywhere, even without an internet connection. Capture insights on the go.",
+  },
+];
 const Features = () => {
   return (
       <div className='w-full mt-12 mb-0 '>
@@ -34,8 +37,8 @@ const Features = () => {
                   {
                       data?.map((item,index) => {
                           return (
-                          <>
-                              <div className="flex flex-col  items-center box-drop  rounded-[30px] bg-white justify-center  w-11/12  h-[400px]" key={index}>
+                          <React.Fragment key={index}>
+                              <div className="flex flex-col  items-center box-drop  rounded-[30px] bg-white justify-center  w-11/12  h-[400px]">
                                 <Image
                                   src={item.img}
                                   alt={item.title}
@@ -49,7 +52,7 @@ const Features = () => {
                                 </p>
                               </div>
                               
-                                  </>
+                                  </React.Fragment>
                             
                           );
                       })

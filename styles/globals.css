@@ -112,7 +112,10 @@ border-radius: 30px;
 }
 
 .z-high{
-  z-index: 9999;
+  z-index: 999;
+}
+.z-modal{
+  z-index: 1111 !important;
 }
 .box-drop{
   filter: drop-shadow(15px 0px 50px rgba(71, 71, 214, 0.15));

@@ -8,15 +8,19 @@ import facebook from "../../assets/svg/face.svg";
 import linkedin from "../../assets/svg/linkedin.svg";
 import msg from "../../assets/svg/msg.svg";
 import log from "../../assets/svg/logg.svg"
-import {ArrowUp} from "../../assets/svg/index"
+import { ArrowUp,  } from "../../assets/svg/index"
+
+
+import { useRouter } from 'next/router';
 const Footer = () => {
 
-   
+  const router = useRouter();
+  
     
     
   return (
     <ContainerLayout>
-      <div className="w-full lg:w-10/12 mx-auto flex flex-col lg:py-[70px] bg-white">
+      <div className="w-full lg:w-10/12 mx-auto flex flex-col lg:py-[70px] bg-white" id='waitlist'>
         <h1
           className="text-customeBlack font-bold text-base lg:text-2xl pl-8"
           data-aos="fade-up"
@@ -40,7 +44,10 @@ const Footer = () => {
             className="w-[120px] lg:w-fit h-auto cursor-pointer"
           />
           <div className="absolute right-0 top-0">
-            <span onClick={() =>  window.scrollTo(0,0)} className='cursor-pointer scale-50 lg:scale-100'>
+            <span
+              onClick={() => window.scrollTo(0, 0)}
+              className="cursor-pointer scale-50 lg:scale-100"
+            >
               <ArrowUp />
             </span>
           </div>
@@ -54,7 +61,7 @@ const Footer = () => {
           <div className="w-full lg:w-10/12 flex lg:flex-row lg:space-x-8 flex-col">
             <div className="flex-col w-full lg:w-4/12">
               <h1 className="text-white font-semibold lg:leading-8 text-md lg:text-xl">
-                Be First to 
+                Be First to
               </h1>
               <h1 className="text-white font-semibold lg:leading-8 text-md lg:text-xl mt-2 mb-2 md:mb-0">
                 know when we launch
@@ -72,16 +79,16 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div
-          className="flex w-full lg:justify-between lg:items-center mt-20 flex-col-reverse lg:flex-row"
-         
-        >
+        <div className="flex w-full lg:justify-between lg:items-center mt-20 flex-col-reverse lg:flex-row">
           <div className="flex items-center space-x-4 mt-4 lg:mt-0 pb-8 lg:pb-0">
-            <Image src={log} alt="log" className='w-[20px] h-auto lg:w-fit' />
+            <Image src={log} alt="log" className="w-[20px] h-auto lg:w-fit" />
             <p className="text-xl lg:text-[32px] font-bold text-customBlack opacity-80">
               WeCollect
             </p>
-            <p className="ltext-base lg:text-xl text-customBlack"> | All rights reserved.</p>
+            <p className="ltext-base lg:text-xl text-customBlack">
+              {" "}
+              | All rights reserved.
+            </p>
           </div>
           <div className="flex space-x-4 items-center">
             <Image src={linkedin} alt="linked" />
@@ -91,6 +98,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+    
     </ContainerLayout>
   );
 }

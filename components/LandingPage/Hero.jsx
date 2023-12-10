@@ -1,10 +1,17 @@
-import React from 'react'
+import {useState} from 'react'
 import ContainerLayout from '../../layouts/ContainerLayout'
 import Image from 'next/image'
 import heroImage from "../../assets/png/hero-image.png";
 import Navbar from './Navbar'
 import { Apple, Google } from '../../assets/svg';
-const Hero = ({active}) => {
+import Modal from '../modals/Modal';
+import successImg from "../../assets/svg/success.svg";
+import { useRouter } from 'next/router';
+import { Cancel } from "../../assets/svg";
+const Hero = ({ active }) => {
+  const [open, setOpen] = useState(true);
+  const router = useRouter();
+
   return (
     <div className="flex flex-col w-full hero-bg min-h-[70vh] pb-12">
       <Navbar active={active} />
@@ -33,25 +40,61 @@ const Hero = ({active}) => {
           </div>
           <div className="w-full lg:w-1/2 justify-end flex">
             <div className="w-full flex flex-col">
-
-            <Image
-              src={heroImage}
-              alt="here"
-              className="w-11/12 mt-12 h-auto"
-              data-aos="zoom-in"
-              data-aos-duration="2000"
+              <Image
+                src={heroImage}
+                alt="here"
+                className="w-11/12 mt-12 h-auto"
+                data-aos="zoom-in"
+                data-aos-duration="2000"
               />
-            <div className="flex flex-col lg:hidden">
-              <p className="text-white font-bold text-2xl mt-8">COMING SOON</p>
-              <div className="flex items-center mt-4 space-x-4">
-                <Google />
-                <Apple />
-              </div>
+              <div className="flex flex-col lg:hidden">
+                <p className="text-white font-bold text-2xl mt-8">
+                  COMING SOON
+                </p>
+                <div className="flex items-center mt-4 space-x-4">
+                  <Google />
+                  <Apple />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </ContainerLayout>
+      <Modal open={open} setOpen={setOpen}>
+        <div className="w-full flex flex-col lg:px-5">
+          <div className="flex justify-end mb-3">
+            <span className="cursor-pointer" onClick={() => setOpen(false)}>
+              <Cancel />
+            </span>
+          </div>
+          <h1 className="lg:text-[36px] text-2xl font-bold text-[#333] lg:leading-[55px]">
+            Excited about how WeCollect is Automating Data Collection?
+          </h1>
+          <p className="text-sm lg:text-xl font-medium mt-4">
+            Join the waitlist and be the first to know.
+          </p>
+          <div className="mt-3 flex justify-center my-2">
+            <Image src={successImg} alt="success" />
+          </div>
+          <div className="flex  flex-col items-center space-y-1  w-full">
+            <button
+              className="bg-[#4747D6] font-bold text-xl text-white outline-none border-none w-full rounded-[20px] h-[75px] flex items-center justify-center"
+              onClick={() => {
+                router.push("#waitlist");
+                setOpen(false);
+              }}
+            >
+              Join Waitlist
+            </button>
+            <button
+              className="h-[75px] text-[#4747D6] w-fit text-xl font-bold cursor-pointer border-none outline-none"
+              onClick={() => setOpen(false)}
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

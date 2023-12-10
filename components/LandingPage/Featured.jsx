@@ -1,6 +1,16 @@
+import { useState,useEffect } from "react";
 import ContainerLayout from "../../layouts/ContainerLayout"
 import Link from "next/link"
 const Featured = () => {
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+   setTimeout(() => {
+    setShow(!show)
+   }, 4000);
+
+   
+  }, [show])
+  
   return (
     <ContainerLayout>
       <div className="w-full overflow-x-hidden bg-feat my-10 lg:flex overflow-y-hidden space-x-4 justify-between hidden  ">
@@ -11,9 +21,17 @@ const Featured = () => {
           <div className="w-[500px] h-[200px] -ml-12 skewy  bg-[#4747D6] "></div>
         </div>
         <div className="w-7/12 flex flex-col justify-center h-full ">
-          <h1 className="max-w-[639px] text-[#333] font-bold text-[40px]">
-            Food Price Monitoring Project in Nigeria
-          </h1>
+          {show ? (
+            <h1 className="max-w-[639px] text-[#333] font-bold text-[40px]">
+              Food Price Monitoring Project in Nigeria
+            </h1>
+          ) : (
+            <p className=" text-[20px] text-[#333] font-semibold">
+              Tracking the availability of food in Nigeria using a data driven
+              price model in line with the UN SD4
+            </p>
+          )}
+
           <Link
             href="https://website-we.vercel.app"
             target="_blank"
@@ -31,9 +49,17 @@ const Featured = () => {
           </div>
         </div>
         <div className="flex flex-col h-[256px] justify-center px-5">
-          <h1 className=" text-[#333] font-bold text-2xl">
-            Food Price Monitoring Project in Nigeria
-          </h1>
+          {show ? (
+            <h1 className=" text-[#333] font-bold text-2xl">
+              Food Price Monitoring Project in Nigeria
+            </h1>
+          ) : (
+            <p className=" text-[15px] text-[#333] font-semibold">
+              Tracking the availability of food in Nigeria using a data driven
+              price model in line with the UN SD4
+            </p>
+          )}
+
           <Link
             href="https://website-we.vercel.app"
             target="_blank"
