@@ -60,14 +60,13 @@ const Become = () => {
             </h1>
             <button
               className="bg-[#4747D6] text-white text-base py-[10px] px-5 rounded-[30px] font-bold mt-8 w-fit border-none outline-none"
-              onClick={() => setOpen(!open)}
+              onClick={() => router.push("/ambassador")}
             >
               Apply now
             </button>
           </div>
         </div>
       </div>
-     
     </ContainerLayout>
   );
 }

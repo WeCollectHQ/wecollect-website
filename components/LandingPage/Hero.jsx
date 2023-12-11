@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import ContainerLayout from '../../layouts/ContainerLayout'
 import Image from 'next/image'
 import heroImage from "../../assets/png/hero-image.png";
@@ -9,9 +9,13 @@ import successImg from "../../assets/svg/success.svg";
 import { useRouter } from 'next/router';
 import { Cancel } from "../../assets/svg";
 const Hero = ({ active }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const router = useRouter();
-
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(true);
+    }, 20000);
+  }, []);
   return (
     <div className="flex flex-col w-full hero-bg min-h-[70vh] pb-12">
       <Navbar active={active} />
