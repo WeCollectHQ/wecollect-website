@@ -28,7 +28,10 @@ const Register = () => {
                       className="flex items-center space-x-3 lg:space-x-[19px]"
                       key={index}
                     >
+                      <div className="w-4 flex ">
+
                       <span className="bg-[#4747D6] w-[10px] h-[10px] rounded-full" />
+                      </div>
                       <p className="text-[#555] text-sm lg:text-base font-medium">
                         {item}
                       </p>

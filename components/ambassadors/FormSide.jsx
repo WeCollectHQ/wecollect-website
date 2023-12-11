@@ -41,7 +41,10 @@ const FormSide = () => {
               <CompleteCheck />
             </span>
           ) : (
-            <span className="w-12 h-12 rounded-full  flex items-center justify-center cursor-pointer  border bg-white border-[#333] border-opacity-30 text-[#333] font-semibold " onClick={() => setStage(1)}>
+            <span
+              className="w-12 h-12 rounded-full  flex items-center justify-center cursor-pointer  border bg-white border-[#333] border-opacity-30 text-[#333] font-semibold "
+              onClick={() => setStage(1)}
+            >
               1
             </span>
           )}
@@ -204,17 +207,19 @@ const FormSide = () => {
                           <label className="text-[#333] text-sm lg:text-base font-semibold">
                             Gender
                           </label>
-                          <select
-                            id="gender"
-                            name="gender"
-                            value={values.gender}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            className="mt-2 block w-full py-2 px-3 border h-[42px]  bg-white rounded-md shadow-sm focus:outline-none   focus:border-[#333] border-opacity-30 sm:text-sm "
-                          >
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </select>
+                          <div className="w-full border h-[42px] pr-4 flex items-center bg-white rounded-md shadow-sm focus:outline-none   focus:border-[#333] border-opacity-30">
+                            <select
+                              id="gender"
+                              name="gender"
+                              value={values.gender}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              className="mt-2 block w-full px-3 border h-[42px]  bg-transparent  focus:outline-none  border-none sm:text-sm   "
+                            >
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                            </select>
+                          </div>
                         </div>
                         {/* end of single input */}
                         {/* single input */}

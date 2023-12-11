@@ -121,7 +121,22 @@ border-radius: 30px;
   filter: drop-shadow(15px 0px 50px rgba(71, 71, 214, 0.15));
 }
 
+select {
+  /* Reset the default styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
+  /* Add your custom styles, such as background, border, etc. */
+  /* For example: */
+  padding: 5px;
+ 
+
+  /* Add a background image for a custom arrow icon */
+  background: url('/arrow-down.png') no-repeat right center;
+  background-size: 24px;
+  padding-right: 2rem !important ; /* Adjust the size of the arrow icon as needed */
+}
 
 
 
