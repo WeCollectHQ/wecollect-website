@@ -71,7 +71,7 @@ const Hero = ({ active }) => {
               <Cancel />
             </span>
           </div>
-          <h1 className="lg:text-2xl text-2xl font-bold text-[#333]  max-w-[377px] mx-auto text-center leading-[36px]">
+          <h1 className="lg:text-2xl text-xl font-bold text-[#333]  max-w-[377px] mx-auto text-center leading-[36px]">
             Excited about how WeCollect is Automating Data Collection?
           </h1>
           <p className="text-sm lg:text-base font-medium mt-4 text-center">
@@ -82,7 +82,7 @@ const Hero = ({ active }) => {
           </div>
           <div className="flex  flex-col items-center space-y-1  w-full">
             <button
-              className="bg-[#4747D6] max-w-[230px] font-bold text-xl text-white outline-none border-none w-full rounded-[20px] h-[60px] flex items-center justify-center"
+              className="bg-[#4747D6] max-w-[230px] font-bold text-xl text-white outline-none border-none w-full rounded-[30px] h-[41px] flex items-center justify-center"
               onClick={() => {
                 router.push("#waitlist");
                 setOpen(false);
@@ -91,7 +91,7 @@ const Hero = ({ active }) => {
               Join Waitlist
             </button>
             <button
-              className="h-[75px] text-[#4747D6] w-full max-w-[230px] text-xl font-bold cursor-pointer border-none outline-none"
+              className="h-[60px] text-[#4747D6] w-full max-w-[230px] text-xl font-bold cursor-pointer border-none outline-none"
               onClick={() => setOpen(false)}
             >
               Learn More
