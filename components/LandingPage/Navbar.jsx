@@ -32,7 +32,7 @@ const Navbar = ({ active }) => {
               href={"https://medium.com/@wecollectng/"}
               target="_blank"
               className="blue-btn text-white md:text-[20px] text-base font-bold flex items-center justify-center px-[20px] py-[10px] "
-              onClick={() => router.push("/blog")}
+            
             >
               Learn more
             </Link>
@@ -41,7 +41,7 @@ const Navbar = ({ active }) => {
               href={"https://medium.com/@wecollectng/"}
               target="_blank"
               className="white-btn text-mainBlue md:text-[20px] text-base font-bold flex items-center justify-center px-[20px] py-[10px] "
-              onClick={() => router.push("/blog")}
+             
             >
               Learn more
             </Link>
