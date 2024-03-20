@@ -198,7 +198,7 @@ const FormSide = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
-                            placeholder="enter email"
+                            placeholder="johndoe@wecollect.tech"
                           />
                         </div>
                         {/* end of single input */}
@@ -252,7 +252,7 @@ const FormSide = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
-                            placeholder="enter phone number"
+                            placeholder="0XXXXXXXXXXX"
                           />
                         </div>
                         {/* end of single input */}
