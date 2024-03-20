@@ -33,7 +33,7 @@ const Featured = () => {
           )}
 
           <Link
-            href="https://website-we.vercel.app"
+            href="https://fpmpn.wecollect.tech"
             target="_blank"
             className="bg-[#4747D6] text-white text-xl py-[10px] px-5 rounded-[30px] mt-1 w-fit"
           >
@@ -61,7 +61,7 @@ const Featured = () => {
           )}
 
           <Link
-            href="https://website-we.vercel.app"
+            href="https://fpmpn.wecollect.tech/"
             target="_blank"
             className="bg-[#4747D6] text-white text-base py-[10px] px-5 rounded-[30px] mt-4 w-fit"
           >
