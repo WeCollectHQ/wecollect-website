@@ -27,7 +27,7 @@ const [active, setActive] = useState(false);
   return (
     <>
       <Head>
-        <title>We Collect</title>
+        <title>WeCollect</title>
         <meta
           name="description"
           content="Leverage advanced data-collecting technology and numerous field agents to access and track data for various projects."

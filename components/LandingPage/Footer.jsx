@@ -1,26 +1,26 @@
-import React,{useEffect,useState} from 'react'
-import ContainerLayout from '../../layouts/ContainerLayout'
-import Image from 'next/image'
+import React, { useEffect, useState } from "react";
+import ContainerLayout from "../../layouts/ContainerLayout";
+import Image from "next/image";
 import google from "../../assets/svg/google1.svg";
 import apple from "../../assets/svg/apple2.svg";
 import twiiter from "../../assets/svg/twit.svg";
 import facebook from "../../assets/svg/face.svg";
 import linkedin from "../../assets/svg/linkedin.svg";
 import msg from "../../assets/svg/msg.svg";
-import log from "../../assets/svg/logg.svg"
-import { ArrowUp,  } from "../../assets/svg/index"
+import log from "../../assets/svg/logg.svg";
+import { ArrowUp } from "../../assets/svg/index";
+import Link from "next/link";
 
-
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 const Footer = () => {
-
   const router = useRouter();
-  
-    
-    
+
   return (
     <ContainerLayout>
-      <div className="w-full lg:w-10/12 mx-auto flex flex-col lg:py-[70px] bg-white" id='waitlist'>
+      <div
+        className="w-full lg:w-10/12 mx-auto flex flex-col lg:py-[70px] bg-white"
+        id="waitlist"
+      >
         <h1
           className="text-customeBlack font-bold text-base lg:text-2xl pl-8"
           data-aos="fade-up"
@@ -71,7 +71,7 @@ const Footer = () => {
               <input
                 type="text"
                 className=" grow    placeholder:text-customBlack placeholder:text-md lg:placeholder:text-2xl border-none outline-none md:pl-5 "
-                placeholder="johndoe@example.com"
+                placeholder=""
               />
               <button className="w-fit flex justify-center items-center h-[48px] px-3 lg:px-9 bg-mainBlue text-white text-[12px] lg:text-2xl font-bold rounded-[20px] ">
                 Notify me
@@ -91,16 +91,32 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex space-x-4 items-center">
-            <Image src={linkedin} alt="linked" />
-            <Image src={facebook} alt="linked" />
-            <Image src={twiiter} alt="linked" />
-            <Image src={msg} alt="linked" />
+            <Link href="https://twitter.com/Wecollectdata" target="_blank">
+              <Image src={twiiter} alt="linked" />
+            </Link>
+            <Link
+              href="https://web.facebook.com/Wecollectintel"
+              target="_blank"
+            >
+              <Image src={facebook} alt="linked" />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/company/wecollect-tech/"
+              target="_blank"
+            >
+              <Image src={linkedin} alt="linked" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/wecollect_data/"
+              target="_blank"
+            >
+              <Image src={msg} alt="linked" />
+            </Link>
           </div>
         </div>
       </div>
-    
     </ContainerLayout>
   );
-}
+};
 
-export default Footer
+export default Footer;
