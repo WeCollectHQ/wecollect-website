@@ -38,7 +38,7 @@ const Features = () => {
                       data?.map((item,index) => {
                           return (
                           <React.Fragment key={index}>
-                              <div className="flex flex-col  items-center box-drop  rounded-[30px] bg-white justify-center  w-11/12  h-[400px]">
+                              <div className="flex flex-col  items-center box-drop  rounded-[30px] bg-white justify-center  w-11/12 mx-auto h-[400px]">
                                 <Image
                                   src={item.img}
                                   alt={item.title}
