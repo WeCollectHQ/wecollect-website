@@ -10,10 +10,37 @@ import msg from "../../assets/svg/msg.svg";
 import log from "../../assets/svg/logg.svg";
 import { ArrowUp } from "../../assets/svg/index";
 import Link from "next/link";
+import axios from "axios";
+import Modal from "../modals/Modal";
+import check from "../../assets/svg/check-icon.svg";
 
 import { useRouter } from "next/router";
 const Footer = () => {
   const router = useRouter();
+    const [email, setEmail] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [open, setOpen] = useState(false);
+
+    const handleSubmit = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.post(
+          "https://api.wecollect.tech/newsletter/subscribe",
+          { email: email }
+        );
+        if (response.status === 200) {
+          setLoading(false);
+          setEmail("");
+          setOpen(true);
+          setTimeout(() => {
+            setOpen(false);
+          }, 3000);
+        }
+      } catch (error) {
+        setLoading(false);
+        throw new Error(error);
+      }
+    };
 
   return (
     <ContainerLayout>
@@ -72,9 +99,14 @@ const Footer = () => {
                 type="text"
                 className=" grow    placeholder:text-customBlack placeholder:text-md lg:placeholder:text-2xl border-none outline-none md:pl-5 "
                 placeholder=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button className="w-fit flex justify-center items-center h-[48px] px-3 lg:px-9 bg-mainBlue text-white text-[12px] lg:text-2xl font-bold rounded-[20px] ">
-                Notify me
+              <button className="w-fit flex justify-center items-center h-[48px] px-3 lg:px-9 bg-mainBlue text-white text-[12px] lg:text-2xl font-bold rounded-[20px] " onClick={handleSubmit}>
+                {
+                  loading ? "loading..." : "Notify me"
+                }
+              
               </button>
             </div>
           </div>
@@ -115,6 +147,33 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <Modal open={open} setOpen={setOpen}>
+        <div className="w-full bg-white     ">
+          <div className="w-full max-w-[341px] flex flex-col mx-auto items-center">
+            <span>
+              <Image src={check} alt="checker" />
+            </span>
+
+            <p className="text-sm lg:text-base text-[#333] font-medium mt-4 text-center">
+              Your request to  WeCollect newsletter has been submitted
+              successfully.
+            </p>
+          
+            <p className="text-sm lg:text-base text-[#333] font-medium mt-4 text-center">
+              Thank you for subscribing.
+            </p>
+            <div className="w-full max-w-[287px] mx-auto mt-14 ">
+              <button
+                type="button"
+                className={`w-full   bg-[#4747D6] rounded-[30px] py-[10px] px-5  flex items-center justify-center text-white font-semibold`}
+                onClick={() => setOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </Modal>
     </ContainerLayout>
   );
 };
