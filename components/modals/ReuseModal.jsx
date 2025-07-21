@@ -3,7 +3,7 @@ import { Fragment, useRef, } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 
-export default function ReuseModal({open,setOpen, children}) {
+export default function ReuseModal({open,setOpen, children,width}) {
 
 
   const cancelButtonRef = useRef(null);

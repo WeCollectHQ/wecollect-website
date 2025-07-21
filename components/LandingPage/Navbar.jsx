@@ -1,10 +1,10 @@
-import React from 'react'
-import ContainerLayout from '../../layouts/ContainerLayout'
-import { Navlogo } from '../../assets/svg'
-import logo from "../../assets/svg/log2.svg"
-import { useRouter } from 'next/router'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react";
+import ContainerLayout from "../../layouts/ContainerLayout";
+import { Navlogo } from "../../assets/svg";
+import logo from "../../assets/svg/log2.svg";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
 const Navbar = ({ active }) => {
   const router = useRouter();
   return (
@@ -31,8 +31,7 @@ const Navbar = ({ active }) => {
             <Link
               href={"https://medium.com/@wecollectng/"}
               target="_blank"
-              className="blue-btn text-white md:text-[20px] text-base font-bold flex items-center justify-center px-[20px] py-[10px] "
-            
+              className="blue-btn text-white md:text-[20px] text-[16px] font-bold flex items-center justify-center px-[20px] py-[10px] "
             >
               Learn more
             </Link>
@@ -40,8 +39,7 @@ const Navbar = ({ active }) => {
             <Link
               href={"https://medium.com/@wecollectng/"}
               target="_blank"
-              className="white-btn text-mainBlue md:text-[20px] text-base font-bold flex items-center justify-center px-[20px] py-[10px] "
-             
+              className="white-btn text-mainBlue md:text-[20px] text-[16px] font-bold flex items-center justify-center px-[20px] py-[10px] "
             >
               Learn more
             </Link>
@@ -50,6 +48,6 @@ const Navbar = ({ active }) => {
       </ContainerLayout>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

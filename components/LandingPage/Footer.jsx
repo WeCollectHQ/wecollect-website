@@ -9,38 +9,10 @@ import linkedin from "../../assets/svg/linkedin.svg";
 import msg from "../../assets/svg/msg.svg";
 import log from "../../assets/svg/logg.svg";
 import { ArrowUp } from "../../assets/svg/index";
-import Link from "next/link";
-import axios from "axios";
-import Modal from "../modals/Modal";
-import check from "../../assets/svg/check-icon.svg";
 
 import { useRouter } from "next/router";
 const Footer = () => {
   const router = useRouter();
-    const [email, setEmail] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [open, setOpen] = useState(false);
-
-    const handleSubmit = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.post(
-          "https://api.wecollect.tech/newsletter/subscribe",
-          { email: email }
-        );
-        if (response.status === 200) {
-          setLoading(false);
-          setEmail("");
-          setOpen(true);
-          setTimeout(() => {
-            setOpen(false);
-          }, 3000);
-        }
-      } catch (error) {
-        setLoading(false);
-        throw new Error(error);
-      }
-    };
 
   return (
     <ContainerLayout>
@@ -49,7 +21,7 @@ const Footer = () => {
         id="waitlist"
       >
         <h1
-          className="text-customeBlack font-bold text-base lg:text-2xl pl-8"
+          className="text-customeBlack font-bold text-[16px] lg:text-2xl pl-8"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
@@ -98,15 +70,10 @@ const Footer = () => {
               <input
                 type="text"
                 className=" grow    placeholder:text-customBlack placeholder:text-md lg:placeholder:text-2xl border-none outline-none md:pl-5 "
-                placeholder=""
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="johndoe@example.com"
               />
-              <button className="w-fit flex justify-center items-center h-[48px] px-3 lg:px-9 bg-mainBlue text-white text-[12px] lg:text-2xl font-bold rounded-[20px] " onClick={handleSubmit}>
-                {
-                  loading ? "loading..." : "Notify me"
-                }
-              
+              <button className="w-fit flex justify-center items-center h-[48px] px-3 lg:px-9 bg-mainBlue text-white text-[12px] lg:text-2xl font-bold rounded-[20px] ">
+                Notify me
               </button>
             </div>
           </div>
@@ -114,66 +81,22 @@ const Footer = () => {
         <div className="flex w-full lg:justify-between lg:items-center mt-20 flex-col-reverse lg:flex-row">
           <div className="flex items-center space-x-4 mt-4 lg:mt-0 pb-8 lg:pb-0">
             <Image src={log} alt="log" className="w-[20px] h-auto lg:w-fit" />
-            <p className="text-xl lg:text-[32px] font-bold text-customBlack opacity-80">
+            <p className="text-xl 2xl:text-[32px] lg:text-2xl font-bold text-customBlack opacity-80">
               WeCollect
             </p>
-            <p className="ltext-base lg:text-xl text-customBlack">
+            <p className="ltext-[16px] lg:text-xl text-customBlack">
               {" "}
               | All rights reserved.
             </p>
           </div>
           <div className="flex space-x-4 items-center">
-            <Link href="https://twitter.com/Wecollectdata" target="_blank">
-              <Image src={twiiter} alt="linked" />
-            </Link>
-            <Link
-              href="https://web.facebook.com/Wecollectintel"
-              target="_blank"
-            >
-              <Image src={facebook} alt="linked" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/company/wecollect-tech/"
-              target="_blank"
-            >
-              <Image src={linkedin} alt="linked" />
-            </Link>
-            <Link
-              href="https://www.instagram.com/wecollect_data/"
-              target="_blank"
-            >
-              <Image src={msg} alt="linked" />
-            </Link>
+            <Image src={linkedin} alt="linked" />
+            <Image src={facebook} alt="linked" />
+            <Image src={twiiter} alt="linked" />
+            <Image src={msg} alt="linked" />
           </div>
         </div>
       </div>
-      <Modal open={open} setOpen={setOpen}>
-        <div className="w-full bg-white     ">
-          <div className="w-full max-w-[341px] flex flex-col mx-auto items-center">
-            <span>
-              <Image src={check} alt="checker" />
-            </span>
-
-            <p className="text-sm lg:text-base text-[#333] font-medium mt-4 text-center">
-              Your request to  WeCollect newsletter has been submitted
-              successfully.
-            </p>
-          
-            <p className="text-sm lg:text-base text-[#333] font-medium mt-4 text-center">
-              Thank you for subscribing.
-            </p>
-            <div className="w-full max-w-[287px] mx-auto mt-14 ">
-              <button
-                type="button"
-                className={`w-full   bg-[#4747D6] rounded-[30px] py-[10px] px-5  flex items-center justify-center text-white font-semibold`}
-                onClick={() => setOpen(false)}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </Modal>
     </ContainerLayout>
   );
 };

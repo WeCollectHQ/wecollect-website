@@ -1,8 +1,8 @@
-import useA from "../../assets/png/use1.png";
-import useB from "../../assets/png/use2.png";
-import useC from "../../assets/png/use3.png";
-import useD from "../../assets/png/use4.png";
-import useE from "../../assets/png/use5.png";
+import useA from "../../assets/png/blog-samp.png";
+import useB from "../../assets/png/blog-samp.png";
+import useC from "../../assets/png/blog-samp.png";
+import useD from "../../assets/png/blog-samp.png";
+import useE from "../../assets/png/blog-samp.png";
  export const data = [
    {
      image: useA,

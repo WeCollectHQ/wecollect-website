@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import check from "../../assets/svg/check-icon.svg";
 import { CompleteCheck } from "../../assets/svg";
-import {useRouter} from "next/router"
+import { useRouter } from "next/router";
 import Image from "next/image";
 import axios from "axios";
 
@@ -22,15 +21,11 @@ const initialValues = {
   agreeToTerms: false,
 };
 
-
-
 const FormSide = () => {
-    const [stage, setStage] = useState(1);
+  const [stage, setStage] = useState(1);
   const [success, setSuccess] = useState(false);
   const [isOneFilled, setIsOneFilled] = useState(false);
   const router = useRouter();
-
-
 
   return (
     <div className="w-full flex flex-col bg-white lg:bg-inherit my-[50px] lg:my-0">
@@ -65,14 +60,14 @@ const FormSide = () => {
               <Image src={check} alt="checker" />
             </span>
 
-            <p className="text-sm lg:text-base text-[#333] font-medium mt-4 text-center">
+            <p className="text-[14px] lg:text-[16px] text-[#333] font-medium mt-4 text-center">
               Your request to become WeCollect ambassador is submitted
               successfully and being reviewed.
             </p>
-            <p className="text-sm lg:text-base text-[#333] font-medium mt-4 text-center">
+            <p className="text-[14px] lg:text-[16px] text-[#333] font-medium mt-4 text-center">
               We will get back to you if you meet our requirements.
             </p>
-            <p className="text-sm lg:text-base text-[#333] font-medium mt-4 text-center">
+            <p className="text-[14px] lg:text-[16px] text-[#333] font-medium mt-4 text-center">
               Thank you for showing interest.
             </p>
             <div className="w-full max-w-[287px] mx-auto mt-14 ">
@@ -169,7 +164,7 @@ const FormSide = () => {
                       <div className="flex flex-col space-y-[30px]">
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             Full name
                           </label>
                           <input
@@ -179,14 +174,14 @@ const FormSide = () => {
                             value={values.name}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="Enter full name"
                           />
                         </div>
                         {/* end of single input */}
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             Email Address
                           </label>
                           <input
@@ -197,14 +192,14 @@ const FormSide = () => {
                             value={values.email}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="johndoe@wecollect.tech"
                           />
                         </div>
                         {/* end of single input */}
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             Gender
                           </label>
                           <div className="w-full border h-[42px] pr-4 flex items-center bg-white rounded-md shadow-sm focus:outline-none   focus:border-[#333] border-opacity-30">
@@ -214,7 +209,7 @@ const FormSide = () => {
                               value={values.gender}
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              className="mt-2 block w-full px-3 border h-[42px]  bg-transparent  focus:outline-none  border-none sm:text-sm   "
+                              className="mt-2 block w-full px-3 border h-[42px]  bg-transparent  focus:outline-none  border-none sm:text-[14px]   "
                             >
                               <option value="male">Male</option>
                               <option value="female">Female</option>
@@ -224,7 +219,7 @@ const FormSide = () => {
                         {/* end of single input */}
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             Age
                           </label>
                           <input
@@ -234,14 +229,14 @@ const FormSide = () => {
                             value={values.age}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="Enter age"
                           />
                         </div>
                         {/* end of single input */}
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             Phone number
                           </label>
                           <input
@@ -251,7 +246,7 @@ const FormSide = () => {
                             value={values.phonenumber}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="0XXXXXXXXXXX"
                           />
                         </div>
@@ -262,7 +257,7 @@ const FormSide = () => {
                       <div className="flex flex-col space-y-[30px]">
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             Cuurent Academic level
                           </label>
                           <input
@@ -273,14 +268,14 @@ const FormSide = () => {
                             value={values.academicLevel}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="Academic level"
                           />
                         </div>
                         {/* end of single input */}
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             Curent School of study
                           </label>
                           <input
@@ -291,14 +286,14 @@ const FormSide = () => {
                             value={values.school}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="School of study"
                           />
                         </div>
                         {/* end of single input */}
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             Where have you volunteered before?
                           </label>
                           <input
@@ -308,14 +303,14 @@ const FormSide = () => {
                             value={values.pastVolunteeredAt}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="enter past volunteering details"
                           />
                         </div>
                         {/* end of single input */}
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             LinkedIn profile link
                           </label>
                           <input
@@ -325,14 +320,14 @@ const FormSide = () => {
                             value={values.linkedIn}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="Eg:linkedin.com"
                           />
                         </div>
                         {/* end of single input */}
                         {/* single input */}
                         <div className="flex flex-col">
-                          <label className="text-[#333] text-sm lg:text-base font-semibold">
+                          <label className="text-[#333] text-[14px] lg:text-[16px] font-semibold">
                             X profile link
                           </label>
                           <input
@@ -342,7 +337,7 @@ const FormSide = () => {
                             value={values.twitter}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-sm lg:placeholder:text-base placeholder:text-[#999] font-medium mt-2"
+                            className="w-full h-[42px] rounded-[8px] border border-[#333] border-opacity-30 px-3  lg:px-5 outline-none focus:outline-none placeholder:text-[14px] lg:placeholder:text-[16px] placeholder:text-[#999] font-medium mt-2"
                             placeholder="Eg:twitter.com"
                           />
                         </div>
