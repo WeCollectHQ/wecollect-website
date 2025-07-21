@@ -81,7 +81,7 @@
 <path d="M126.731 55.678H93.1849V57.7751H126.731V55.678Z" fill="white"/>
 <path d="M141.408 59.8704H93.1847V61.9675H141.408V59.8704Z" fill="white"/>
 <path d="M137.214 66.1619H95.282V82.9347H137.214V66.1619Z" fill="white"/>
-<path d="M30.2853 133.255H7.22102V7.45459H143.505V17.9382" stroke="#3AD29F" stroke-width="1.90551" stroke-miterlimit="10" stroke-dasharray="3.81 3.81"/>
+<path d="M30.2853 133.255H7.22102V7.45459H143.505V17.9382" stroke="#3AD29F" strokeWidth="1.90551" stroke-miterlimit="10" stroke-dasharray="3.81 3.81"/>
 <g opacity="0.5">
 <path opacity="0.5" d="M7.92161 15.8432C12.2966 15.8432 15.8432 12.2966 15.8432 7.92161C15.8432 3.54663 12.2966 0 7.92161 0C3.54663 0 0 3.54663 0 7.92161C0 12.2966 3.54663 15.8432 7.92161 15.8432Z" fill="url(#paint9_linear_1_354)"/>
 </g>
