@@ -77,7 +77,7 @@ const Section = () => {
             </p>
 
             {/* Stepper */}
-            <div className="flex justify-center lg:justify-start gap-4 mt-6">
+            <div className="flex justify-center lg:justify-start gap-4 my-8">
               {[1, 2, 3, 4, 5].map((step, index) => {
                 const isSelected = selectedStepIndex === index;
 
@@ -108,7 +108,7 @@ const Section = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="bg-mainBlue m-auto lg:m-0 hover:bg-[#E3D5FF] h-[50px] text-base font-medium flex items-center text-white hover:text-mainBlue rounded-[50px] px-5 cursor-pointer mt-14 mb-14">
+            <button className="bg-mainBlue m-auto lg:m-0 hover:bg-[#E3D5FF] h-[50px] text-base font-medium flex items-center text-white hover:text-mainBlue rounded-[50px] px-5 cursor-pointer mb-14">
               <div className="bg-[#fff] rounded-full p-1 mr-3">
                 <Image src={GetAQuoteArrow} alt="" />
               </div>
