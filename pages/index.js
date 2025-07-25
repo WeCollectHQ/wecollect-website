@@ -4,6 +4,7 @@ import Control from "../components/LandingPage/Control";
 import HomeFeatures from "../components/LandingPage/HomeFeatures";
 import How from "../components/LandingPage/How";
 import Section from "../components/LandingPage/Section";
+import Projects from "../components/LandingPage/Projects";
 import CustomCarousel from "../components/LandingPage/CustomCarousel";
 import Slider from "../components/blogs/Slider";
 import RequestDemo from "../components/footer/request-demo";
@@ -11,6 +12,8 @@ import Footer from "../components/footer/new-footer";
 import Faq from "../components/LandingPage/Faq";
 import Head from "next/head";
 import NewHomeHero from "../components/LandingPage/new-home-hero";
+import UseCases from "../components/LandingPage/UseCases";
+import Blog from "../components/LandingPage/Blog";
 
 function Home() {
   useEffect(() => {
@@ -33,15 +36,18 @@ function Home() {
       <HomeHero /> */}
       <NewHomeHero />
       <OurPartner />
-      <Control />
+      {/* <Control /> */}
       <HomeFeatures />
+      <UseCases />
       <How />
       <Section />
+      <Projects />
+      <Blog />
       {/* <DesktopCarousel /> */}
-      <CustomCarousel />
+      {/* <CustomCarousel /> */}
       {/* <MobileCarousel /> */}
       <Faq />
-      <Slider />
+      {/* <Slider /> */}
       <RequestDemo />
       <Footer />
     </div>

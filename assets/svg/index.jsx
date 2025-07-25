@@ -1,5 +1,3 @@
-
-
 export const BellIcon = () => {
   return (
     <svg
@@ -43,7 +41,7 @@ export const BellIcon = () => {
       />
     </svg>
   );
-}
+};
 export const BackIcon = () => {
   return (
     <svg
@@ -107,7 +105,7 @@ export const BackIcon = () => {
       </defs>
     </svg>
   );
-}
+};
 export const SuccessIcon = () => {
   return (
     <svg
@@ -138,7 +136,7 @@ export const SuccessIcon = () => {
       </defs>
     </svg>
   );
-}
+};
 export const CancelIcon = () => {
   return (
     <svg
@@ -205,7 +203,7 @@ export const CancelIcon = () => {
       </defs>
     </svg>
   );
-}
+};
 export const BlogSearchIcon = () => {
   return (
     <svg
@@ -229,35 +227,26 @@ export const BlogSearchIcon = () => {
       </defs>
     </svg>
   );
-}
+};
 export const Bars = () => {
   return (
     <svg
-      width="37"
-      height="37"
-      viewBox="0 0 37 37"
+      width="26"
+      height="21"
+      viewBox="0 0 26 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect
-        x="0.0234375"
-        y="0.0253906"
-        width="36.95"
-        height="36.95"
-        rx="5"
-        fill="#4747D6"
-        fill-opacity="0.1"
-      />
       <path
-        d="M10.25 12.5H26.75M10.25 18.5H26.75M10.25 24.5H26.75"
+        d="M13 19.5625H24.8125M6.25 10.5625H24.8125M1.1875 1.5625H24.8125"
         stroke="#4747D6"
-        stroke-width="1.5"
+        stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
     </svg>
   );
-}
+};
 
 export const CloseIcon = () => {
   return (
@@ -285,7 +274,7 @@ export const CloseIcon = () => {
       />
     </svg>
   );
-}
+};
 
 export const SpecialArrow = () => {
   return (
@@ -302,7 +291,7 @@ export const SpecialArrow = () => {
       />
     </svg>
   );
-}
+};
 export const EmailIcon = () => {
   return (
     <svg
@@ -332,7 +321,7 @@ export const EmailIcon = () => {
       </defs>
     </svg>
   );
-}
+};
 export const PhoneIcon = () => {
   return (
     <svg
@@ -365,7 +354,7 @@ export const PhoneIcon = () => {
       </defs>
     </svg>
   );
-}
+};
 
 export const LocationIcon = () => {
   return (
@@ -393,7 +382,7 @@ export const LocationIcon = () => {
       />
     </svg>
   );
-}
+};
 
 export const ArrowDown = () => {
   return (
@@ -410,7 +399,7 @@ export const ArrowDown = () => {
       />
     </svg>
   );
-}
+};
 export const CompleteCheck = () => (
   <svg
     width="49"
@@ -450,7 +439,7 @@ export const Cancel = () => {
       />
     </svg>
   );
-}
+};
 export const ArrowUp = () => {
   return (
     <svg
@@ -505,7 +494,7 @@ export const ArrowUp = () => {
       </defs>
     </svg>
   );
-}
+};
 export const Navlogo = () => {
   return (
     <svg
@@ -543,7 +532,7 @@ export const Navlogo = () => {
       />
     </svg>
   );
-}
+};
 
 export const Google = () => {
   return (
@@ -581,7 +570,7 @@ export const Google = () => {
       />
     </svg>
   );
-}
+};
 
 export const Apple = () => {
   return (
@@ -607,4 +596,4 @@ export const Apple = () => {
       />
     </svg>
   );
-}
+};

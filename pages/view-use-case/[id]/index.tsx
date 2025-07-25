@@ -14,6 +14,7 @@ const ViewUseCase = () => {
   const { id } = router.query;
   const idValue = Number(id);
   const item = useCaseData[idValue];
+
   useEffect(() => {
     window?.scrollTo(0, 0);
   }, []);

@@ -1,34 +1,42 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import ContainerLayout from "../../layouts/ContainerLayout";
 import add from "../../assets/svg/arrow-down.svg";
 import minus from "../../assets/svg/minus.svg";
 import { faqData } from "../../utils/faqdata";
+import DotsBg from "../../assets/png/dots-bg-image.png";
+import FaqLeftIcon from "../../assets/svg/mingcute_comment-line.svg";
 import Link from "next/link";
 
 const Faq = () => {
+  const router = useRouter();
+
   return (
     <div
-      className="w-full bg-[#fff] h-auto -mb-16 pt-10 2xl:py-[100px] mt-12 flow-hide"
+      // className="w-full bg-[#fff] h-auto -mb-16 pt-10 2xl:py-[100px] mt-12 flow-hide"
+      className="w-full relative overflow-hidden"
       id="faq"
       // data-aos="fade-up"
       // data-aos-duration="1000"
     >
+      <Image
+        src={DotsBg}
+        alt="dots background"
+        className="absolute top-0 left-1/2 -translate-x-1/2 z-0 max-w-[761px]"
+      />
+
       <ContainerLayout>
         <div className="w-full flex flex-col">
-          <p
-            className="text-[#333333] text-xl leading-[30px] lg:text-2xl 2xl:text-[36px] font-semibold text-center font-serif"
-            // data-aos="fade-up"
-            // data-aos-duration="1000"
-          >
-            FAQ
-          </p>
-          <p
-            className="text-[#555555] text-[14px] font-sans  lg:text-[16px] 2xl:text-[20px] font-medium text-center mt-[10px] leading-[25px] lg:leading-[35px]"
-            // data-aos="fade-up"
-            // data-aos-duration="1000"
-          >
-            Find quick answers to some frequently asked questions
+          <div className="flex justify-center mt-[100px] mb-6">
+            <div className="inline-flex bg-[#F3F3FF] shadow-xl rounded-[50px] py-2 px-3 border-2 border-[#FFFFFF]">
+              <Image src={FaqLeftIcon} alt="" />
+              <p className="text-[#1E1E5A] text-base font-medium pl-2">FAQ</p>
+            </div>
+          </div>
+
+          <p className="bg-gradient-to-r from-[#151541] to-[#00009A] bg-clip-text text-transparent font-sans text-[24px] lg:text-[40px] font-black text-center lg:leading-[60px] z-10 relative">
+            Our User Already Asked, and We Answered
           </p>
 
           <div className="w-full bg-[#F9F6FF] h-auto rounded-[30px] flex flex-col mt-[30px] md:mt-[50px] p-5  lg:p-[30px]">
@@ -36,13 +44,14 @@ const Faq = () => {
               return <SingleFaq item={item} key={index} />;
             })}
           </div>
-          <div className="w-full flex items-center justify-center mt-11 mb-4 ">
-            <Link
-              href={"/faq"}
-              className="faq-btn font-semibold  text-mainBlue flex items-center justify-center rounded-[50px] font-sans "
+
+          <div className="flex justify-center">
+            <button
+              onClick={() => router.push("/faq")}
+              className="bg-[#F3F3FF] w-[200px] h-12 rounded-[50px] py-3 px-6 text-[#4747D6] text-base font-medium shadow-xl my-12"
             >
-              See more {">"}
-            </Link>
+              View All
+            </button>
           </div>
         </div>
       </ContainerLayout>

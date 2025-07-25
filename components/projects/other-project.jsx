@@ -5,6 +5,7 @@ import spiral from "../../assets/png/spiral-curve.png";
 import oval from "../../assets/png/oval-b.png";
 import angola from "../../assets/png/angola.png";
 import { useRouter } from "next/router";
+
 const OtherProject = () => {
   const router = useRouter();
   return (

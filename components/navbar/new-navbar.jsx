@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ContainerLayout from "../../layouts/ContainerLayout";
 import logo from "../../assets/svg/latest-logo.svg";
 import { useRouter } from "next/router";
@@ -15,6 +15,8 @@ import learning from "../../assets/svg/wecollect-learning.svg";
 import { IoIosArrowForward } from "react-icons/io";
 import axios from "axios";
 import SearchSelect from "../selects/search-select";
+import GetAQuoteArrow from "../../assets/svg/get-a-quote-arrow.svg";
+
 const list = [
   { name: "Brand visibility", id: 0 },
   { name: "Supply chain monitoring & project management", id: 0 },
@@ -27,6 +29,7 @@ const list = [
   { name: "Population Enumeration", id: 0 },
   { name: "Demography Analysis", id: 0 },
 ];
+
 const NewNavbar = () => {
   const router = useRouter();
   const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false);
@@ -37,7 +40,7 @@ const NewNavbar = () => {
   const [current, setCurrent] = useState(0);
   const [agentPresent, setAgentPresent] = useState(0);
   const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
+  const [error, setError] = useState("");
 
   const [email, setEmail] = useState("");
   const [records, setRecords] = useState();
@@ -46,23 +49,23 @@ const NewNavbar = () => {
   const [phone, setPhone] = useState("");
   const [useCase, setUseCase] = useState({ name: "", id: 0 });
   const [date, setDate] = useState("");
- const validateEmail = (email) => {
-   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Standard email regex
-   return emailRegex.test(email);
- };
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
- // Handle email change
- const handleEmailChange = (e) => {
-   const value = e.target.value;
-   setEmail(value);
+  // Handle email change
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
 
-   // Validate the email and set error if invalid
-   if (value && !validateEmail(value)) {
-     setError("Please enter a valid email address");
-   } else {
-     setError("");
-   }
- };
+    // Validate the email and set error if invalid
+    if (value && !validateEmail(value)) {
+      setError("Please enter a valid email address");
+    } else {
+      setError("");
+    }
+  };
   const [description, setDescription] = useState("");
 
   const handleSubmit = async () => {
@@ -83,19 +86,19 @@ const NewNavbar = () => {
         "https://api.wecollect.tech/quote",
         data
       );
-        await axios.post("/api/get-quote-slack", {
-          records: records ?? 0,
-          email: email,
-          phone: phone,
-          location: location ?? 0,
-          usecase: useCase?.name,
-          agentPresent: agentPresent === 2 ? true : false,
-          date: date,
-          records: records ?? 0,
-          description: description,
-          agents:agents ?? 0
-        });
-        console.log("Notification sent to Slack!");
+      await axios.post("/api/get-quote-slack", {
+        records: records ?? 0,
+        email: email,
+        phone: phone,
+        location: location ?? 0,
+        usecase: useCase?.name,
+        agentPresent: agentPresent === 2 ? true : false,
+        date: date,
+        records: records ?? 0,
+        description: description,
+        agents: agents ?? 0,
+      });
+      console.log("Notification sent to Slack!");
 
       if (response.status === 200) {
         setLoading(false);
@@ -106,7 +109,7 @@ const NewNavbar = () => {
         setDescription("");
         setPhone("");
         setEmail("");
-        setUseCase({name:"", id:0});
+        setUseCase({ name: "", id: 0 });
         setCurrent(2);
       }
     } catch (e) {
@@ -117,26 +120,26 @@ const NewNavbar = () => {
 
   useEffect(() => {
     if (open === false || current === 0) {
-        setLoading(false);
-        setRecords("");
-        setLocation("");
-        setDate("");
-        setAgents("");
-        setDescription("");
-        setPhone("");
-        setEmail("");
-        setUseCase({ name: "", id: 0 });
-        setCurrent(0);
-   }
-  }, [open,current])
-  
+      setLoading(false);
+      setRecords("");
+      setLocation("");
+      setDate("");
+      setAgents("");
+      setDescription("");
+      setPhone("");
+      setEmail("");
+      setUseCase({ name: "", id: 0 });
+      setCurrent(0);
+    }
+  }, [open, current]);
+
   return (
     <>
       <div
-        className={`bg-[#F5F4FB] fixed top-0 right-0 left-0 z-high w-full h-[68px] lg:flex items-center hidden rounded-b-[50px] font-sans `}
+        className={`bg-transparent fixed top-2 right-0 left-0 z-high w-full h-[68px] lg:flex items-center hidden rounded-b-[50px] font-sans `}
       >
         <ContainerLayout>
-          <div className="w-full flex items-center justify-between relative  h-[68px]">
+          <div className="bg-[#F3F3FF] w-full flex items-center justify-between relative h-[68px] rounded-[50px] px-3 py-2">
             <div>
               <span className="cursor-pointer" onClick={() => router.push("/")}>
                 {" "}
@@ -194,9 +197,33 @@ const NewNavbar = () => {
                 className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
               >
                 <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
-                  Contact Us
+                  Use Cases
                 </p>
               </Link>
+              <Link
+                href="/contact-us"
+                className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
+              >
+                <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
+                  Projects
+                </p>
+              </Link>
+              <Link
+                href="/contact-us"
+                className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
+              >
+                <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
+                  Download
+                </p>
+              </Link>
+              {/* <Link
+                href="/contact-us"
+                className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
+              >
+                <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
+                  Contact Us
+                </p>
+              </Link> */}
             </div>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2 ">
@@ -211,7 +238,10 @@ const NewNavbar = () => {
                 className="bg-mainBlue hover:bg-[#E3D5FF] h-[50px] font-semibold flex items-center text-white hover:text-mainBlue rounded-[50px] px-5 cursor-pointer "
                 onClick={() => setOpen(true)}
               >
-                Get Quote
+                <div className="bg-[#fff] rounded-full p-1 mr-3">
+                  <Image src={GetAQuoteArrow} alt="" />
+                </div>
+                Get a Quote
               </button>
             </div>
           </div>
@@ -594,25 +624,22 @@ const NewNavbar = () => {
                 {/* end */}
 
                 {/* start */}
-               
-                
-             
-                  <div className="flex flex-col">
-                    <label
-                      htmlFor=""
-                      className=" text-[#555] font-sans  text-[14px] lg:text-[16px] mb-1"
-                    >
-                      Project Start Date
-                    </label>
-                    <input
-                      type="date"
-                      className="w-full border-[2px] border-white bg-mainBlue bg-opacity-5 outline-none h-[50px] rounded-[50px] px-4 font-sans "
-                      placeholder="select date"
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
-                    />
-                  </div>
-               
+
+                <div className="flex flex-col">
+                  <label
+                    htmlFor=""
+                    className=" text-[#555] font-sans  text-[14px] lg:text-[16px] mb-1"
+                  >
+                    Project Start Date
+                  </label>
+                  <input
+                    type="date"
+                    className="w-full border-[2px] border-white bg-mainBlue bg-opacity-5 outline-none h-[50px] rounded-[50px] px-4 font-sans "
+                    placeholder="select date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                  />
+                </div>
 
                 {/* end */}
                 {/* start */}
@@ -650,10 +677,10 @@ const NewNavbar = () => {
                     id="email"
                     className={`w-full border-[2px] font-sans outline-none h-[50px] rounded-[50px] px-4 
                       ${
-            error
-              ? "border-red-500 bg-red-100"
-              : "border-white bg-mainBlue bg-opacity-5"
-          }
+                        error
+                          ? "border-red-500 bg-red-100"
+                          : "border-white bg-mainBlue bg-opacity-5"
+                      }
           `}
                     placeholder="Enter email"
                     value={email}
@@ -683,24 +710,22 @@ const NewNavbar = () => {
                   />
                 </div>
                 {/* end */}
-          <div className="flex flex-col">
-            <label
-              htmlFor=""
-              className=" text-[#555] font-sans  text-[14px] lg:text-[16px] mb-1"
-            >
-              Project Description
-            </label>
-            <textarea
-              type="text"
-              className="w-full border-[2px] border-white bg-mainBlue bg-opacity-5 font-sans  outline-none  rounded-md px-4 pt-3 min-h-[100px] "
-              placeholder="type description ... "
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </div>
-                <div>
-
+                <div className="flex flex-col">
+                  <label
+                    htmlFor=""
+                    className=" text-[#555] font-sans  text-[14px] lg:text-[16px] mb-1"
+                  >
+                    Project Description
+                  </label>
+                  <textarea
+                    type="text"
+                    className="w-full border-[2px] border-white bg-mainBlue bg-opacity-5 font-sans  outline-none  rounded-md px-4 pt-3 min-h-[100px] "
+                    placeholder="type description ... "
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  />
                 </div>
+                <div></div>
                 {/* start */}
                 <div className="flex flex-col">
                   <button
