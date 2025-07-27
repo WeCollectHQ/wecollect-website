@@ -193,7 +193,7 @@ const NewNavbar = () => {
                 </span>
               </div>
               <Link
-                href="/contact-us"
+                href="/applicable-cases"
                 className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
               >
                 <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
@@ -201,7 +201,7 @@ const NewNavbar = () => {
                 </p>
               </Link>
               <Link
-                href="/contact-us"
+                href="/our-project"
                 className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
               >
                 <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
@@ -209,7 +209,7 @@ const NewNavbar = () => {
                 </p>
               </Link>
               <Link
-                href="/contact-us"
+                href="/download"
                 className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
               >
                 <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
@@ -258,7 +258,7 @@ const NewNavbar = () => {
               }}
             >
               <div className="w-full     rounded-b-[30px]  grid grid-cols-2 gap-8">
-                <div
+                {/* <div
                   onClick={() => router.push("/our-project")}
                   className="w-full h-auto flex items-center cursor-pointer hover:bg-[#fff]  rounded-[20px] px-4 py-2 transition-all duration-1000 ease-in-out "
                 >
@@ -275,9 +275,9 @@ const NewNavbar = () => {
                       Check out our projects
                     </p>
                   </div>
-                </div>
+                </div> */}
 
-                <div
+                {/* <div
                   onClick={() => router.push("/applicable-cases")}
                   className="w-full h-auto flex items-center cursor-pointer hover:bg-[#fff]  rounded-[20px] px-4 py-2 transition-all duration-1000 ease-in-out "
                 >
@@ -294,7 +294,7 @@ const NewNavbar = () => {
                       Project examples
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 <div
                   onClick={() => router.push("/blog")}
@@ -315,7 +315,7 @@ const NewNavbar = () => {
                   </div>
                 </div>
 
-                <div
+                {/* <div
                   onClick={() => router.push("/download")}
                   className="w-full h-auto flex items-center cursor-pointer hover:bg-[#fff]  rounded-[20px] px-4 py-2 transition-all duration-1000 ease-in-out "
                 >
@@ -332,7 +332,7 @@ const NewNavbar = () => {
                       Start collecting data
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
               {/* <div className="w-full grid grid-cols-2">
               <div className="shadow-one w-full h-4 bg-transparent"></div>

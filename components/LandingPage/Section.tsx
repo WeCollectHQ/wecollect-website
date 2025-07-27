@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import featA from "../../assets/png/sm.png";
 import featB from "../../assets/png/re.png";
@@ -44,6 +44,14 @@ const Section = () => {
       description: "Compensate approved agents, easily.",
     },
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSelectedStepIndex((prevIndex) => (prevIndex + 1) % steps.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [steps.length]);
 
   const renderTitleWithLineBreak = (text) => {
     return text.split("|").map((part, index) => (

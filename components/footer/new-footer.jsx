@@ -187,7 +187,7 @@ const NewFooter = () => {
 
         {/* COPYRIGHT */}
         <div className="text-center mt-6 text-base font-medium text-[#FFFFFF] opacity-80 pt-4">
-          © All rights reserved, WeCollect, 2023
+          © All rights reserved, WeCollect, 2025
         </div>
       </ContainerLayout>
     </div>
