@@ -5,10 +5,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Bars, CloseIcon } from "../../assets/svg";
 import { ArrowDown } from "../../assets/svg";
+import GetAQuoteArrow from "../../assets/svg/get-a-quote-arrow.svg";
+
 const styles = {
   active: "",
   nonactive: "",
 };
+
 const MobileNav = ({ present }) => {
   const [show, setShow] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
@@ -40,25 +43,27 @@ const MobileNav = ({ present }) => {
         {show && (
           <div className="bg-white w-full flex flex-col items-center z-100 transition-all duration-1000 delay-1000 h-screen relative ">
             <div className="flex flex-col w-full px-4 mt-[45px]">
-              <div className="w-full py-6 " onClick={() => setShow(false)}>
+              {/* <div className="w-full py-6 " onClick={() => setShow(false)}>
                 <Link
                   href="/home"
                   className="text-ash font-sans text-[16px] font-semibold "
                 >
-                  Home
+                  About
                 </Link>
-              </div>
+              </div> */}
+
               <div
                 className="w-full py-6 flex items-center gap-2 "
                 onClick={() => setShowAbout(!showAbout)}
               >
                 <p className=" text-[16px] font-semibold text-ash font-sans">
-                  About Us
+                  About
                 </p>
                 <span>
                   <ArrowDown />
                 </span>
               </div>
+
               {showAbout && (
                 <div className="flex flex-col gap-4 ">
                   <Link
@@ -98,6 +103,7 @@ const MobileNav = ({ present }) => {
                   <ArrowDown />
                 </span>
               </div>
+
               {showProduct && (
                 <div className="flex flex-col gap-4 ">
                   <Link
@@ -114,19 +120,54 @@ const MobileNav = ({ present }) => {
                   </Link>
                 </div>
               )}
-              <div className="w-full py-6 " onClick={() => setShow(false)}>
+              {/* <div className="w-full py-6 " onClick={() => setShow(false)}>
                 <Link
                   href="/contact-us"
                   className="text-ash font-sans text-[16px] font-semibold "
                 >
                   Contact Us
                 </Link>
+              </div> */}
+              <div className="w-full py-6 " onClick={() => setShow(false)}>
+                <Link
+                  href="/contact-us"
+                  className="text-ash font-sans text-[16px] font-semibold "
+                >
+                  Use Cases
+                </Link>
               </div>
-              <div className="flex flex-col  space-y-5 absolute bottom-40 ">
-                <button className="bg-[#4747D6] w-full max-w-fit px-5 rounded-[50px] hero-btn flex justify-center items-center h-[47px]  text-white bg-primary font-semibold font-sans">
-                  Get Started
+              <div className="w-full py-6 " onClick={() => setShow(false)}>
+                <Link
+                  href="/contact-us"
+                  className="text-ash font-sans text-[16px] font-semibold "
+                >
+                  Projects
+                </Link>
+              </div>
+              <div className="w-full py-6 " onClick={() => setShow(false)}>
+                <Link
+                  href="/contact-us"
+                  className="text-ash font-sans text-[16px] font-semibold "
+                >
+                  Downloads
+                </Link>
+              </div>
+
+              <div className="w-full flex flex-col space-y-5 absolute bottom-20">
+                <hr className="w-full border border-gray-300" />
+                <button
+                  className="bg-mainBlue hover:bg-[#E3D5FF] w-[150px] h-[50px] font-medium flex items-center text-white hover:text-mainBlue rounded-[50px] px-5 cursor-pointer"
+                  onClick={() => setOpen(true)}
+                >
+                  <div className="bg-[#fff] rounded-full p-1 mr-2">
+                    <Image src={GetAQuoteArrow} alt="" />
+                  </div>
+                  Get a Quote
                 </button>
-                <button className="w-full flex justify-center items-center h-[47px] px-5 rounded-[50px]  text-mainBlue bg-white hero-btn font-sans font-semibold border-primary ">
+                {/* <button className="bg-[#4747D6] w-full max-w-fit px-5 rounded-[50px] hero-btn flex justify-center items-center h-[47px]  text-white bg-primary font-semibold font-sans">
+                  Get Started
+                </button> */}
+                <button className="flex justify-center items-center w-[100px] h-[47px] px-5 rounded-[50px]  text-mainBlue bg-white hero-btn font-sans font-semibold border-primary ">
                   Sign In
                 </button>
               </div>

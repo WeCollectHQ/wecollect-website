@@ -12,17 +12,19 @@ export default async function handler(
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { records, email, phone, description, agents, date,location,  usecase,agentPresent } =
-    req.body;
+  const {
+    records,
+    email,
+    phone,
+    description,
+    agents,
+    date,
+    location,
+    usecase,
+    agentPresent,
+  } = req.body;
 
-  if (
-    
-    !email ||
-    !phone 
-    
-    
-  
-  ) {
+  if (!email || !phone) {
     return res.status(400).json({ message: "Missing required fields" });
   }
 
@@ -35,29 +37,29 @@ export default async function handler(
   console.log({
     channel: channelId,
     text: `📢 *New Quotation Form Submission*:
-- *Number of Location:* ${location}
-- *Number of Records:* ${records ?? 0}
-- *Phone:* ${phone}
-- *Email:* ${email}
-- *Description:* ${description}
-- *Number of Agent:* ${agents ?? 0}
-- *Use Case:* ${usecase}
-- *Start Date:* ${date}
-- *I have an agent:* ${agentPresent}`,
+    - *Number of Location:* ${location}
+    - *Number of Records:* ${records ?? 0}
+    - *Phone:* ${phone}
+    - *Email:* ${email}
+    - *Description:* ${description}
+    - *Number of Agent:* ${agents ?? 0}
+    - *Use Case:* ${usecase}
+    - *Start Date:* ${date}
+    - *I have an agent:* ${agentPresent}`,
   });
   try {
     await slackClient.chat.postMessage({
       channel: channelId,
       text: `📢 *New Quotation Form Submission*:
-- *Number of Location:* ${location ?? 0}
-- *Number of Records:* ${records ?? 0}
-- *Phone:* ${phone}
-- *Email:* ${email}
-- *Description:* ${description}
-- *Number of Agent:* ${agents ?? 0}
-- *Use Case:* ${usecase}
-- *Start Date:* ${date}
-- *I have an agent:* ${agentPresent}`,
+      - *Number of Location:* ${location ?? 0}
+      - *Number of Records:* ${records ?? 0}
+      - *Phone:* ${phone}
+      - *Email:* ${email}
+      - *Description:* ${description}
+      - *Number of Agent:* ${agents ?? 0}
+      - *Use Case:* ${usecase}
+      - *Start Date:* ${date}
+      - *I have an agent:* ${agentPresent}`,
     });
 
     return res
