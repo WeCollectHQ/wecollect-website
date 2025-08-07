@@ -34,7 +34,7 @@ const testimonials = [
   {
     logo: kaduna,
     quote:
-      "Lorem ipsum dolor sit amet consectetur. Velit venenatis erat diam diam in. Ut magna arcu odio egestas. Vulputate volutpat eu odio aliquam et rutrum aliquet libero. Elit commodo tincidunt.",
+      "The WeCollect team brought not only strong technical expertise but also a deep understanding of field realities in northern Nigeria. The mobile data collection process was seamless, and the geotagging accuracy helped us map customer distribution and infrastructure gaps with far greater clarity than we previously had. ",
     name: "Ibrahim Kolapo, GIS Consultant",
     stars: 4.5,
   },
