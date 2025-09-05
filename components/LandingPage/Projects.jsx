@@ -112,19 +112,21 @@ const Projects = () => {
 
           {/* Desktop */}
           <div
-            className="hidden lg:block w-full h-[830px] lg:h-[700px] bg-cover bg-center bg-no-repeat mt-11 rounded-[32px] relative overflow-hidden"
+            className="hidden lg:flex w-11/12 m-auto h-[700px] bg-cover bg-center bg-no-repeat mt-8 lg:mt-8 rounded-[32px] relative overflow-hidden"
             style={{ backgroundImage: `url(${DownloadBg.src})` }}
           >
-            {/* Phone Image */}
-            <Image
-              src={DownlaodImage}
-              alt="App preview"
-              className="absolute bottom-0 lg:left-8 w-[400px] max-w-[90%] z-10"
-            />
+            {/* Image Section */}
+            <div className="w-full lg:w-1/2 flex justify-center items-center mt-44">
+              <Image
+                src={DownlaodImage}
+                alt="App preview"
+                className="w-[90%] max-w-[400px] h-auto object-contain"
+              />
+            </div>
 
-            {/* Text & CTAs */}
-            <div className="absolute right-8 top-1/2 -translate-y-1/2 text-white w-full md:w-1/2 max-w-[500px] px-6 z-20">
-              <p className="text-[#FFFFFF] text-[28px] lg:text-[36px] font-black leading-[1.2] mb-[110px] mt-20">
+            {/* Text & CTAs Section */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-white px-6 z-20">
+              <p className="text-[#FFFFFF] text-[28px] lg:text-[36px] font-black leading-[1.2] mb-6 mt-10">
                 Take the Field With You. <br />
                 Download the App and <br />
                 Start Reporting Smarter.

@@ -136,10 +136,10 @@ const NewNavbar = () => {
   return (
     <>
       <div
-        className={`bg-transparent fixed top-2 right-0 left-0 z-high w-full h-[68px] lg:flex items-center hidden rounded-b-[50px] font-sans `}
+        className={`bg-transparent fixed top-5 right-0 left-0 z-high w-full h-[68px] lg:flex items-center hidden rounded-b-[50px] font-sans `}
       >
         <ContainerLayout>
-          <div className="bg-[#F3F3FF] w-full flex items-center justify-between relative h-[68px] rounded-[50px] px-3 py-2">
+          <div className="bg-[#F3F3FF] w-full flex items-center justify-between relative h-[68px] rounded-[50px] px-3 py-2 border-2 border-[#FFFFFF]">
             <div>
               <span className="cursor-pointer" onClick={() => router.push("/")}>
                 {" "}
@@ -194,23 +194,35 @@ const NewNavbar = () => {
               </div>
               <Link
                 href="/applicable-cases"
-                className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
+                className={`rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 ${
+                  router.pathname === "/applicable-cases"
+                    ? "text-mainBlue"
+                    : "text-ash"
+                }`}
               >
                 <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
                   Use Cases
                 </p>
               </Link>
+
               <Link
                 href="/our-project"
-                className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
+                className={`rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 ${
+                  router.pathname === "/our-project"
+                    ? "text-mainBlue"
+                    : "text-ash"
+                }`}
               >
                 <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
                   Projects
                 </p>
               </Link>
+
               <Link
                 href="/download"
-                className="rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 text-ash hover:text-mainBlue"
+                className={`rounded-[50px] gap-2 h-[50px] hover:bg-[#E3D5FF] flex items-center px-4 ${
+                  router.pathname === "/download" ? "text-mainBlue" : "text-ash"
+                }`}
               >
                 <p className=" text-[14px] 2xl:text-[16px] font-semibold ">
                   Download
@@ -235,13 +247,14 @@ const NewNavbar = () => {
                 </Link>
               </div>
               <button
-                className="bg-mainBlue hover:bg-[#E3D5FF] h-[50px] font-semibold flex items-center text-white hover:text-mainBlue rounded-[50px] px-5 cursor-pointer "
+                className="group bg-mainBlue h-[50px] font-semibold flex items-center text-white hover:text-mainBlue rounded-[50px] shadow-lg px-5 cursor-pointer transition-all duration-300 relative overflow-hidden"
                 onClick={() => setOpen(true)}
               >
-                <div className="bg-[#fff] rounded-full p-1 mr-3">
+                <div className="bg-[#fff] hover:text-mainBlue rounded-full p-1 mr-3">
                   <Image src={GetAQuoteArrow} alt="" />
                 </div>
-                Get a Quote
+                <span className="relative z-10">Get a Quote</span>
+                <span className="absolute inset-0 w-full h-full bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
               </button>
             </div>
           </div>
