@@ -41,7 +41,7 @@ function HomeFeatures() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="w-full h-fit lg:h-full rounded-[30px] py-5 lg:py-10 px-5 lg:px-[30px] cursor-pointer boxlee hover:shadow-xl shadow-[#ede6ff]"
+              className="w-full h-fit lg:h-full rounded-[30px] py-5 lg:py-10 px-5 lg:px-[30px] cursor-pointer boxlee hover:shadow shadow-[#ede6ff]"
               onClick={() => router.push(feature.link)}
             >
               <Image

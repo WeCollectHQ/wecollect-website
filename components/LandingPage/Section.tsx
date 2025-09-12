@@ -12,6 +12,7 @@ import Hr from "./Hr.jsx";
 const Section = () => {
   const [selectedStepIndex, setSelectedStepIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const steps = [
     {
@@ -47,8 +48,20 @@ const Section = () => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    // Progress animation
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          return 0;
+        }
+        return prev + 100 / (8000 / 50); // Update every 50ms for smooth animation
+      });
+    }, 50);
+
+    // Step transition
+    const stepInterval = setInterval(() => {
       setIsTransitioning(true);
+      setProgress(0); // Reset progress when transitioning
 
       setTimeout(() => {
         setSelectedStepIndex((prevIndex) => (prevIndex + 1) % steps.length);
@@ -56,12 +69,16 @@ const Section = () => {
       }, 400);
     }, 8000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(progressInterval);
+      clearInterval(stepInterval);
+    };
   }, [steps.length]);
 
   const handleStepClick = (index) => {
     if (index < steps.length && index !== selectedStepIndex) {
       setIsTransitioning(true);
+      setProgress(0); // Reset progress when manually selecting
       setTimeout(() => {
         setSelectedStepIndex(index);
         setIsTransitioning(false);
@@ -76,6 +93,92 @@ const Section = () => {
         {index !== text.split("|").length - 1 && <br />}
       </React.Fragment>
     ));
+  };
+
+  // SVG Circle Progress Component
+  const CircularProgress = ({ progress, isActive }) => {
+    const size = 87; // lg size
+    const sizeSmall = 48; // default size
+    const strokeWidth = 3;
+    const radius = 20;
+    const radiusSmall = 15;
+    const circumference = 2 * Math.PI * radius;
+    const circumferenceSmall = 2 * Math.PI * radiusSmall;
+
+    // Calculate stroke dash offset (starts full and decreases as progress increases)
+    const strokeDashoffset = circumference - (progress / 100) * circumference;
+    const strokeDashoffsetSmall =
+      circumferenceSmall - (progress / 100) * circumferenceSmall;
+
+    if (!isActive) return null;
+
+    return (
+      <>
+        {/* Large screens */}
+        <svg
+          className="absolute inset-0 hidden lg:block transform -rotate-90"
+          width={size}
+          height={size}
+        >
+          {/* Background circle */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke="#E5E5FF"
+            strokeWidth={strokeWidth}
+            fill="transparent"
+          />
+          {/* Progress circle */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke="#4747D6"
+            strokeWidth={strokeWidth}
+            fill="transparent"
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+            strokeLinecap="round"
+            style={{
+              transition: "stroke-dashoffset 16ms linear",
+            }}
+          />
+        </svg>
+
+        {/* Small screens */}
+        <svg
+          className="absolute inset-0 lg:hidden transform -rotate-90"
+          width={sizeSmall}
+          height={sizeSmall}
+        >
+          {/* Background circle */}
+          <circle
+            cx={sizeSmall / 2}
+            cy={sizeSmall / 2}
+            r={radiusSmall}
+            stroke="#E5E5FF"
+            strokeWidth={2}
+            fill="transparent"
+          />
+          {/* Progress circle */}
+          <circle
+            cx={sizeSmall / 2}
+            cy={sizeSmall / 2}
+            r={radiusSmall}
+            stroke="#4747D6"
+            strokeWidth={2}
+            fill="transparent"
+            strokeDasharray={circumferenceSmall}
+            strokeDashoffset={strokeDashoffsetSmall}
+            strokeLinecap="round"
+            style={{
+              transition: "stroke-dashoffset 16ms linear",
+            }}
+          />
+        </svg>
+      </>
+    );
   };
 
   return (
@@ -125,20 +228,26 @@ const Section = () => {
                   <div
                     key={index}
                     onClick={() => handleStepClick(index)}
-                    className={`w-[48px] lg:w-[87px] h-[48px] lg:h-[87px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 ${
+                    className={`w-[48px] lg:w-[87px] h-[48px] lg:h-[87px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 relative ${
                       isSelected
                         ? "bg-[#F3F3FF] shadow-xl scale-110"
                         : "bg-[#F3F3FF] hover:shadow-md"
                     }`}
                   >
+                    {/* Circular Progress Indicator */}
+                    <CircularProgress
+                      progress={isSelected ? progress : 0}
+                      isActive={isSelected}
+                    />
+
                     {isSelected ? (
-                      <div className="w-[38px] lg:w-[60px] h-[38px] lg:h-[60px] rounded-full bg-white border-[4px] lg:border-[6px] border-[#4747D6] flex items-center justify-center transition-all duration-300 ease-in-out">
+                      <div className="w-[38px] lg:w-[60px] h-[38px] lg:h-[60px] rounded-full bg-white border-[4px] lg:border-[6px] border-[#4747D6] flex items-center justify-center transition-all duration-300 ease-in-out z-10 relative">
                         <span className="text-[#4747D6] font-black text-sm lg:text-xl">
                           {step}
                         </span>
                       </div>
                     ) : (
-                      <span className="text-[#4747D6] font-black text-sm lg:text-xl transition-all duration-300 ease-in-out">
+                      <span className="text-[#4747D6] font-black text-sm lg:text-xl transition-all duration-300 ease-in-out z-10 relative">
                         {step}
                       </span>
                     )}
