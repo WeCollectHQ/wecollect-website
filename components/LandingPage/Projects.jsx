@@ -20,23 +20,23 @@ const testimonials = [
   {
     logo: techpoint,
     quote:
-      "Overall, I'm very satisfied with the service. The only minor issue was that most respondents were concentrated in urban areas. Still, I'm very likely to recommend it.",
+      "Overall, I'm very satisfied with the service. The respondents represented a solid and engaged audience, and the results were highly insightful. I'll definitely recommend it.",
     name: "Yinka, CEO, Intelpoint",
-    stars: 4.5,
+    stars: 5.0,
   },
   {
     logo: fpmp,
     quote:
       "I was glad to see that I could use a one-stop software for my project, without having to worry about how to find field enumerators across Nigeria. WeCollect saved me the stress.",
     name: "Obi Mercy, PM, FPMPN",
-    stars: 4.5,
+    stars: 5.0,
   },
   {
     logo: kaduna,
     quote:
       "The WeCollect team brought not only strong technical expertise but also a deep understanding of field realities in northern Nigeria. The mobile data collection process was seamless, and the geotagging accuracy helped us map customer distribution and infrastructure gaps with far greater clarity than we previously had. ",
     name: "Ibrahim Kolapo, GIS Consultant",
-    stars: 4.5,
+    stars: 5.0,
   },
 ];
 
@@ -90,7 +90,8 @@ const Projects = () => {
                         ★
                       </span>
                     ))}
-                    <span className="text-yellow-400 text-lg">☆</span>
+                    {/* <span className="text-yellow-400 text-lg">☆</span> */}
+                    <span className="text-yellow-400 text-lg">★</span>
                   </div>
                   <p className="text-[#1E1E5A] text-[14px] font-semibold font-sans">
                     {item.name}
