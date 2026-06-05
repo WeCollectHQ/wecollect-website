@@ -34,16 +34,17 @@ const NewHomeHero = () => {
             </div>
 
             <h1 className="md:inline-flex hidden text-[64px] text-center bg-[linear-gradient(89.2deg,_#151541_8.26%,_#00009A_99.38%)] bg-clip-text text-transparent tracking-widest font-black mx-auto">
-              Your all-in-one Tool <br /> for Field Project Management
+               The Shortest Distance Between <br />  You and Reliable African Insights
             </h1>
 
+           
+
             <h1 className="font-serif md:hidden text-[24px] inline-flex text-center bg-[linear-gradient(89.2deg,_#151541_8.26%,_#00009A_99.38%)] bg-clip-text text-transparent tracking-widest font-black mx-auto">
-              Your all-in-one Tool <br /> for Field Project Management
+               The Shortest Distance Between <br />  You and Reliable African Insights
             </h1>
 
             <p className="text-[#1E1E5A] text-xs lg:text-2xl tracking-wider text-center mt-8 lg:mt-1 font-medium max-w-[768px] mx-auto">
-              Collect field data, manage on-the-ground teams, and accelerate
-              decisions across Africa
+           Welcome to Africa’s native field data infrastructure. Get location-verified, full-suite survey and M&E solutions delivered at scale.
             </p>
 
             <div className="flex justify-center items-center mt-10">
@@ -53,7 +54,7 @@ const NewHomeHero = () => {
                 className="w-[60px] lg:w-[139px] h-[30px] lg:h-[61px]"
               />
               <p className="text-[#151540] text-[10px] lg:text-xl font-medium lg:ml-3 lg:mr-4">
-                300+ field agents
+                1,700+ field agents
               </p>
               <div className="w-px h-8 bg-[#9898B3] mx-1 lg:mx-4"></div>
               <Image
@@ -62,7 +63,7 @@ const NewHomeHero = () => {
                 className="w-4 left-4 lg:mr-3 lg:ml-4"
               />
               <p className="text-[#151540] text-[10px] lg:text-xl font-medium lg:ml-3 lg:mr-4">
-                98% completion rate
+                100% completion rate
               </p>
             </div>
 
