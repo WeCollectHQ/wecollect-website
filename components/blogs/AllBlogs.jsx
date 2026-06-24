@@ -10,6 +10,7 @@ const AllBlogs = () => {
   const router = useRouter();
   const { search } = router.query;
   const [allBlogs, setAllBlogs] = useState([]);
+  
   useEffect(() => {
     if (!search) {
       setAllBlogs(blogPosts);

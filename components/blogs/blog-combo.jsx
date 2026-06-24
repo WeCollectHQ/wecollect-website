@@ -1,30 +1,59 @@
 import React, { useEffect, useState } from "react";
 import ContainerLayout from "../../layouts/ContainerLayout";
 import Image from "next/image";
-import { blogPosts } from "../../utils/blog-data";
+import { useRouter } from "next/router";
 import empty from "../../assets/svg/empty-result.svg";
 import { BlogSearchIcon } from "../../assets/svg";
-import { useRouter } from "next/router";
+import Loading from "../loading";
 const BlogCombo = () => {
-  const item = blogPosts[0];
   const [search, setSearch] = useState("");
-  //   const handleKeyPress = (event) => {
-  //     if (event.key === "Enter") {
-  //       handleBlogSearch();
-  //     }
-  //   };
   const [allBlogs, setAllBlogs] = useState([]);
-  useEffect(() => {
-    if (!search) {
-      setAllBlogs(blogPosts);
-    } else {
-      const filteredBlogs = blogPosts.filter((blog) =>
-        blog.title.toLowerCase().includes(search.toLowerCase())
-      );
-      setAllBlogs(filteredBlogs);
-    }
-  }, [search]);
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
+  const resolvePath = (blog) => blog.path || blog.link || "#";
+  useEffect(() => {
+    let mounted = true;
+
+    async function loadBlogs() {
+      try {
+        setIsLoading(true);
+        const response = await fetch("/api/wordpress-posts?perPage=100");
+
+        if (!response.ok) {
+          throw new Error(`Request failed with ${response.status}`);
+        }
+
+        const posts = await response.json();
+
+        if (mounted && Array.isArray(posts)) {
+          setAllBlogs(posts);
+        }
+      } catch (error) {
+        if (mounted) {
+          setAllBlogs([]);
+        }
+      } finally {
+        if (mounted) {
+          setIsLoading(false);
+        }
+      }
+    }
+
+    loadBlogs();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const filteredBlogs = search
+    ? allBlogs.filter((blog) =>
+        blog.title.toLowerCase().includes(search.toLowerCase())
+      )
+    : allBlogs;
+
+  const item = filteredBlogs[0];
+
   return (
     <div className="flex flex-col font-sans">
       <ContainerLayout>
@@ -45,7 +74,7 @@ const BlogCombo = () => {
               //   onKeyDown={handleKeyPress}
               onChange={(e) => setSearch(e.target.value)}
             />
-            {(allBlogs?.length === 0) | (search?.length > 0) ? (
+            {filteredBlogs?.length === 0 || search?.length > 0 ? (
               <button
                 className="bg-mainBlue rounded-[50px] h-[36px] px-5 flex items-center justify-center text-white text-[16px]  cursor-pointer lg:min-w-[98px] hover:bg-[#E3D5FF] hover:text-mainBlue font-semibold  "
                 onClick={() => setSearch("")}
@@ -58,12 +87,17 @@ const BlogCombo = () => {
                 // onClick={handleBlogSearch}
               >
                 Search
-              </button>
+                </button>
             )}
           </div>
+          {isLoading ? (
+            <div className="w-full py-24">
+              <Loading isFullScreen={false} />
+            </div>
+          ) : null}
           {search && (
             <div className="w-full bg-white  flow-hide rounded-b-[50px]   ">
-              {allBlogs?.length === 0 && (
+              {filteredBlogs?.length === 0 && (
                 <div className="w-full flex  max-h-[412px] h-[412px] flex-col justify-center items-center ">
                   <span>
                     <Image src={empty} alt="empty" />
@@ -103,7 +137,7 @@ const BlogCombo = () => {
             </div>
           )}
           {/* BLOG LATEST */}
-          {!search && allBlogs?.length !== 0 && (
+          {!search && filteredBlogs?.length !== 0 && (
             <div
               className="w-full flex flex-col pt-2 lg:overflow-y-hidden"
               // data-aos="fade-up"
@@ -119,13 +153,19 @@ const BlogCombo = () => {
               </h1>
               <div className="w-full mt-12 flex flex-col md:flex-row justify-between items-center ">
                 <div className="w-full md:w-6/12 items-center">
-                  <Image
-                    src={item?.leadImage}
-                    alt="hero"
-                    className="w-full h-auto rounded-[30px]"
-                    // data-aos="fade-up"
-                    // data-aos-duration="1000"
-                  />
+                  {typeof item?.image === "string" ? (
+                    <img
+                      src={item?.image}
+                      alt="hero"
+                      className="w-full h-auto rounded-[30px]"
+                    />
+                  ) : (
+                    <Image
+                      src={item?.image}
+                      alt="hero"
+                      className="w-full h-auto rounded-[30px]"
+                    />
+                  )}
                 </div>
                 <div className="w-full md:w-5/12 flex flex-col justify-center">
                   <p
@@ -154,7 +194,7 @@ const BlogCombo = () => {
                   </p>
                   <p
                     className=" bg-white   text-[16px] text-mainBlue border border-mainBlue hover:border-none  hover:text-mainBlue  font-semibold mt-4  w-fit px-[30px] py-[15px] cursor-pointer h-[50px] rounded-[50px] flex items-center justify-center hover:bg-[#E3D5FF]   "
-                    onClick={() => router.push(`/blog/0`)}
+                    onClick={() => router.push(resolvePath(item))}
                     // data-aos="fade-up"
                     // data-aos-duration="1000"
                   >
@@ -165,7 +205,7 @@ const BlogCombo = () => {
             </div>
           )}
           {/* END OF BLOG LATEST */}
-          {allBlogs?.length > 0 && (
+          {filteredBlogs?.length > 0 && (
             <div
               className="w-full flex flex-col mt-16 lg:mt-20 mb-8 md:mb-0"
               id="blog"
@@ -183,18 +223,26 @@ const BlogCombo = () => {
                 <div className="flex items-center justify-center"></div>
               ) : (
                 <div className="w-full grid grid-cols-1 gap-x-8 gap-y-12  sm:grid-cols-2 lg:grid-cols-3 overflow-y-hidden">
-                  {allBlogs?.map((item, index) => (
+                  {filteredBlogs?.map((item, index) => (
                     <div
                       className="w-full flex flex-col"
                       key={index}
                       // data-aos="fade-up"
                       // data-aos-duration="1000"
                     >
-                      <Image
-                        src={item.leadImage}
-                        alt="image"
-                        className="w-full object-cover mx-auto md:w-full h-auto rounded-[30px]"
-                      />
+                      {typeof item.image === "string" ? (
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full object-cover mx-auto md:w-full h-auto rounded-[30px]"
+                        />
+                      ) : (
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full object-cover mx-auto md:w-full h-auto rounded-[30px]"
+                        />
+                      )}
                       <p className="text-[12px] md:text-[16px] text-[#555] mt-4 ">
                         {item.date}
                       </p>
@@ -206,7 +254,7 @@ const BlogCombo = () => {
                       </p>
                       <p
                         className="hover:bg-[#E3D5FF] bg-white   text-[16px] text-mainBlue border border-mainBlue hover:border-none    font-semibold mt-4  w-fit px-[30px] py-[15px] cursor-pointer h-[50px] rounded-[50px] flex items-center justify-center hover:text-mainBlue   "
-                        onClick={() => router.push(`/blog/${item?.id}`)}
+                        onClick={() => router.push(resolvePath(item))}
                       >
                         Read
                       </p>

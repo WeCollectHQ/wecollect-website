@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { blogs } from "../../utils/blogData";
@@ -8,7 +8,43 @@ import DotsBg from "../../assets/png/dots-bg-image.png";
 import Hr from "./Hr";
 
 function Blog() {
+  const [visiblePosts, setVisiblePosts] = useState(blogs);
   const router = useRouter();
+  const resolvePath = (blog) => blog.path || blog.link || "#";
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function loadPosts() {
+      try {
+        const response = await fetch("/api/wordpress-posts");
+
+        if (!response.ok) {
+          throw new Error(`Request failed with ${response.status}`);
+        }
+
+        const wordpressPosts = await response.json();
+
+        if (
+          mounted &&
+          Array.isArray(wordpressPosts) &&
+          wordpressPosts.length > 0
+        ) {
+          setVisiblePosts(wordpressPosts);
+        }
+      } catch (error) {
+        if (mounted) {
+          setVisiblePosts(blogs);
+        }
+      }
+    }
+
+    loadPosts();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   return (
     <div
@@ -36,16 +72,24 @@ function Blog() {
         </p>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 z-10 relative">
-          {blogs.map((blog, index) => (
+          {visiblePosts.map((blog, index) => (
             <div
               key={index}
               className="bg-white rounded-[20px] p-4 flex flex-col h-full"
             >
-              <Image
-                src={blog.image}
-                alt={blog.title}
-                className="rounded-[12px] w-full h-[300px] object-cover"
-              />
+              {typeof blog.image === "string" ? (
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="rounded-[12px] w-full h-[300px] object-cover"
+                />
+              ) : (
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  className="rounded-[12px] w-full h-[300px] object-cover"
+                />
+              )}
 
               <p className="text-[#686890] text-xs font-medium mt-10 mb-4">
                 {blog.date}
@@ -59,23 +103,31 @@ function Blog() {
                 {blog.description}
               </p>
 
-              <button
-                onClick={() => router.push(blog.link)}
-                className="w-[200px] h-12 bg-[#4747D6] hover:bg-[#3333b3] text-[#E9E9EF] text-base font-medium px-6 py-2 rounded-full self-start"
+              <a
+                href={resolvePath(blog)}
+                onClick={(event) => {
+                  event.preventDefault();
+                  router.push(resolvePath(blog));
+                }}
+                className="inline-flex w-[200px] h-12 items-center justify-center bg-[#4747D6] hover:bg-[#3333b3] text-[#E9E9EF] text-base font-medium px-6 py-2 rounded-full self-start"
               >
                 Read
-              </button>
+              </a>
             </div>
           ))}
         </div>
 
         <div className="flex justify-center">
-          <button
-            onClick={() => router.push("/blog")}
-            className="bg-[#F3F3FF] w-[200px] h-12 rounded-[50px] py-3 px-6 text-[#4747D6] text-base font-medium shadow-xl my-12"
+          <a
+            href="/blog"
+            onClick={(event) => {
+              event.preventDefault();
+              router.push("/blog");
+            }}
+            className="inline-flex items-center justify-center bg-[#F3F3FF] w-[200px] h-12 rounded-[50px] py-3 px-6 text-[#4747D6] text-base font-medium shadow-xl my-12"
           >
             View All
-          </button>
+          </a>
         </div>
       </ContainerLayout>
 
