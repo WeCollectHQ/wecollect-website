@@ -303,7 +303,7 @@ box-shadow: 0px 171px 68px 0px #1797EC03; */
   height: max-content;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .slide-in {

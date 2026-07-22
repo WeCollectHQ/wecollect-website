@@ -2,20 +2,12 @@ import { useEffect } from "react";
 import "../styles/globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Merriweather, Arimo } from "@next/font/google";
+import { Manrope } from "@next/font/google";
 
-// Import Merriweather font
-export const merriweather = Merriweather({
+// Import Manrope font
+export const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
-  variable: "--font-merriweather",
-});
-
-// Import Arimo font
-export const arimo = Arimo({
-  subsets: ["latin"],
-  weight: ["400","500","600", "700"],
-  variable: "--font-arimo",
+  variable: "--font-manrope",
 });
 
 function MyApp({ Component, pageProps }) {
@@ -25,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <main className={`${merriweather.variable} ${arimo.variable}`}>
+    <main className={`${manrope.variable}`}>
       <Component {...pageProps} />
     </main>
   );
