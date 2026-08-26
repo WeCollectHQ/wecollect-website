@@ -1,12 +1,9 @@
-interface ArrowUpRightIconProps {
+interface IconProps {
   className?: string;
   size?: number;
 }
 
-export const ArrowUpRightIcon = ({
-  className = "",
-  size = 24,
-}: ArrowUpRightIconProps) => {
+export const ArrowUpRightIcon = ({ className = "", size = 24 }: IconProps) => {
   return (
     <svg
       width={size}
@@ -135,7 +132,7 @@ export const YouTubeIcon = () => {
   );
 };
 
-export const GooglePlayIcon = () => {
+export const GooglePlayIcon = ({ className = "cursor-pointer" }: IconProps) => {
   return (
     <svg
       width="180"
@@ -143,6 +140,7 @@ export const GooglePlayIcon = () => {
       viewBox="0 0 180 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M173.333 1.04162C176.42 1.04162 178.932 3.4905 178.932 6.5V45.5C178.932 48.5095 176.42 50.9584 173.333 50.9584H6.66667C3.58 50.9584 1.06833 48.5095 1.06833 45.5V6.5C1.06833 3.4905 3.58 1.04162 6.66667 1.04162H173.333ZM173.333 1.90735e-06H6.66667C3.00167 1.90735e-06 0 2.92663 0 6.5V45.5C0 49.0734 3.00167 52 6.66667 52H173.333C176.998 52 180 49.0734 180 45.5V6.5C180 2.92663 176.998 1.90735e-06 173.333 1.90735e-06Z"
@@ -221,7 +219,7 @@ export const GooglePlayIcon = () => {
   );
 };
 
-export const AppleStoreIcon = () => {
+export const AppleStoreIcon = ({ className = "cursor-pointer" }: IconProps) => {
   return (
     <svg
       width="180"
@@ -229,6 +227,7 @@ export const AppleStoreIcon = () => {
       viewBox="0 0 180 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M173.333 1.04163C176.42 1.04163 178.932 3.49051 178.932 6.5V45.5C178.932 48.5095 176.42 50.9584 173.333 50.9584H6.66667C3.58 50.9584 1.06833 48.5095 1.06833 45.5V6.5C1.06833 3.49051 3.58 1.04163 6.66667 1.04163H173.333ZM173.333 3.8147e-06H6.66667C3.00167 3.8147e-06 0 2.92663 0 6.5V45.5C0 49.0734 3.00167 52 6.66667 52H173.333C176.998 52 180 49.0734 180 45.5V6.5C180 2.92663 176.998 3.8147e-06 173.333 3.8147e-06Z"
