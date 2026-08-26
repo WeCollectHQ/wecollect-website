@@ -152,52 +152,20 @@ export function Footer() {
 
         {/* BOTTOM BAR*/}
 
-        <section className="border-t border-white/15">
-          <div className="mx-auto flex max-w-[1040px] flex-col gap-8 px-5 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-0 lg:py-[38px]">
+        <section className="border-t border-[#4B4B7B] mt-11">
+          <div className="mx-auto flex max-w-260 flex-col-reverse gap-8 px-5 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-0 lg:py-9.5">
             {/* Copyright */}
-            <p className="text-[12px] text-white/65">
+            <p className="text-[12px] text-[#B9B9CC] font-medium leading-5">
               © All rights reserved, WeCollect, 2026
             </p>
 
             {/* App buttons */}
             <div className="flex items-center gap-4">
               {/* Google Play */}
-              <Link
-                href="#"
-                aria-label="Get it on Google Play"
-                className="flex h-[52px] min-w-[174px] items-center gap-3 rounded-[6px] border border-white/60 px-3 text-white transition-colors hover:bg-white/10"
-              >
-                <GooglePlayIcon />
-
-                <span className="flex flex-col leading-none">
-                  <span className="text-[8px] uppercase tracking-wide text-white/75">
-                    Get it on
-                  </span>
-
-                  <span className="mt-1 text-[19px] font-medium">
-                    Google Play
-                  </span>
-                </span>
-              </Link>
+              <GooglePlayIcon />
 
               {/* App Store */}
-              <Link
-                href="#"
-                aria-label="Download on the App Store"
-                className="flex h-[52px] min-w-[174px] items-center gap-3 rounded-[6px] border border-white/60 px-3 text-white transition-colors hover:bg-white/10"
-              >
-                <AppleStoreIcon />
-
-                <span className="flex flex-col leading-none">
-                  <span className="text-[8px] text-white/75">
-                    Download on the
-                  </span>
-
-                  <span className="mt-1 text-[18px] font-medium">
-                    App Store
-                  </span>
-                </span>
-              </Link>
+              <AppleStoreIcon />
             </div>
           </div>
         </section>
