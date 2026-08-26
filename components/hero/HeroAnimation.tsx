@@ -3,16 +3,23 @@
 import dynamic from "next/dynamic";
 import heroAnimation from "@/assets/pngs/WeCollect-hero-video.json";
 
-const Lottie = dynamic(() => import("lottie-react").then((mod) => mod.Lottie), {
-  ssr: false,
-  loading: () => <div className="h-[400px] w-full animate-pulse bg-white/5 rounded-2xl"></div>
-});
+// lottie-react v3: no default export, uses `src` not `animationData`.
+// Disable SSR since lottie reads DOM/window APIs.
+const Lottie = dynamic(
+  () => import("lottie-react").then((mod) => mod.Lottie) as never,
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[400px] w-full animate-pulse bg-white/5 rounded-2xl" />
+    ),
+  }
+) as React.FC<{ src: unknown; loop?: boolean; autoplay?: boolean; className?: string }>;
 
 export function HeroAnimation() {
   return (
     <div className="w-full">
       <Lottie
-        animationData={heroAnimation}
+        src={heroAnimation}
         loop
         autoplay
         className="h-auto w-full"
