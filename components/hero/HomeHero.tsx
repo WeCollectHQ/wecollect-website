@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import HomeHeroBgImage from "@/assets/pngs/home-hero-bg-image.webp";
-import HomeHeroDashboardImage from "@/assets/pngs/wecollect loop 1.png";
+import HomeHeroPhoneImage from "@/assets/pngs/home-hero-phone.webp";
+import { HeroAnimation } from "./HeroAnimation";
 import { ArrowUpRightIcon } from "@/assets/svgs/index";
 
 export function HomeHero() {
@@ -23,53 +24,60 @@ export function HomeHero() {
 
       <Container className="relative z-10 pt-20 md:pt-24 lg:pt-28">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 bg-[#3A3A8B] px-3 py-1.5">
+        <div className="inline-flex items-center gap-2 bg-[#272776] px-4 py-2">
           <span className="h-2 w-2 rounded-full bg-[#FDE93D]" />
 
-          <span className="text-[9px] font-semibold uppercase leading-3 tracking-wide text-[#FDE93D] md:text-[10px]">
+          <span className="text-[8px] md:text-[12px] font-medium uppercase leading-4.5 tracking-wide text-[#FDE93D]">
             Data tool and infrastructure for African contexts
           </span>
         </div>
 
         {/* Heading */}
-        <h1 className="mt-7 max-w-145 font-merriweather text-[40px] font-bold leading-[1.08] tracking-[-1.5%] text-[#E9E9EF] md:text-[52px] lg:text-[56px]">
+        <h1 className="mt-6 md:mt-8 font-merriweather text-[32px] font-bold leading-10 md:leading-18 tracking-[-0.5%] md:tracking-[-2%] text-[#E9E9EF] md:text-[60px]">
           Run field operation and
-          <br />
+          <br className="hidden lg:block" />
           data collection in Africa
         </h1>
 
         {/* Description */}
-        <p className="mt-6 max-w-130 text-[14px] font-medium leading-6 text-[#B9B9CC] md:text-[15px] md:leading-6.5">
+        <p className="mt-6 md:mt-8 text-[14px] md:text-[18px] font-medium leading-5.5 md:leading-7.5 text-[#B9B9CC]">
           WeCollect enables organizations to run field operations and gather
-          trusted data across Africa, combining scalable technology and
-          AI-powered analytics for faster reporting, actionable insights, and
-          better decisions.
+          trusted data <br className="hidden lg:block" /> across Africa,
+          combining scalable technology and AI-powered analytics for{" "}
+          <br className="hidden lg:block" /> faster reporting, actionable
+          insights, and better decisions.
         </p>
 
         {/* Buttons */}
-        <div className="mt-7 flex items-center gap-3">
-          <Button href="/signup" variant="secondary" size="sm">
+        <div className="mt-6 md:mt-8 flex items-center gap-3">
+          <Button href="/signup" variant="secondary" size="lg">
             Get Started
           </Button>
 
           <Button
             href="/demo"
             variant="outline-white"
-            size="sm"
+            size="lg"
             icon={<ArrowUpRightIcon />}
           >
             Book a Demo
           </Button>
         </div>
 
-        {/* Dashboard */}
-        <div className="relative mx-auto mt-24 w-full max-w-200 md:mt-28 lg:mt-24">
-          <Image
-            src={HomeHeroDashboardImage}
-            alt="WeCollect field operations dashboard"
-            priority
-            className="h-auto w-full"
-          />
+        {/* Dashboard + Phone */}
+        <div className="relative mx-auto mt-15 mb-[37.89px] w-full max-w-200 md:mt-28 md:mb-35.5 lg:mt-24">
+          {/* Lottie dashboard animation */}
+          <HeroAnimation />
+
+          {/* Phone overlay — bottom-right, matches Figma */}
+          <div className="absolute bottom-0 right-0 translate-y-[12%] translate-x-[4%] w-[22%] md:w-[21%]">
+            <Image
+              src={HomeHeroPhoneImage}
+              alt="WeCollect mobile app"
+              className="h-auto w-full drop-shadow-2xl"
+              priority
+            />
+          </div>
         </div>
       </Container>
     </section>
