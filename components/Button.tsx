@@ -8,7 +8,7 @@ type ButtonVariant =
   | "outline-white"
   | "ghost";
 
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonSize = "xs" | "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -16,6 +16,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
   icon?: ReactNode;
 }
+
+// 8 - 32
 // 8.5 - 34
 // 10 - 40
 // 11 - 44
@@ -23,6 +25,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 // 12 - 48
 
 const sizes: Record<ButtonSize, string> = {
+  xs: "h-8 px-3 text-sm md:px-4",
   sm: "h-8.5 px-3 text-sm md:h-11.5 md:px-4 md:text-sm",
   md: "h-10 px-4 text-[15px] md:h-11.5 md:px-6 md:text-[16px]",
   lg: "h-10 px-5 text-[15px] md:h-12 md:px-6 md:text-[16px]",

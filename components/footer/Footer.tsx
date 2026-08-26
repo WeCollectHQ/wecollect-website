@@ -66,10 +66,10 @@ export function Footer() {
 
         {/* FOOTER CONTENT*/}
 
-        <div className="mx-auto grid max-w-260 grid-cols-1 gap-12 px-5 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-16 lg:px-0 mt-44">
+        <div className="mx-auto grid max-w-260 grid-cols-2 gap-x-4 gap-y-12 px-5 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-16 lg:px-0 mt-44">
           {/* BRAND */}
 
-          <div className="max-w-82.5">
+          <div className="col-span-2 lg:col-span-1 max-w-82.5">
             <WecollectFooterLogo />
 
             <p className="mt-6 max-w-77.5 text-[12px] font-medium leading-5 text-[#B9B9CC]">
@@ -108,31 +108,27 @@ export function Footer() {
 
             {/* Newsletter */}
             <div className="mt-6">
-              <p className="text-[12px] text-white/70">
+              <p className="text-[12px] font-medium leading-5 text-[#B9B9CC]">
                 Subscribe to WeCollect newsletters
               </p>
 
-              <form className="mt-2 flex h-[39px] max-w-[315px] border border-white/40">
+              <form className="mt-2 flex h-10 max-w-78.75 items-center bg-[#151540] border border-[#E9E9EF]">
                 <input
                   type="email"
                   placeholder="Enter your email..."
-                  className="min-w-0 flex-1 bg-transparent px-2 text-[12px] text-white outline-none placeholder:text-white/45"
+                  className="min-w-0 flex-1 bg-transparent px-2 text-[12px] font-medium leading-5 text-white outline-none placeholder:text-[#686890]"
                 />
 
-                <Button
-                  type="submit"
-                  size="sm"
-                  className="border-l border-white/40 bg-[#4946D3] px-4 text-[12px] text-white hover:bg-[#403DBD]"
-                >
+                <Button type="submit" size="xs" className="mr-0.75">
                   Subscribe
                 </Button>
               </form>
 
-              <p className="mt-2 text-[11px] leading-[16px] text-white/70">
+              <p className="mt-2 text-[12px] font-medium leading-5 text-[#B9B9CC]">
                 By subscribing, I agree to WeCollect{" "}
                 <Link
                   href="/privacy-policy"
-                  className="text-[#4946D3] underline underline-offset-2"
+                  className="text-[#4747D6] underline underline-offset-2"
                 >
                   Privacy Policy
                 </Link>
@@ -140,76 +136,36 @@ export function Footer() {
             </div>
           </div>
 
-          {/* ===================================================
-                COMPANY
-            =================================================== */}
+          <div className="col-span-1 flex flex-col gap-12 lg:contents">
+            {/* COMPANY */}
+            <FooterColumn title="Company" links={companyLinks} />
 
-          <FooterColumn title="Company" links={companyLinks} />
+            {/* PRODUCT */}
+            <FooterColumn title="Product" links={productLinks} />
+          </div>
 
-          {/* ===================================================
-                PRODUCT
-            =================================================== */}
-
-          <FooterColumn title="Product" links={productLinks} />
-
-          {/* ===================================================
-                SOLUTIONS
-            =================================================== */}
-
-          <FooterColumn title="Solutions" links={solutionLinks} />
+          <div className="col-span-1 lg:contents">
+            {/* SOLUTIONS */}
+            <FooterColumn title="Solutions" links={solutionLinks} align="end" />
+          </div>
         </div>
-        {/* </section> */}
 
-        {/* 
-            BOTTOM BAR
-         */}
+        {/* BOTTOM BAR*/}
 
-        <section className="border-t border-white/15">
-          <div className="mx-auto flex max-w-[1040px] flex-col gap-8 px-5 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-0 lg:py-[38px]">
+        <section className="border-t border-[#4B4B7B] mt-11">
+          <div className="mx-auto flex max-w-260 flex-col-reverse gap-8 px-5 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-0 lg:py-9.5">
             {/* Copyright */}
-            <p className="text-[12px] text-white/65">
+            <p className="text-[12px] text-[#B9B9CC] font-medium leading-5">
               © All rights reserved, WeCollect, 2026
             </p>
 
             {/* App buttons */}
             <div className="flex items-center gap-4">
               {/* Google Play */}
-              <Link
-                href="#"
-                aria-label="Get it on Google Play"
-                className="flex h-[52px] min-w-[174px] items-center gap-3 rounded-[6px] border border-white/60 px-3 text-white transition-colors hover:bg-white/10"
-              >
-                <GooglePlayIcon />
-
-                <span className="flex flex-col leading-none">
-                  <span className="text-[8px] uppercase tracking-wide text-white/75">
-                    Get it on
-                  </span>
-
-                  <span className="mt-1 text-[19px] font-medium">
-                    Google Play
-                  </span>
-                </span>
-              </Link>
+              <GooglePlayIcon />
 
               {/* App Store */}
-              <Link
-                href="#"
-                aria-label="Download on the App Store"
-                className="flex h-[52px] min-w-[174px] items-center gap-3 rounded-[6px] border border-white/60 px-3 text-white transition-colors hover:bg-white/10"
-              >
-                <AppleStoreIcon />
-
-                <span className="flex flex-col leading-none">
-                  <span className="text-[8px] text-white/75">
-                    Download on the
-                  </span>
-
-                  <span className="mt-1 text-[18px] font-medium">
-                    App Store
-                  </span>
-                </span>
-              </Link>
+              <AppleStoreIcon />
             </div>
           </div>
         </section>
