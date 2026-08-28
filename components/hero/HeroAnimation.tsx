@@ -10,20 +10,20 @@ const Lottie = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="h-[400px] w-full animate-pulse bg-white/5 rounded-2xl" />
+      <div className="h-100 w-full animate-pulse bg-white/5 rounded-2xl" />
     ),
-  }
-) as React.FC<{ src: unknown; loop?: boolean; autoplay?: boolean; className?: string }>;
+  },
+) as React.FC<{
+  src: unknown;
+  loop?: boolean;
+  autoplay?: boolean;
+  className?: string;
+}>;
 
 export function HeroAnimation() {
   return (
     <div className="w-full">
-      <Lottie
-        src={heroAnimation}
-        loop
-        autoplay
-        className="h-auto w-full"
-      />
+      <Lottie src={heroAnimation} loop autoplay className="h-auto w-full" />
     </div>
   );
 }

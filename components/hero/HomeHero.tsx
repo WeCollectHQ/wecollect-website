@@ -70,7 +70,7 @@ export function HomeHero() {
           <HeroAnimation />
 
           {/* Phone overlay — bottom-right, matches Figma */}
-          <div className="absolute bottom-0 right-0 translate-y-[12%] translate-x-[4%] w-[22%] md:w-[21%]">
+          <div className="absolute bottom-5 md:bottom-12 right-0 translate-y-[12%] translate-x-[4%] w-[22%] md:w-[21%]">
             <Image
               src={HomeHeroPhoneImage}
               alt="WeCollect mobile app"
