@@ -484,3 +484,22 @@ export const ActOnDataIcon = () => {
     </svg>
   );
 };
+
+export const CheckIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="mt-0.5 shrink-0"
+  >
+    <path
+      d="M13.3334 4L6.00002 11.3333L2.66669 8"
+      stroke="#4ADE80"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

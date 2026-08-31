@@ -4,7 +4,7 @@ import { FAQ } from "@/components/home/FAQ";
 // import { PlatformHero } from "@/components/platform/PlatformHero";
 // import { PlatformShowcase } from "@/components/platform/PlatformShowcase";
 
-export default function AgentNetworkPage() {
+export default function AIDataPage() {
   return (
     <>
       {/* <PlatformHero />

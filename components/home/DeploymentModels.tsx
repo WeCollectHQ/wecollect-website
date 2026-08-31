@@ -1,27 +1,10 @@
 import Image from "next/image";
+
+import { CheckIcon, ArrowUpRightIcon } from "@/assets/svgs";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
-import { ArrowUpRightIcon } from "@/assets/svgs";
 import AgentTeamImage from "@/assets/pngs/agent-team.png";
-
-const CheckIcon = () => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="mt-0.5 shrink-0"
-  >
-    <path
-      d="M13.3334 4L6.00002 11.3333L2.66669 8"
-      stroke="#4ADE80"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+import DeploymentBgImage from "@/assets/pngs/deployment-models-bg-image.webp";
 
 const features = [
   "Trained, ranked and re-deployed on repeat programs",
@@ -31,78 +14,96 @@ const features = [
 
 export function DeploymentModels() {
   return (
-    <section className="relative overflow-hidden bg-[#0D0D26] py-20 md:py-32 text-white">
-      {/* Africa map background */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cellipse cx='300' cy='300' rx='200' ry='260' fill='%233D3D7A' opacity='0.4'/%3E%3C/svg%3E")`,
-          backgroundSize: "70%",
-        }}
-        aria-hidden="true"
+    <section className="relative overflow-hidden bg-[#0D0D26] text-white">
+      {/* Background */}
+      <Image
+        src={DeploymentBgImage}
+        alt=""
+        fill
+        priority
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
       />
 
+      {/* Overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-[#0D0D26]/35" />
+
       <Container className="relative z-10">
-        <div className="grid items-center gap-12 md:grid-cols-2 lg:gap-20">
-          {/* Left — content */}
-          <div className="flex flex-col">
+        <div className="grid min-h-[828px] items-center gap-12 py-20 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:py-24 lg:grid-cols-[1fr_1.08fr] lg:gap-[82px] lg:py-28">
+          {/* LEFT CONTENT */}
+          <div className="max-w-[390px]">
             {/* Eyebrow */}
             <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#FDE93D]" />
-              <span className="text-[10px] md:text-[12px] font-medium uppercase tracking-widest text-[#FDE93D]">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-[#FDE93D]" />
+
+              <span className="text-[10px] font-medium uppercase leading-4 tracking-wide text-[#FDE93D] md:text-[12px]">
                 Deployment Models
               </span>
             </div>
 
             {/* Heading */}
-            <h2 className="mt-4 md:mt-6 font-merriweather text-[28px] md:text-[48px] font-bold leading-9 md:leading-[1.15] text-white">
+            <h2 className="mt-6 font-merriweather text-[32px] font-bold leading-10 tracking-[-0.5%] text-[#E9E9EF] md:text-[40px] md:leading-[1.12] md:tracking-[-1%] lg:text-[48px]">
               No field team?
               <br />
               Deploy ours.
             </h2>
 
             {/* Description */}
-            <p className="mt-4 md:mt-6 text-[13px] md:text-[15px] leading-5.5 md:leading-7 font-medium text-[#B9B9CC]">
+            <p className="mt-6 max-w-[370px] text-[14px] font-medium leading-5.5 text-[#B9B9CC] md:text-[15px] md:leading-6">
               The platform works with or without our agents. But when you need
               boots on the ground, our trained, verified network is ready.
             </p>
 
-            {/* Feature list */}
-            <ul className="mt-6 md:mt-8 flex flex-col gap-3 md:gap-4">
+            {/* Features */}
+            <div className="mt-6">
               {features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <CheckIcon />
-                  <span className="text-[13px] md:text-[15px] font-medium leading-5.5 text-[#B9B9CC]">
+                <div
+                  key={feature}
+                  className="flex items-start gap-3 border-t border-[#30306F] py-4"
+                >
+                  <CheckIcon className="mt-0.5 shrink-0" />
+
+                  <span className="text-[13px] font-medium leading-5.5 text-[#7F7FA8] md:text-[14px]">
                     {feature}
                   </span>
-                </li>
+                </div>
               ))}
-            </ul>
+
+              {/* Bottom border */}
+              <div className="border-t border-[#30306F]" />
+            </div>
 
             {/* Buttons */}
-            <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-nowrap items-center gap-2">
               <Button
                 href="/demo"
-                variant="secondary"
+                variant="primary"
                 size="lg"
                 icon={<ArrowUpRightIcon />}
+                className="shrink-0"
               >
                 Book a Demo
               </Button>
 
-              <Button href="/agent-network" variant="outline-white" size="lg">
+              <Button
+                href="/agent-network"
+                variant="outline-white"
+                size="lg"
+                className="shrink-0"
+              >
                 Learn about the network
               </Button>
             </div>
           </div>
 
-          {/* Right — image */}
-          <div className="relative aspect-[4/4.5] w-full overflow-hidden md:aspect-auto md:h-[480px] lg:h-[520px]">
+          {/* RIGHT IMAGE */}
+          <div className="relative mx-auto w-full max-w-[518px]">
             <Image
               src={AgentTeamImage}
               alt="WeCollect field agents team"
-              fill
-              className="object-cover object-center"
+              width={518}
+              height={519}
+              priority
+              className="h-auto w-full object-cover"
             />
           </div>
         </div>
