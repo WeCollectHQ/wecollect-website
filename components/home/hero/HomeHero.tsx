@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { Button } from "@/components/Button";
-import { Container } from "@/components/Container";
+import { Button } from "@/components/common/Button";
+import { Container } from "@/components/common/Container";
 import HomeHeroBgImage from "@/assets/pngs/home-hero-bg-image.webp";
 import HomeHeroPhoneImage from "@/assets/pngs/home-hero-phone.webp";
 import { HeroAnimation } from "./HeroAnimation";

@@ -6,7 +6,7 @@ import { Container } from "../Container";
 
 export function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-15 bg-white lg:h-18">
+    <header className="fixed inset-x-0 top-0 z-50 h-15 lg:h-18 bg-white">
       <Container className="flex h-full items-center justify-between">
         <WecollectLogo />
 
