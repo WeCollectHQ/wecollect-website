@@ -2,8 +2,8 @@ import VerificationProblemImage from "@/assets/pngs/verification-problem.png";
 import { SolutionOverview } from "@/components/common/SolutionOverview";
 import {
   VerificationFraudRiskIcon,
-  VerificationTransparencyIcon,
-  VerificationScalingRiskIcon,
+  TransparencyIcon,
+  ScalingRiskIcon,
   VerificationAddressValidationIcon,
   VerificationKycFieldChecksIcon,
   VerificationSiteVisitIcon,
@@ -20,13 +20,13 @@ const problems = [
       "Agents claiming to visit sites while submitting forms from their living rooms.",
   },
   {
-    icon: <VerificationTransparencyIcon />,
+    icon: <TransparencyIcon />,
     title: "No Transparency",
     description:
       "Manual processes leave no audit trail — and no way to prove data quality to clients or regulators.",
   },
   {
-    icon: <VerificationScalingRiskIcon />,
+    icon: <ScalingRiskIcon />,
     title: "Scaling Risk",
     description:
       "Scale makes the problem worse: every additional agent multiplies the risk of errors, fraud, and inconsistency.",
