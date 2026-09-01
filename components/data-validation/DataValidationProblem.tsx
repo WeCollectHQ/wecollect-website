@@ -1,11 +1,10 @@
 import { SolutionOverview } from "@/components/common/SolutionOverview";
-
 import DataValidationProblemImage from "@/assets/pngs/data-validation-problem.png";
 import {
   ValidationDataIntegrityIcon,
-  ValidationNoTransparencyIcon,
-  ValidationScalingRiskIcon,
-  ValidationGisBoundaryIcon,
+  TransparencyIcon,
+  ScalingRiskIcon,
+  GisLocationTaggingIcon,
   ValidationGpsSpoofingIcon,
   ValidationAutomatedAnomalyIcon,
   ValidationDuplicateRecordIcon,
@@ -24,13 +23,13 @@ const problems = [
     title: "No Transparency",
     description:
       "Manual processes leave no audit trail — and no way to prove data quality to clients or regulators.",
-    icon: <ValidationNoTransparencyIcon />,
+    icon: <TransparencyIcon />,
   },
   {
     title: "Scaling Risk",
     description:
       "Scale makes the problem worse: every additional agent multiplies the risk of errors, fraud, and inconsistency.",
-    icon: <ValidationScalingRiskIcon />,
+    icon: <ScalingRiskIcon />,
   },
 ];
 
@@ -39,7 +38,7 @@ const features = [
     title: "GIS Boundary Validation",
     description:
       "Every submission validated against real African administrative boundaries — LGA, ward, state. Mismatches flagged instantly.",
-    icon: <ValidationGisBoundaryIcon />,
+    icon: <GisLocationTaggingIcon />,
   },
   {
     title: "GPS Spoofing Detection",

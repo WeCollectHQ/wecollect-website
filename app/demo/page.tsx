@@ -1,9 +1,9 @@
-import { FAQ } from "@/components/home/FAQ";
+import { DemoHero } from "@/components/demo/DemoHero";
 
-export default function PlatformPage() {
+export default function DemoPage() {
   return (
     <>
-      <FAQ />
+      <DemoHero />
     </>
   );
 }
