@@ -5,7 +5,12 @@ import Image from "next/image";
 
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
-import { ArrowUpRightIcon } from "@/assets/svgs";
+import {
+  ArrowUpRightIcon,
+  PlatformIcon,
+  AgentsIcon,
+  HybridIcon,
+} from "@/assets/svgs";
 
 import DeploymentPlatformImage from "@/assets/pngs/deployment-platform.png";
 
@@ -57,90 +62,6 @@ const deploymentModels = [
     icon: "hybrid",
   },
 ];
-
-function PlatformIcon() {
-  return (
-    <svg
-      width="30"
-      height="30"
-      viewBox="0 0 30 30"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-[#0D0D26]"
-    >
-      <rect
-        x="4.5"
-        y="3.5"
-        width="21"
-        height="14"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path d="M15 17.5V24" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M9 24H21" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-function AgentsIcon() {
-  return (
-    <svg
-      width="30"
-      height="30"
-      viewBox="0 0 30 30"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-[#0D0D26]"
-    >
-      <circle cx="11" cy="9" r="5" stroke="currentColor" strokeWidth="1.5" />
-
-      <circle cx="21" cy="11" r="4" stroke="currentColor" strokeWidth="1.5" />
-
-      <path
-        d="M2.5 25C3.5 19.5 6.5 17 11 17C15.5 17 18.5 19.5 19.5 25"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-
-      <path
-        d="M18 19C19 17.5 20.5 17 22.5 17C26 17 28 19.5 28.5 23"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-    </svg>
-  );
-}
-
-function HybridIcon() {
-  return (
-    <svg
-      width="30"
-      height="30"
-      viewBox="0 0 30 30"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-[#0D0D26]"
-    >
-      <rect
-        x="4"
-        y="4"
-        width="14"
-        height="14"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-
-      <rect
-        x="12"
-        y="12"
-        width="14"
-        height="14"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-    </svg>
-  );
-}
 
 function ModelIcon({ type }: { type: string }) {
   if (type === "agents") {
@@ -210,7 +131,7 @@ export function DeploymentModels() {
               mt-8
               flex
               w-full
-              max-w-[533px]
+              max-w-[650px]
               border
               border-[#E3E3ED]
               bg-white
@@ -219,6 +140,8 @@ export function DeploymentModels() {
           >
             {deploymentModels.map((model, index) => {
               const isActive = activeModel === model.id;
+              const isNextActive = deploymentModels[index + 1]?.id === activeModel;
+              const showRightBorder = index !== deploymentModels.length - 1 && !isActive && !isNextActive;
 
               return (
                 <button
@@ -227,21 +150,21 @@ export function DeploymentModels() {
                   onClick={() => setActiveModel(model.id)}
                   className={`
                     flex-1
-                    px-3
+                    cursor-pointer
+                    px-2
                     py-2.5
-                    text-[11px]
+                    text-[13px]
                     font-medium
                     transition-colors
                     duration-200
-                    ${
-                      index !== deploymentModels.length - 1
-                        ? "border-r border-[#E3E3ED]"
-                        : ""
-                    }
+                    md:px-3
+                    md:py-3.5
+                    md:text-[15px]
+                    ${showRightBorder ? "border-r border-[#E3E3ED]" : ""}
                     ${
                       isActive
                         ? "bg-[#C9C8F4] text-[#0D0D26]"
-                        : "bg-white text-[#5D5D85] hover:bg-[#FAFAFF]"
+                        : "bg-white text-[#686890] hover:bg-[#FAFAFF]"
                     }
                   `}
                 >
