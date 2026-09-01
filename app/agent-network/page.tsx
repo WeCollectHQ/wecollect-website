@@ -1,16 +1,18 @@
+import { AfricanCoverage } from "@/components/agent-network/AfricanCoverage";
+import { AgentNetworkHero } from "@/components/agent-network/AgentNetworkHero";
+import { DeploymentModels } from "@/components/agent-network/DeploymentModels";
+import { DeploymentProcess } from "@/components/agent-network/DeploymentProcess";
+import { QualityAssurance } from "@/components/agent-network/QualityAssurance";
 import { FAQ } from "@/components/home/FAQ";
-// import { PlatformArchitecture } from "@/components/platform/PlatformArchitecture";
-// import { PlatformCapabilities } from "@/components/platform/PlatformCapabilities";
-// import { PlatformHero } from "@/components/platform/PlatformHero";
-// import { PlatformShowcase } from "@/components/platform/PlatformShowcase";
 
 export default function AgentNetworkPage() {
   return (
     <>
-      {/* <PlatformHero />
-      <PlatformShowcase />
-      <PlatformArchitecture />
-      <PlatformCapabilities /> */}
+      <AgentNetworkHero />
+      <DeploymentModels />
+      <DeploymentProcess />
+      <QualityAssurance />
+      <AfricanCoverage />
       <FAQ />
     </>
   );
