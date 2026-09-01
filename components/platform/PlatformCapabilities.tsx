@@ -10,7 +10,10 @@ import {
   AutomatedPayoutIcon,
   DataExportsIcon,
   AiAssistedQaIcon,
-  ConversationalQueryIcon
+  ConversationalQueryIcon,
+  FeatureBulletIcon,
+  ProhibitedIcon,
+  ThickCheckIcon
 } from "@/assets/svgs";
 
 const capabilities = [
@@ -235,7 +238,9 @@ export function PlatformCapabilities() {
                       {/* Feature */}
                       <td className="border-b border-r border-[#E9E9EF] px-7 py-4">
                         <div className="flex items-center gap-3">
-                          <span className="text-[14px] text-[#30308A]">✣</span>
+                          <span className="shrink-0 flex items-center justify-center">
+                            <FeatureBulletIcon />
+                          </span>
 
                           <span className="text-[12px] font-medium text-[#0D0D26] md:text-[13px]">
                             {comparison.feature}
@@ -246,7 +251,9 @@ export function PlatformCapabilities() {
                       {/* Traditional */}
                       <td className="border-b border-r border-[#E9E9EF] px-7 py-4">
                         <div className="flex items-center gap-3">
-                          <span className="text-[13px] text-red-500">⊘</span>
+                          <span className="shrink-0 flex items-center justify-center">
+                            <ProhibitedIcon />
+                          </span>
 
                           <span className="text-[12px] font-medium text-[#686890] line-through md:text-[13px]">
                             {comparison.traditional}
@@ -257,8 +264,8 @@ export function PlatformCapabilities() {
                       {/* WeCollect */}
                       <td className="border-b border-[#E9E9EF] bg-[#4B4BDE] px-7 py-4">
                         <div className="flex items-center gap-3">
-                          <span className="text-[14px] font-bold text-[#4ADE80]">
-                            ✓
+                          <span className="shrink-0 flex items-center justify-center">
+                            <ThickCheckIcon />
                           </span>
 
                           <span className="text-[12px] font-medium text-white md:text-[13px]">
