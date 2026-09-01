@@ -1,14 +1,18 @@
 "use client";
 import { WecollectLogo } from "../Logo";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ArrowUpRightIcon, OpenMenuIcon, CloseMenuIcon } from "@/assets/svgs";
 import { solutionLinks } from "@/constants/navigation";
 import { Button } from "@/components/Button";
 
 export function NavbarMobile() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(true);
+
+  const isSolutionsActive = pathname.startsWith("/solutions");
 
   const mobileSolutionLinks = [
     ...solutionLinks.filter(
@@ -73,7 +77,11 @@ export function NavbarMobile() {
               <Link
                 href="/platform"
                 onClick={() => setOpen(false)}
-                className="flex h-8.75 items-center border border-[#4B4B7B] px-3 text-[14px] font-medium text-[#E9E9EF]"
+                className={`flex h-8.75 items-center border px-3 text-[14px] font-medium transition-colors ${
+                  pathname === "/platform"
+                    ? "border-[#FFF000] text-[#FFF000] bg-[#272776]"
+                    : "border-[#4B4B7B] text-[#E9E9EF]"
+                }`}
               >
                 Platform
               </Link>
@@ -84,7 +92,11 @@ export function NavbarMobile() {
                   type="button"
                   onClick={() => setSolutionsOpen((value) => !value)}
                   aria-expanded={solutionsOpen}
-                  className="flex h-9.5 w-full items-center justify-between border border-[#4B4B7B] px-3 text-[14px] font-medium text-[#E9E9EF]"
+                  className={`flex h-9.5 w-full items-center justify-between border px-3 text-[14px] font-medium transition-colors ${
+                    isSolutionsActive
+                      ? "border-[#FFF000] text-[#FFF000] bg-[#272776]"
+                      : "border-[#4B4B7B] text-[#E9E9EF]"
+                  }`}
                 >
                   <span>Solutions</span>
 
@@ -94,9 +106,9 @@ export function NavbarMobile() {
                     viewBox="0 0 14 14"
                     fill="none"
                     aria-hidden="true"
-                    className={`text-[#7777A7] transition-transform duration-200 ${
+                    className={`transition-transform duration-200 ${
                       solutionsOpen ? "rotate-180" : ""
-                    }`}
+                    } ${isSolutionsActive ? "text-[#FFF000]" : "text-[#7777A7]"}`}
                   >
                     <path
                       d="M3.5 5.25L7 8.75L10.5 5.25"
@@ -110,26 +122,28 @@ export function NavbarMobile() {
 
                 {solutionsOpen && (
                   <div className="mt-1.75 grid grid-cols-2 gap-1.75">
-                    {mobileSolutionLinks.map((solution) => (
-                      <Link
-                        key={solution.href}
-                        href={solution.href}
-                        onClick={() => setOpen(false)}
-                        className={[
-                          "flex min-h-8.75 items-center",
-                          "border border-[#4B4B7B] bg-[#272776]",
-                          "px-3",
-                          "text-[14px] font-medium leading-[1.2]",
-                          "text-[#E9E9EF]",
-                          "transition-colors hover:bg-[#E9E9EF]/5",
-                          solution.mobileFullWidth
-                            ? "col-span-2"
-                            : "col-span-1",
-                        ].join(" ")}
-                      >
-                        {solution.label}
-                      </Link>
-                    ))}
+                    {mobileSolutionLinks.map((solution) => {
+                      const isActive = pathname === solution.href;
+                      return (
+                        <Link
+                          key={solution.href}
+                          href={solution.href}
+                          onClick={() => setOpen(false)}
+                          className={[
+                            "flex min-h-8.75 items-center",
+                            isActive ? "border-[#FFF000] text-[#FFF000] bg-[#30308A]" : "border-[#4B4B7B] bg-[#272776] text-[#E9E9EF]",
+                            "border px-3",
+                            "text-[14px] font-medium leading-[1.2]",
+                            "transition-colors hover:bg-[#E9E9EF]/5",
+                            solution.mobileFullWidth
+                              ? "col-span-2"
+                              : "col-span-1",
+                          ].join(" ")}
+                        >
+                          {solution.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -138,7 +152,11 @@ export function NavbarMobile() {
               <Link
                 href="/agent-network"
                 onClick={() => setOpen(false)}
-                className="flex h-8.75 items-center border border-[#4B4B7B] px-3 text-[14px] font-medium text-[#E9E9EF]"
+                className={`flex h-8.75 items-center border px-3 text-[14px] font-medium transition-colors ${
+                  pathname === "/agent-network"
+                    ? "border-[#FFF000] text-[#FFF000] bg-[#272776]"
+                    : "border-[#4B4B7B] text-[#E9E9EF]"
+                }`}
               >
                 Agent Network
               </Link>
@@ -147,7 +165,11 @@ export function NavbarMobile() {
               <Link
                 href="/blog"
                 onClick={() => setOpen(false)}
-                className="flex h-8.75 items-center border border-[#4B4B7B] px-3 text-[14px] font-medium text-[#E9E9EF]"
+                className={`flex h-8.75 items-center border px-3 text-[14px] font-medium transition-colors ${
+                  pathname === "/blog"
+                    ? "border-[#FFF000] text-[#FFF000] bg-[#272776]"
+                    : "border-[#4B4B7B] text-[#E9E9EF]"
+                }`}
               >
                 Blog
               </Link>
