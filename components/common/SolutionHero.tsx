@@ -14,6 +14,8 @@ export interface SolutionHeroProps {
   imageAlt: string;
   primaryButtonText?: string;
   primaryButtonHref?: string;
+  actions?: React.ReactNode;
+  imageOverlay?: React.ReactNode;
 }
 
 export function SolutionHero({
@@ -24,6 +26,8 @@ export function SolutionHero({
   imageAlt,
   primaryButtonText = "Book a Demo",
   primaryButtonHref = "/demo",
+  actions,
+  imageOverlay,
 }: SolutionHeroProps) {
   return (
     <section className="relative overflow-hidden bg-[#202064] text-white">
@@ -123,14 +127,18 @@ export function SolutionHero({
 
             {/* CTA */}
             <div className="mt-8">
-              <Button
-                href={primaryButtonHref}
-                variant="secondary"
-                size="lg"
-                icon={<ArrowUpRightIcon />}
-              >
-                {primaryButtonText}
-              </Button>
+              {actions ? (
+                actions
+              ) : (
+                <Button
+                  href={primaryButtonHref}
+                  variant="secondary"
+                  size="lg"
+                  icon={<ArrowUpRightIcon />}
+                >
+                  {primaryButtonText}
+                </Button>
+              )}
             </div>
           </div>
 
@@ -154,6 +162,7 @@ export function SolutionHero({
                 className="object-cover"
               />
             </div>
+            {imageOverlay}
           </div>
         </div>
       </Container>
