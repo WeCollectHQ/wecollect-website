@@ -42,7 +42,7 @@ const deploymentSteps = [
 
 export function DeploymentProcess() {
   return (
-    <section className="relative overflow-hidden bg-[#FFFDF0] text-[#0D0D26] border-b border-[#E6E4D8]">
+    <section className="relative overflow-hidden text-[#0D0D26] border-b border-[#E6E4D8]">
       {/* Background image */}
       <Image
         src={DeploymentProcessBgImage}
@@ -53,7 +53,7 @@ export function DeploymentProcess() {
       />
 
       <Container>
-        <div className="relative py-[60px] md:py-[80px]">
+        <div className="relative py-[60px] md:py-[150px]">
           {/* Heading */}
           <div className="text-center">
             <p className="text-[10px] font-bold uppercase leading-4 text-[#8C8410] tracking-wide">

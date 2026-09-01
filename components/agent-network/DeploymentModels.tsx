@@ -83,7 +83,7 @@ export function DeploymentModels() {
     deploymentModels[0];
 
   return (
-    <section className="bg-[#F7F7FF] text-[#0D0D26]">
+    <section className="bg-[#F6F6FD] text-[#0D0D26]">
       <Container>
         <div
           className="
@@ -140,8 +140,12 @@ export function DeploymentModels() {
           >
             {deploymentModels.map((model, index) => {
               const isActive = activeModel === model.id;
-              const isNextActive = deploymentModels[index + 1]?.id === activeModel;
-              const showRightBorder = index !== deploymentModels.length - 1 && !isActive && !isNextActive;
+              const isNextActive =
+                deploymentModels[index + 1]?.id === activeModel;
+              const showRightBorder =
+                index !== deploymentModels.length - 1 &&
+                !isActive &&
+                !isNextActive;
 
               return (
                 <button
