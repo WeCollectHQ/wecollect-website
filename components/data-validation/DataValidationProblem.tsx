@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/common/Container";
+import { SolutionOverview } from "@/components/common/SolutionOverview";
 
 import DataValidationProblemImage from "@/assets/pngs/data-validation-problem.png";
 
@@ -199,147 +200,12 @@ const features = [
 
 export function DataValidationProblem() {
   return (
-    <>
-      {/* THE PROBLEM */}
-      <section className="bg-white text-[#0D0D26]">
-        <Container>
-          <div className="py-[70px] md:py-[80px]">
-            {/* Section heading */}
-            <div className="mb-7">
-              <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3]">
-                The Problem
-              </p>
-
-              <h2
-                className="
-                  mt-3
-                  font-merriweather
-                  text-[30px]
-                  font-bold
-                  leading-[1.2]
-                  tracking-[-1%]
-                  md:text-[34px]
-                  lg:text-[38px]
-                "
-              >
-                What we solve.
-              </h2>
-            </div>
-
-            {/* Problem + image */}
-            <div
-              className="
-                grid
-                overflow-hidden
-                border
-                border-[#E7E7EF]
-                md:grid-cols-[1fr_1fr]
-              "
-            >
-              {/* Problems */}
-              <div className="grid grid-rows-3">
-                {problems.map((problem, index) => (
-                  <div
-                    key={problem.title}
-                    className={`
-                      flex
-                      min-h-[138px]
-                      flex-col
-                      justify-center
-                      px-4
-                      py-6
-                      md:px-5
-                      md:py-5
-                      ${
-                        index !== problems.length - 1
-                          ? "border-b border-[#E7E7EF]"
-                          : ""
-                      }
-                    `}
-                  >
-                    <div className="mb-3 text-[#0D0D26]">{problem.icon}</div>
-
-                    <h3 className="text-[13px] font-medium leading-5 text-[#0D0D26]">
-                      {problem.title}
-                    </h3>
-
-                    <p className="mt-2 max-w-[390px] text-[10px] leading-[1.6] text-[#57577F] md:text-[11px]">
-                      {problem.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Image */}
-              <div className="relative min-h-[414px] overflow-hidden">
-                <Image
-                  src={DataValidationProblemImage}
-                  alt="Field agent validating GPS data"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* KEY FEATURES */}
-      <section className="bg-white text-[#0D0D26]">
-        <Container>
-          <div className="pb-[70px] md:pb-[80px]">
-            <div className="mb-7">
-              <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3]">
-                Key Features
-              </p>
-
-              <h2
-                className="
-                  mt-3
-                  font-merriweather
-                  text-[30px]
-                  font-bold
-                  leading-[1.2]
-                  tracking-[-1%]
-                  md:text-[34px]
-                  lg:text-[38px]
-                "
-              >
-                How WeCollect solves verification &amp; reporting
-              </h2>
-            </div>
-
-            {/* Feature grid */}
-            <div className="grid grid-cols-1 border-l border-t border-[#E7E7EF] sm:grid-cols-2 lg:grid-cols-3">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="
-                    min-h-[190px]
-                    border-b
-                    border-r
-                    border-[#E7E7EF]
-                    px-5
-                    py-7
-                    md:px-6
-                    md:py-8
-                  "
-                >
-                  <div className="mb-4 text-[#0D0D26]">{feature.icon}</div>
-
-                  <h3 className="max-w-[210px] text-[13px] font-medium leading-5 text-[#0D0D26]">
-                    {feature.title}
-                  </h3>
-
-                  <p className="mt-3 max-w-[235px] text-[10px] leading-[1.65] text-[#57577F] md:text-[11px]">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-    </>
+    <SolutionOverview
+      problems={problems}
+      problemImage={DataValidationProblemImage}
+      problemImageAlt="Field agent validating GPS data"
+      featureTitle="How WeCollect solves verification & reporting"
+      features={features}
+    />
   );
 }
