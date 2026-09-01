@@ -2,9 +2,9 @@ import { SolutionOverview } from "@/components/common/SolutionOverview";
 import FieldOperationsProblemImage from "@/assets/pngs/field-operations-problem.png";
 import {
   FieldFragmentedIcon,
-  FieldNoTransparencyIcon,
-  FieldScalingRiskIcon,
-  RouteTerritoryIcon,
+  TransparencyIcon,
+  ScalingRiskIcon,
+  GisLocationTaggingIcon,
   ActivationVerificationIcon,
   LiveAgentTrackingIcon,
   OutletVisitReportingIcon,
@@ -15,50 +15,59 @@ import {
 const problems = [
   {
     title: "Fragmented Operations",
-    description: "Field sales operates run on WhatsApp, phone calls, and spreadsheets.",
+    description:
+      "Field sales operates run on WhatsApp, phone calls, and spreadsheets.",
     icon: <FieldFragmentedIcon />,
   },
   {
     title: "No Transparency",
-    description: "Manual processes leave no audit trail — and no way to prove data quality to clients or regulators.",
-    icon: <FieldNoTransparencyIcon />,
+    description:
+      "Manual processes leave no audit trail — and no way to prove data quality to clients or regulators.",
+    icon: <TransparencyIcon />,
   },
   {
     title: "Scaling Risk",
-    description: "Scale makes the problem worse: every additional agent multiplies the risk of errors, fraud, and inconsistency.",
-    icon: <FieldScalingRiskIcon />,
+    description:
+      "Scale makes the problem worse: every additional agent multiplies the risk of errors, fraud, and inconsistency.",
+    icon: <ScalingRiskIcon />,
   },
 ];
 
 const features = [
   {
     title: "Route & Territory Management",
-    description: "Assign agents to specific routes, LGAs, and outlets. Track coverage in real time on a live map.",
-    icon: <RouteTerritoryIcon />,
+    description:
+      "Assign agents to specific routes, LGAs, and outlets. Track coverage in real time on a live map.",
+    icon: <GisLocationTaggingIcon />,
   },
   {
     title: "Activation Verification",
-    description: "Photo evidence, GPS location, and form completion required for every activation. Ghost workers eliminated.",
+    description:
+      "Photo evidence, GPS location, and form completion required for every activation. Ghost workers eliminated.",
     icon: <ActivationVerificationIcon />,
   },
   {
     title: "Live Agent Tracking",
-    description: "GPS location, check-in/check-out, dwell time, and submission logs for every field agent.",
+    description:
+      "GPS location, check-in/check-out, dwell time, and submission logs for every field agent.",
     icon: <LiveAgentTrackingIcon />,
   },
   {
     title: "Outlet Visit Reporting",
-    description: "Structured visit forms, shelf audit captures, and competitive intelligence — all geo-tagged.",
+    description:
+      "Structured visit forms, shelf audit captures, and competitive intelligence — all geo-tagged.",
     icon: <OutletVisitReportingIcon />,
   },
   {
     title: "Automated Agent Payouts",
-    description: "Performance-based payments triggered automatically on verified submissions. Zero cash, zero fraud.",
+    description:
+      "Performance-based payments triggered automatically on verified submissions. Zero cash, zero fraud.",
     icon: <AutomatedAgentPayoutsIcon />,
   },
   {
     title: "Supervisor Dashboard",
-    description: "Real-time productivity scores, anomaly flags, and team leaderboards for every supervisor.",
+    description:
+      "Real-time productivity scores, anomaly flags, and team leaderboards for every supervisor.",
     icon: <SupervisorDashboardIcon />,
   },
 ];
