@@ -1054,3 +1054,44 @@ export function HybridIcon() {
     </svg>
   );
 }
+
+export function BriefScopeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-6 w-6">
+      <path d="M6 3.5h9l3 3V20.5H6V3.5Z" />
+      <path d="M15 3.5v4h3" />
+      <path d="M9 11h6M9 14h6" />
+    </svg>
+  );
+}
+
+export function AgentMatchingIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-6 w-6">
+      <circle cx="10" cy="8" r="3" />
+      <path d="M4.5 19c.7-3.2 2.5-4.8 5.5-4.8s4.8 1.6 5.5 4.8" />
+      <path d="M17 8v6M14 11h6" />
+    </svg>
+  );
+}
+
+export function BriefingTrainingIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-6 w-6">
+      <path d="M3.5 5h7.5c1.7 0 3 1.3 3 3v11c0-1.7-1.3-3-3-3H3.5V5Z" />
+      <path d="M20.5 5H13c-1.7 0-3 1.3-3 3v11c0-1.7 1.3-3 3-3h7.5V5Z" />
+    </svg>
+  );
+}
+
+export function LiveDeploymentIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-6 w-6">
+      <circle cx="12" cy="12" r="1.5" />
+      <path d="M7.5 8.5a5 5 0 0 0 0 7" />
+      <path d="M16.5 8.5a5 5 0 0 1 0 7" />
+      <path d="M4.5 6a8.5 8.5 0 0 0 0 12" />
+      <path d="M19.5 6a8.5 8.5 0 0 1 0 12" />
+    </svg>
+  );
+}
