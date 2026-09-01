@@ -60,7 +60,9 @@ export function DeploymentModels() {
                   key={feature}
                   className="flex items-start gap-3 border-t border-[#30306F] py-4"
                 >
-                  <CheckIcon className="mt-0.5 shrink-0" />
+                  <span className="mt-0.5 shrink-0 text-white">
+                    <CheckIcon />
+                  </span>
 
                   <span className="text-[13px] font-medium leading-5.5 text-[#7F7FA8] md:text-[14px]">
                     {feature}

@@ -2,7 +2,12 @@ import Image from "next/image";
 
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
-import { ArrowUpRightIcon } from "@/assets/svgs";
+import {
+  ArrowUpRightIcon,
+  OfflineFirstIcon,
+  MultiplatformIcon,
+  EnterpriseSecurityIcon,
+} from "@/assets/svgs";
 import PlatformPhoneImage from "@/assets/pngs/platform-phone-image.png";
 
 const flowSteps = [
@@ -48,89 +53,19 @@ const platformFeatures = [
     title: "Offline First",
     description:
       "Field agents work without connectivity. Data syncs when signal returns — no submissions lost.",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6 10.5C9.5 7 14 5.5 18.5 6.5"
-          stroke="#0D0D26"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M9.5 14C11.5 12 14 11 16.5 11.5"
-          stroke="#0D0D26"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M13.5 17.5C14.5 16.5 16 16 17 16.5"
-          stroke="#0D0D26"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M5 5L27 27"
-          stroke="#0D0D26"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    icon: <OfflineFirstIcon />,
   },
   {
     title: "Multi-Platform",
     description:
       "Web dashboard for supervisors. Native iOS and Android apps for field agents. Works on low-cost devices.",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 11L16 7L24 11V21L16 25L8 21V11Z"
-          stroke="#0D0D26"
-          strokeWidth="1.5"
-        />
-        <path d="M8 11L16 15L24 11" stroke="#0D0D26" strokeWidth="1.5" />
-        <path d="M16 15V25" stroke="#0D0D26" strokeWidth="1.5" />
-      </svg>
-    ),
+    icon: <MultiplatformIcon />,
   },
   {
     title: "Enterprise Security",
     description:
       "AES-256 encryption, role-based access, audit trails, NDPC-compliant data handling.",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M16 5L25 8.5V15C25 21 21.5 25 16 27C10.5 25 7 21 7 15V8.5L16 5Z"
-          stroke="#0D0D26"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M13 16L15 18L19.5 13.5"
-          stroke="#0D0D26"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+    icon: <EnterpriseSecurityIcon />,
   },
 ];
 
