@@ -57,7 +57,7 @@ export function FAQ() {
         </div>
 
         {/* Content */}
-        <div className="mt-10 grid grid-cols-1 gap-8 md:mt-12 md:grid-cols-[1.2fr_1fr] lg:gap-12">
+        <div className="mx-auto mt-10 grid max-w-[1024px] grid-cols-1 md:mt-12 md:grid-cols-2">
           {/* FAQ */}
           <div>
             <div className="border border-[#E9E9EF] bg-white">
