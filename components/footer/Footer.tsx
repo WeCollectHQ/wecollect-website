@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
 import Image from "next/image";
 import { FooterColumn } from "./FooterColumn";
 import DesktopBgImage from "@/assets/pngs/footer-desktop-bg-image.webp";
@@ -38,15 +39,15 @@ export function Footer() {
 
       <div className="relative z-10">
         {/* CTA */}
-        <div className="mx-auto flex flex-col items-center px-5 mt-44.5 md:mt-53 text-center lg:max-w-275 lg:px-0">
-          <h2 className="font-merriweather text-[24px] md:text-[40px] font-bold leading-8 md:leading-12 md:tracking-[-1%] text-[#E9E9EF]">
+        <Container className="flex flex-col items-center mt-44.5 md:mt-53 text-center">
+          <h2 className="font-merriweather font-bold text-[24px] text-[#E9E9EF] md:text-[40px] leading-8 md:leading-12 md:tracking-[-1%]">
             <span className="text-[#B9B9CC]">See Beyond: </span>
             Our Tool provides end-to-end
             <br className="hidden lg:block" />
             solution for your data collection needs
           </h2>
 
-          <p className="mt-4 md:mt-6 text-[14px] md:text-[16px] font-medium leading-5 md:leading-6.5 text-[#B9B9CC] lg:text-[16px]">
+          <p className="mt-4 md:mt-6 text-[14px] text-[#B9B9CC] md:text-[16px] lg:text-[16px] font-medium leading-5 md:leading-6.5">
             Book a 30-minute demo and discover how WeCollect helps you plan,
             deploy, verify, and manage field <br className="hidden lg:block" />{" "}
             operations with confidence. Get answers tailored to your use case
@@ -62,11 +63,11 @@ export function Footer() {
           >
             Book a Demo
           </Button>
-        </div>
+        </Container>
 
         {/* FOOTER CONTENT*/}
 
-        <div className="mx-auto grid max-w-260 grid-cols-2 gap-x-4 gap-y-12 px-5 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-16 lg:px-0 mt-44">
+        <Container className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-x-4 gap-y-12 lg:gap-16 mt-44">
           {/* BRAND */}
 
           <div className="col-span-2 lg:col-span-1 max-w-82.5">
@@ -148,12 +149,12 @@ export function Footer() {
             {/* SOLUTIONS */}
             <FooterColumn title="Solutions" links={solutionLinks} align="end" />
           </div>
-        </div>
+        </Container>
 
         {/* BOTTOM BAR*/}
 
         <section className="border-t border-[#4B4B7B] mt-11">
-          <div className="mx-auto flex max-w-260 flex-col-reverse gap-8 px-5 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-0 lg:py-9.5">
+          <Container className="flex flex-col-reverse lg:flex-row gap-8 py-8 lg:py-9.5 lg:items-center lg:justify-between">
             {/* Copyright */}
             <p className="text-[12px] text-[#B9B9CC] font-medium leading-5">
               © All rights reserved, WeCollect, 2026
@@ -167,7 +168,7 @@ export function Footer() {
               {/* App Store */}
               <AppleStoreIcon />
             </div>
-          </div>
+          </Container>
         </section>
       </div>
     </footer>

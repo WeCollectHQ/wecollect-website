@@ -1,12 +1,23 @@
-import { Navbar } from "@/components/navbar/Navbar";
-import { Footer } from "@/components/footer/Footer";
+import { HomeHero } from "@/components/home/hero/HomeHero";
+import { DataModality } from "@/components/home/DataModality";
+import { DeploymentModels } from "@/components/home/DeploymentModels";
+import { FAQ } from "@/components/home/FAQ";
+import { FourPillars } from "@/components/home/FourPillars";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { Testimonials } from "@/components/home/Testimonials";
+import { TrustedOrganizations } from "@/components/home/TrustedOrganizations";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-zinc-50 font-sans">
-      <Navbar />
-      <main className="flex-1 my-20">{/* Main content goes here */}</main>
-      <Footer />
-    </div>
+    <>
+      <HomeHero />
+      <TrustedOrganizations />
+      <FourPillars />
+      <HowItWorks />
+      <DeploymentModels />
+      <DataModality />
+      <Testimonials />
+      <FAQ />
+    </>
   );
 }
