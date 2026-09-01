@@ -1,16 +1,16 @@
+import { ClientProof } from "@/components/field-operations/ClientProof";
+import { FieldOperationsHero } from "@/components/field-operations/FieldOperationsHero";
+import { FieldOperationsProblem } from "@/components/field-operations/FieldOperationsProblem";
+import { IncludedServices } from "@/components/field-operations/IncludedServices";
 import { FAQ } from "@/components/home/FAQ";
-// import { PlatformArchitecture } from "@/components/platform/PlatformArchitecture";
-// import { PlatformCapabilities } from "@/components/platform/PlatformCapabilities";
-// import { PlatformHero } from "@/components/platform/PlatformHero";
-// import { PlatformShowcase } from "@/components/platform/PlatformShowcase";
 
 export default function FieldOperationPage() {
   return (
     <>
-      {/* <PlatformHero />
-      <PlatformShowcase />
-      <PlatformArchitecture />
-      <PlatformCapabilities /> */}
+      <FieldOperationsHero />
+      <FieldOperationsProblem />
+      <IncludedServices />
+      <ClientProof />
       <FAQ />
     </>
   );

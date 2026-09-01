@@ -1,16 +1,16 @@
+import { ClientProof } from "@/components/data-validation/ClientProof";
+import { DataValidationHero } from "@/components/data-validation/DataValidationHero";
+import { DataValidationProblem } from "@/components/data-validation/DataValidationProblem";
+import { IncludedServices } from "@/components/data-validation/IncludedServices";
 import { FAQ } from "@/components/home/FAQ";
-// import { PlatformArchitecture } from "@/components/platform/PlatformArchitecture";
-// import { PlatformCapabilities } from "@/components/platform/PlatformCapabilities";
-// import { PlatformHero } from "@/components/platform/PlatformHero";
-// import { PlatformShowcase } from "@/components/platform/PlatformShowcase";
 
 export default function DataValidationPage() {
   return (
     <>
-      {/* <PlatformHero />
-      <PlatformShowcase />
-      <PlatformArchitecture />
-      <PlatformCapabilities /> */}
+      <DataValidationHero />
+      <DataValidationProblem />
+      <IncludedServices />
+      <ClientProof />
       <FAQ />
     </>
   );

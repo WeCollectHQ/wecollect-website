@@ -1,16 +1,16 @@
 import { FAQ } from "@/components/home/FAQ";
-// import { PlatformArchitecture } from "@/components/platform/PlatformArchitecture";
-// import { PlatformCapabilities } from "@/components/platform/PlatformCapabilities";
-// import { PlatformHero } from "@/components/platform/PlatformHero";
-// import { PlatformShowcase } from "@/components/platform/PlatformShowcase";
+import { ClientProof } from "@/components/verification-reporting/ClientProof";
+import { IncludedServices } from "@/components/verification-reporting/IncludedServices";
+import { VerificationHero } from "@/components/verification-reporting/VerificationHero";
+import { VerificationOverview } from "@/components/verification-reporting/VerificationOverview";
 
 export default function VerificationPage() {
   return (
     <>
-      {/* <PlatformHero />
-      <PlatformShowcase />
-      <PlatformArchitecture />
-      <PlatformCapabilities /> */}
+      <VerificationHero />
+      <VerificationOverview />
+      <IncludedServices />
+      <ClientProof />
       <FAQ />
     </>
   );

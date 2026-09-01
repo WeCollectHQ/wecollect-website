@@ -1,16 +1,16 @@
+import { ClientProof } from "@/components/data-collection/ClientProof";
+import { DataCollectionHero } from "@/components/data-collection/DataCollectionHero";
+import { DataCollectionProblem } from "@/components/data-collection/DataCollectionProblem";
+import { IncludedServices } from "@/components/data-collection/IncludedServices";
 import { FAQ } from "@/components/home/FAQ";
-// import { PlatformArchitecture } from "@/components/platform/PlatformArchitecture";
-// import { PlatformCapabilities } from "@/components/platform/PlatformCapabilities";
-// import { PlatformHero } from "@/components/platform/PlatformHero";
-// import { PlatformShowcase } from "@/components/platform/PlatformShowcase";
 
 export default function DataCollectionPage() {
   return (
     <>
-      {/* <PlatformHero />
-      <PlatformShowcase />
-      <PlatformArchitecture />
-      <PlatformCapabilities /> */}
+      <DataCollectionHero />
+      <DataCollectionProblem />
+      <IncludedServices />
+      <ClientProof />
       <FAQ />
     </>
   );
