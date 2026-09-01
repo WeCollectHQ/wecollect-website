@@ -725,3 +725,90 @@ export const EnterpriseSecurityIcon = () => (
     />
   </svg>
 );
+
+export function FormBuilderIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 3.5H16.625L22.75 9.625V24.5H7V3.5Z" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M16.625 3.5V9.625H22.75" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M11 14H18.5M11 18H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function GisValidationIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 25C18.667 20.8 21 17.067 21 13C21 9.134 17.866 6 14 6C10.134 6 7 9.134 7 13C7 17.067 9.333 20.8 14 25Z" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="14" cy="13" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M4 20L14 24L24 20" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+export function GeofencingIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.5 14H7L9.5 7L14 21L17.5 10L20 14H25.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function LiveDashboardIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 20C5 12.82 8.82 8 14 8C19.18 8 23 12.82 23 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14 14L19 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M4 20H24" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+export function SecureStorageIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 15C5 11.686 7.686 9 11 9C11.465 9 11.917 9.053 12.348 9.153C13.173 6.728 15.469 5 18.167 5C21.572 5 24.333 7.761 24.333 11.167C24.333 11.628 24.282 12.077 24.186 12.509" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M5 15H18" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="17" y="15" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M19 15V13.5C19 12.672 19.672 12 20.5 12C21.328 12 22 12.672 22 13.5V15" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+export function AutomatedPayoutIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="7" width="20" height="12" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="14" cy="13" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M14 22V25M11.5 23.5L14 26L16.5 23.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function DataExportsIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 4V23H23" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M10 17L14 13L17 16L23 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M18 9H23V14" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+export function AiAssistedQaIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 4L15.5 9.5L21 11L15.5 12.5L14 18L12.5 12.5L7 11L12.5 9.5L14 4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M21 18L21.75 20.25L24 21L21.75 21.75L21 24L20.25 21.75L18 21L20.25 20.25L21 18Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function ConversationalQueryIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5H23V18H13L8 23V18H5V5Z" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M9 10H19M9 14H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
