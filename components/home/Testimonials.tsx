@@ -79,7 +79,17 @@ function ArrowRightIcon() {
   );
 }
 
-export function Testimonials() {
+interface TestimonialsProps {
+  variant?: "default" | "with-stats";
+}
+
+const statsData = [
+  { value: "98%", label: "Trained & Verified Agents" },
+  { value: "37", label: "States Covered" },
+  { value: "300+", label: "LGAs" },
+];
+
+export function Testimonials({ variant = "default" }: TestimonialsProps = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const previous = () => {
@@ -90,60 +100,77 @@ export function Testimonials() {
     setActiveIndex((current) => Math.min(current + 1, testimonials.length - 1));
   };
 
-  const testimonial = testimonials[activeIndex];
+  const isWithStats = variant === "with-stats";
+
+  // Reusable Carousel Track
+  const renderTrack = () => (
+    <div className="overflow-hidden">
+      <div
+        className="flex transition-transform duration-500 ease-out"
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      >
+        {testimonials.map((item) => (
+          <article
+            key={item.company}
+            className={`w-full shrink-0 ${
+              isWithStats ? "px-8 py-8 md:px-10 md:py-12" : "border border-[#E9E9EF] px-8 py-8 md:px-8 md:py-9"
+            }`}
+          >
+            <StarRating />
+            <p className="mt-6 text-[14px] font-medium leading-6 text-[#686890] md:text-[16px] md:leading-6.5">
+              {item.quote}
+            </p>
+            <div className="mt-8 flex flex-col gap-1">
+              <p className="text-[14px] font-medium leading-5 text-[#0D0D26]">
+                {item.company}
+              </p>
+              <p className="text-[12px] font-medium leading-5 text-[#0D0D26]">
+                {item.name}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
-    <section className="w-full bg-white py-[120px] md:py-[150px]">
+    <section className="w-full bg-white py-[120px] md:py-[150px] border-y border-[#E9E9EF]">
       <Container>
         {/* Header */}
         <div className="text-center">
           <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3] md:text-[12px]">
             What clients say
           </p>
-
           <h2 className="mt-4 font-merriweather text-[28px] font-bold leading-9 tracking-[-0.5%] text-[#0D0D26] md:text-[40px] md:leading-12 md:tracking-[-1%]">
             Trusted in the field.
           </h2>
         </div>
 
-        {/* Carousel */}
-        <div className="mx-auto mt-10 max-w-[634px] md:mt-12">
-          {/* Viewport */}
-          <div className="overflow-hidden">
-            {/* Track */}
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{
-                transform: `translateX(-${activeIndex * 100}%)`,
-              }}
-            >
-              {testimonials.map((item) => (
-                <article
-                  key={item.company}
-                  className="w-full shrink-0 border border-[#E9E9EF] px-8 py-8 md:px-8 md:py-9"
-                >
-                  {/* Rating */}
-                  <StarRating />
-
-                  {/* Quote */}
-                  <p className="mt-6 text-[14px] font-medium leading-6 text-[#686890] md:text-[16px] md:leading-6.5">
-                    {item.quote}
-                  </p>
-
-                  {/* Author */}
-                  <div className="mt-8">
-                    <p className="text-[14px] font-medium leading-5 text-[#0D0D26]">
-                      {item.company}
-                    </p>
-
-                    <p className="mt-1 text-[12px] font-medium leading-5 text-[#0D0D26]">
-                      {item.name}
+        {/* Content Wrapper */}
+        <div className={`mx-auto mt-10 md:mt-12 ${isWithStats ? "w-full" : "max-w-[634px]"}`}>
+          {isWithStats ? (
+            <div className="grid md:grid-cols-[250px_1fr] border border-[#E9E9EF]">
+              {/* Left Stats Sidebar */}
+              <div className="bg-[#F8F9FB] flex flex-col divide-y divide-[#E9E9EF] border-r border-[#E9E9EF]">
+                {statsData.map((stat) => (
+                  <div key={stat.label} className="p-6 md:p-8 flex flex-col justify-center grow">
+                    <h4 className="text-[20px] md:text-[24px] font-bold text-[#0D0D26] font-merriweather">
+                      {stat.value}
+                    </h4>
+                    <p className="text-[12px] md:text-[13px] font-medium text-[#7F7FA8] mt-2">
+                      {stat.label}
                     </p>
                   </div>
-                </article>
-              ))}
+                ))}
+              </div>
+              
+              {/* Right Carousel Track */}
+              {renderTrack()}
             </div>
-          </div>
+          ) : (
+            renderTrack()
+          )}
 
           {/* Controls */}
           <div className="mt-3 flex items-center justify-between">
@@ -158,9 +185,7 @@ export function Testimonials() {
                   aria-current={activeIndex === index}
                   className={[
                     "h-1.5 transition-all duration-300",
-                    activeIndex === index
-                      ? "w-8 bg-[#4B4BDB]"
-                      : "w-1.5 bg-[#B9B9CC]",
+                    activeIndex === index ? "w-8 bg-[#4B4BDB]" : "w-1.5 bg-[#B9B9CC]",
                   ].join(" ")}
                 />
               ))}
@@ -173,17 +198,16 @@ export function Testimonials() {
                 onClick={previous}
                 disabled={activeIndex === 0}
                 aria-label="Previous testimonial"
-                className="flex h-9 w-9 items-center justify-center bg-[#B9B9CC] text-white transition-colors hover:bg-[#9898B3] disabled:cursor-not-allowed disabled:opacity-70"
+                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:bg-[#B9B9CC] disabled:hover:bg-[#B9B9CC]"
               >
                 <ArrowLeftIcon />
               </button>
-
               <button
                 type="button"
                 onClick={next}
                 disabled={activeIndex === testimonials.length - 1}
                 aria-label="Next testimonial"
-                className="flex h-9 w-9 items-center justify-center bg-[#4B4BDB] text-white transition-colors hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:opacity-70"
+                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:bg-[#B9B9CC] disabled:hover:bg-[#B9B9CC]"
               >
                 <ArrowRightIcon />
               </button>
