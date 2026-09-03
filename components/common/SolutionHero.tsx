@@ -15,7 +15,6 @@ export interface SolutionHeroProps {
   primaryButtonText?: string;
   primaryButtonHref?: string;
   actions?: React.ReactNode;
-  imageOverlay?: React.ReactNode;
 }
 
 export function SolutionHero({
@@ -27,7 +26,6 @@ export function SolutionHero({
   primaryButtonText = "Book a Demo",
   primaryButtonHref = "/demo",
   actions,
-  imageOverlay,
 }: SolutionHeroProps) {
   return (
     <section className="relative overflow-hidden bg-[#202064] text-white">
@@ -162,7 +160,6 @@ export function SolutionHero({
                 className="object-cover"
               />
             </div>
-            {imageOverlay}
           </div>
         </div>
       </Container>

@@ -80,7 +80,13 @@ const trustedOrganizations = [
   },
 ];
 
-export function TrustedOrganizations() {
+interface TrustedOrganizationsProps {
+  variant?: "dark" | "light";
+}
+
+export function TrustedOrganizations({
+  variant = "dark",
+}: TrustedOrganizationsProps) {
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -115,22 +121,46 @@ export function TrustedOrganizations() {
     };
   }, []);
 
+  const isLight = variant === "light";
+
+  const bgClass = isLight ? "bg-[#FFFFFF]" : "bg-[#30308A]";
+  const borderClass = isLight ? "border-[#E9E9EF]" : "border-white/15";
+  const textClass = isLight ? "text-[#5D5D88]" : "text-[#9898B3]";
+  const fadeLeftClass = isLight
+    ? "from-[#FFFFFF] to-transparent"
+    : "from-[#30308A] to-transparent";
+  const fadeRightClass = isLight
+    ? "from-[#FFFFFF] to-transparent"
+    : "from-[#30308A] to-transparent";
+
   return (
-    <section className="w-full overflow-hidden bg-[#30308A]">
+    <section
+      className={`w-full overflow-hidden py-15 border-y ${bgClass} ${borderClass}`}
+    >
       {/* Label */}
-      <div className="flex h-10 items-center justify-center border-b border-white/15">
-        <p className="text-[3.82px] text-[#9898B3] md:text-[8px] font-medium uppercase leading-[5.46px] md:leading-5">
+      <div
+        className={`flex h-10 items-center justify-center border-b ${borderClass}`}
+      >
+        <p
+          className={`text-[3.82px] md:text-[8px] font-medium uppercase leading-[5.46px] md:leading-5 ${textClass}`}
+        >
           Trusted by leading organisations
         </p>
       </div>
 
       {/* Logo carousel */}
-      <div className="relative h-16 md:h-18 lg:h-16 overflow-hidden border-b border-white/15">
+      <div
+        className={`relative h-16 md:h-18 lg:h-16 overflow-hidden border-b ${borderClass}`}
+      >
         {/* Left fade */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 md:w-20 bg-linear-to-r from-[#30308A] to-transparent" />
+        <div
+          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 md:w-20 bg-linear-to-r ${fadeLeftClass}`}
+        />
 
         {/* Right fade */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 md:w-20 bg-linear-to-l from-[#30308A] to-transparent" />
+        <div
+          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 md:w-20 bg-linear-to-l ${fadeRightClass}`}
+        />
 
         {/* Animated track */}
         <div
@@ -141,7 +171,7 @@ export function TrustedOrganizations() {
             (organization, index) => (
               <div
                 key={`${organization.name}-${index}`}
-                className="flex h-full w-35 md:w-40 lg:w-42.5 shrink-0 items-center justify-center border-r border-white/15 px-6"
+                className={`flex h-full w-35 md:w-40 lg:w-42.5 shrink-0 items-center justify-center border-r px-6 ${borderClass}`}
               >
                 <Image
                   src={organization.logo}

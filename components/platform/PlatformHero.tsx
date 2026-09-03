@@ -37,30 +37,6 @@ export function PlatformHero() {
           </Button>
         </div>
       }
-      imageOverlay={
-        <div
-          className="
-            absolute
-            right-[-10px]
-            top-[38%]
-            flex
-            items-center
-            rounded-full
-            bg-[#18182F]
-            p-1
-            shadow-[0_6px_18px_rgba(0,0,0,0.35)]
-            md:right-[-14px]
-          "
-        >
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF1DBD] text-[20px] font-normal text-white">
-            A
-          </span>
-
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#087BEA] text-[20px] font-normal text-white">
-            C
-          </span>
-        </div>
-      }
     />
   );
 }
