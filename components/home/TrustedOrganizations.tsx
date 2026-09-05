@@ -82,10 +82,12 @@ const trustedOrganizations = [
 
 interface TrustedOrganizationsProps {
   variant?: "dark" | "light";
+  children?: React.ReactNode;
 }
 
 export function TrustedOrganizations({
   variant = "dark",
+  children,
 }: TrustedOrganizationsProps) {
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -183,6 +185,8 @@ export function TrustedOrganizations({
           )}
         </div>
       </div>
+      
+      {children}
     </section>
   );
 }

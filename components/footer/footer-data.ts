@@ -41,7 +41,7 @@ export const socialLinks = [
 export const companyLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/demo" },
   { label: "Blog", href: "/blog" },
   { label: "Terms of Use", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy-policy" },
