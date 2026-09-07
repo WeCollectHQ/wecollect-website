@@ -43,7 +43,7 @@ export const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/demo" },
   { label: "Blog", href: "/blog" },
-  { label: "Terms of Use", href: "/terms" },
+  { label: "Terms of Use", href: "/terms-of-use" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Cookie Policy", href: "/cookie-policy" },
 ];
