@@ -3,13 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/common/Container";
-import {
-  ArrowUpRightIcon,
-  SearchIcon,
-  ChevronLeft,
-  ChevronRight,
-} from "@/assets/svgs";
-
+import { ArrowUpRightIcon, SearchIcon } from "@/assets/svgs";
+import { Button } from "@/components/common/Button";
 import BlogPlaceholder from "@/assets/pngs/blog-placeholder.png";
 import { WordPressPost } from "@/lib/wordpress";
 
@@ -23,31 +18,77 @@ interface BlogPost {
   image: any;
 }
 
+function ArrowLeftIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.5 4.5L7 10L12.5 15.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
+function ArrowRightIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.5 4.5L13 10L7.5 15.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
-
-
-export function BlogList({ initialPosts = [] }: { initialPosts?: WordPressPost[] }) {
+export function BlogList({
+  initialPosts = [],
+}: {
+  initialPosts?: WordPressPost[];
+}) {
   // Dynamically generate tabs based on the actual categories returned by WordPress
-  const dynamicCategories = ["All", ...Array.from(new Set(initialPosts.flatMap(post => post.categories)))];
+  const dynamicCategories = [
+    "All",
+    ...Array.from(new Set(initialPosts.flatMap((post) => post.categories))),
+  ];
 
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9;
-  
+
   // Filter by category and search query
-  const filteredPosts = initialPosts.filter(post => {
-    const matchesCategory = activeCategory === "All" || post.categories.includes(activeCategory);
-    const matchesSearch = 
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+  const filteredPosts = initialPosts.filter((post) => {
+    const matchesCategory =
+      activeCategory === "All" || post.categories.includes(activeCategory);
+    const matchesSearch =
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const currentPosts = filteredPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
-
+  const currentPosts = filteredPosts.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage,
+  );
 
   return (
     <section className="py-20 bg-white">
@@ -66,26 +107,26 @@ export function BlogList({ initialPosts = [] }: { initialPosts?: WordPressPost[]
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
-                  setCurrentPage(1); // Reset page on search
+                  setCurrentPage(1);
                 }}
                 className="w-full bg-transparent text-[14px] text-[#0D0D26] placeholder:text-[#9898B3] outline-none"
               />
             </div>
-            <button
-              type="submit"
-              className="bg-[#4B4BDB] text-white px-8 py-2.5 text-[14px] font-medium hover:bg-[#3838C5] transition-colors flex items-center gap-2"
-            >
+            <Button type="submit" size="sm" className="mr-0.75">
               <SearchIcon />
               Search
-            </button>
+            </Button>
           </form>
 
           <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border border-[#E9E9EF] divide-y lg:divide-y-0 divide-x-0 lg:divide-x divide-[#E9E9EF]">
             {dynamicCategories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => { setActiveCategory(cat); setCurrentPage(1); }}
-                className={`py-3.5 text-[12px] font-medium text-center transition-colors border-x lg:border-none border-[#E9E9EF] ${
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setCurrentPage(1);
+                }}
+                className={`cursor-pointer py-3.5 text-[12px] font-medium text-center transition-colors border-x lg:border-none border-[#E9E9EF] ${
                   activeCategory === cat
                     ? "bg-[#C3C3F4] text-[#202064]"
                     : "bg-white text-[#686890] hover:bg-gray-50"
@@ -103,12 +144,18 @@ export function BlogList({ initialPosts = [] }: { initialPosts?: WordPressPost[]
             <div className="w-16 h-16 bg-[#EEEDFC] text-[#4B4BDB] rounded-full flex items-center justify-center mb-4">
               <SearchIcon />
             </div>
-            <h3 className="font-merriweather text-[20px] font-bold text-[#0D0D26] mb-2">No articles found</h3>
-            <p className="text-[14px] text-[#686890] max-w-[400px]">
-              We couldn't find any articles matching your search or selected category. Try adjusting your filters.
+            <h3 className="font-merriweather text-[20px] font-bold text-[#0D0D26] mb-2">
+              No articles found
+            </h3>
+            <p className="text-[14px] text-[#686890] max-w-100">
+              We couldn't find any articles matching your search or selected
+              category. Try adjusting your filters.
             </p>
-            <button 
-              onClick={() => { setActiveCategory("All"); setSearchQuery(""); }}
+            <button
+              onClick={() => {
+                setActiveCategory("All");
+                setSearchQuery("");
+              }}
               className="mt-6 text-[#4B4BDB] font-semibold text-[14px] hover:underline"
             >
               Clear all filters
@@ -169,30 +216,30 @@ export function BlogList({ initialPosts = [] }: { initialPosts?: WordPressPost[]
         {/* Pagination */}
         {totalPages > 1 && (
           <div className="mt-16 flex items-center justify-center gap-2">
-            <button 
-              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className={`flex h-10 w-10 items-center justify-center ${currentPage === 1 ? 'bg-[#B9B9CC] cursor-not-allowed' : 'bg-[#4B4BDB] hover:bg-[#3838C5] transition-colors'} text-white`}
+              className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:bg-[#B9B9CC] disabled:hover:bg-[#B9B9CC]"
             >
-              <ChevronLeft />
+              <ArrowLeftIcon />
             </button>
-            
+
             {Array.from({ length: totalPages }).map((_, i) => (
-              <button 
+              <button
                 key={i}
                 onClick={() => setCurrentPage(i + 1)}
-                className={`flex h-10 w-10 items-center justify-center ${currentPage === i + 1 ? 'bg-[#4B4BDB] text-white' : 'border border-[#E9E9EF] bg-white text-[#686890] hover:bg-gray-50'} font-medium text-[14px] transition-colors`}
+                className={`flex h-10 w-10 items-center justify-center ${currentPage === i + 1 ? "bg-[#4B4BDB] text-white" : "border border-[#E9E9EF] bg-white text-[#686890] hover:bg-gray-50"} font-medium text-[14px] transition-colors`}
               >
                 {i + 1}
               </button>
             ))}
 
-            <button 
-              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+            <button
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className={`flex h-10 w-10 items-center justify-center ${currentPage === totalPages ? 'bg-[#B9B9CC] cursor-not-allowed' : 'bg-[#4B4BDB] hover:bg-[#3838C5] transition-colors'} text-white`}
+              className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:bg-[#B9B9CC] disabled:hover:bg-[#B9B9CC]"
             >
-              <ChevronRight />
+              <ArrowRightIcon />
             </button>
           </div>
         )}
