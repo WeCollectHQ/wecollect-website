@@ -120,7 +120,7 @@ export function FAQ() {
 
             {/* See all */}
             <a
-              href="/faq"
+              href="/faqs"
               className="mt-7 inline-flex items-center gap-2 px-3 text-[13px] font-medium text-[#4B4BDB]"
             >
               <span>See all</span>

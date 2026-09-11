@@ -178,14 +178,14 @@ export function TrustedOrganizations({
                 <Image
                   src={organization.logo}
                   alt={organization.name}
-                  className="h-auto max-h-7 w-auto max-w-27.5 object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                  className="h-auto max-h-12 w-auto max-w-40 object-contain"
                 />
               </div>
             ),
           )}
         </div>
       </div>
-      
+
       {children}
     </section>
   );

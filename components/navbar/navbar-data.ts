@@ -7,8 +7,8 @@ export const links = [
     label: "Agent Network",
     href: "/agent-network",
   },
-  {
-    label: "Blog",
-    href: "/blog",
-  },
+  // {
+  //   label: "Blog",
+  //   href: "/blog",
+  // },
 ];

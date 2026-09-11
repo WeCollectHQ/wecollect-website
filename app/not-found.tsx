@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { Button } from "@/components/common/Button";
 import { ArrowUpRightIcon } from "@/assets/svgs";
@@ -14,7 +13,7 @@ export default function NotFound() {
         }
       `}</style>
 
-      <div className="relative flex-1 flex flex-col items-center justify-center text-center p-6 text-white min-h-[500px]">
+      <div className="relative flex-1 flex flex-col items-center justify-center text-center p-6 text-white min-h-125">
         {/* Background */}
         <div className="absolute inset-0 z-0 bg-[#202064] overflow-hidden">
           <Image
@@ -27,8 +26,8 @@ export default function NotFound() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-[800px] mx-auto flex flex-col items-center justify-center">
-          <div className="relative flex flex-col items-center justify-center mb-6 w-full h-[100px] md:h-[150px]">
+        <div className="relative z-10 w-full max-w-2800 mx-auto flex flex-col items-center justify-center">
+          <div className="relative flex flex-col items-center justify-center mb-6 w-full h-25 md:h-37.5">
             {/* Huge 404 Watermark */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-merriweather font-bold text-white/[0.07] select-none leading-none tracking-tight text-[160px] md:text-[240px] lg:text-[320px] z-0 pointer-events-none">
               404
@@ -39,7 +38,7 @@ export default function NotFound() {
             </h2>
           </div>
 
-          <p className="relative z-10 text-[15px] md:text-[17px] text-[#BDBDD7] max-w-[500px] leading-[1.6] mb-10">
+          <p className="relative z-10 text-[15px] md:text-[17px] text-[#BDBDD7] max-w-125 leading-[1.6] mb-10">
             The page you're looking for doesn't exist or has moved. Let's get
             you back to where your field operations are happening.
           </p>
@@ -47,7 +46,7 @@ export default function NotFound() {
           <div className="relative z-10">
             <Button
               href="/"
-              className="!bg-white !text-[#4747D6] hover:!bg-[#FDE93D] hover:!text-[#0D0D26] px-8 md:px-10"
+              className="bg-white! text-[#4747D6]! hover:bg-[#FDE93D]! hover:text-[#0D0D26]! px-8 md:px-10"
               icon={<ArrowUpRightIcon />}
             >
               Return to Homepage
