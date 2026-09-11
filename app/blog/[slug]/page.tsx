@@ -201,12 +201,13 @@ export default async function BlogDetailPage(props: { params: Promise<{ slug: st
                   className="flex-1 bg-transparent px-3 text-[13px] text-[#0D0D26] placeholder:text-[#9898B3] outline-none"
                   required
                 />
-                <button 
+                <Button 
                   type="button"
-                  className="bg-[#4B4BDB] text-white px-5 py-2 font-medium text-[13px] hover:bg-[#3838C5] transition-colors"
+                  variant="primary"
+                  className="!px-5 !py-2 !h-auto !text-[13px]"
                 >
                   Subscribe
-                </button>
+                </Button>
               </form>
 
               <p className="text-[11px] text-[#9898B3]">
