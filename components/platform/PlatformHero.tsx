@@ -28,12 +28,12 @@ export function PlatformHero() {
           </Button>
 
           <Button
-            href="/platform/features"
+            href="/pricing"
             variant="outline-white"
             size="lg"
             className="shrink-0 whitespace-nowrap"
           >
-            Explore features
+            Explore Price
           </Button>
         </div>
       }
