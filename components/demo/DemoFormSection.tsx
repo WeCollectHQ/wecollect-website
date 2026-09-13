@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useActionState, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { submitDemoForm } from "@/app/actions/demo";
 import { Container } from "@/components/common/Container";
 import { 
   CalendarClockIcon, 
@@ -11,6 +12,19 @@ import {
 } from "@/assets/svgs";
 
 export function DemoFormSection() {
+  const [state, action, isPending] = useActionState(submitDemoForm, null);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state?.success) {
+      setShowSuccess(true);
+      formRef.current?.reset();
+      const timer = setTimeout(() => setShowSuccess(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [state]);
+
   return (
     <section id="demo-form" className="relative w-full scroll-mt-16">
       {/* Full-bleed split backgrounds */}
@@ -97,15 +111,17 @@ export function DemoFormSection() {
 
         {/* RIGHT COLUMN */}
         <div className="py-16 md:pl-12 lg:pl-24 lg:py-24 xl:pl-32 flex flex-col justify-center border-t md:border-t-0 md:border-l border-[#E7E7EF]">
-          <form className="max-w-[440px] w-full" onSubmit={(e) => e.preventDefault()}>
+          <form className="max-w-[440px] w-full" action={action} ref={formRef}>
             
             <div className="mb-6">
               <label className="block text-[14px] font-semibold text-[#0D0D26] mb-2">
                 Full Name <span className="text-[#FF5B5B]">*</span>
               </label>
               <input 
+                name="name"
                 type="text" 
                 placeholder="Enter name..." 
+                disabled={isPending}
                 className="w-full bg-[#F8F9FB] border border-[#E7E7EF] rounded-sm px-4 py-3 text-[14px] text-[#0D0D26] focus:outline-none focus:border-[#4B4BDB] placeholder-[#A7A7C6]"
                 required
               />
@@ -116,8 +132,10 @@ export function DemoFormSection() {
                 Name of Organisation <span className="text-[#FF5B5B]">*</span>
               </label>
               <input 
+                name="organization"
                 type="text" 
                 placeholder="Enter name of organisation/team..." 
+                disabled={isPending}
                 className="w-full bg-[#F8F9FB] border border-[#E7E7EF] rounded-sm px-4 py-3 text-[14px] text-[#0D0D26] focus:outline-none focus:border-[#4B4BDB] placeholder-[#A7A7C6]"
                 required
               />
@@ -128,8 +146,10 @@ export function DemoFormSection() {
                 Email <span className="text-[#FF5B5B]">*</span>
               </label>
               <input 
+                name="email"
                 type="email" 
                 placeholder="you@email.com" 
+                disabled={isPending}
                 className="w-full bg-[#F8F9FB] border border-[#E7E7EF] rounded-sm px-4 py-3 text-[14px] text-[#0D0D26] focus:outline-none focus:border-[#4B4BDB] placeholder-[#A7A7C6]"
                 required
               />
@@ -140,6 +160,8 @@ export function DemoFormSection() {
                 Data Need <span className="text-[#FF5B5B]">*</span>
               </label>
               <textarea 
+                name="dataNeed"
+                disabled={isPending}
                 placeholder="Briefly describe your use case — field team size, geography, data type..." 
                 rows={4}
                 className="w-full bg-[#F8F9FB] border border-[#E7E7EF] rounded-sm px-4 py-3 text-[14px] text-[#0D0D26] focus:outline-none focus:border-[#4B4BDB] placeholder-[#A7A7C6] resize-none"
@@ -154,21 +176,21 @@ export function DemoFormSection() {
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 flex-wrap">
                 <label className="flex items-center gap-2 cursor-pointer group">
                   <div className="relative flex items-center justify-center w-5 h-5">
-                    <input type="radio" name="fieldTeam" className="peer appearance-none w-5 h-5 rounded-full border border-[#C5C5D6] checked:border-[#4B4BDB] cursor-pointer transition-colors" />
+                    <input type="radio" name="fieldTeam" value="Yes - I have a team" disabled={isPending} className="peer appearance-none w-5 h-5 rounded-full border border-[#C5C5D6] checked:border-[#4B4BDB] cursor-pointer transition-colors" />
                     <div className="absolute w-2.5 h-2.5 rounded-full bg-[#4B4BDB] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
                   </div>
                   <span className="text-[13px] text-[#5D5D88] group-hover:text-[#0D0D26] transition-colors">Yes — I have a team</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer group">
                   <div className="relative flex items-center justify-center w-5 h-5">
-                    <input type="radio" name="fieldTeam" defaultChecked className="peer appearance-none w-5 h-5 rounded-full border border-[#C5C5D6] checked:border-[#4B4BDB] cursor-pointer transition-colors" />
+                    <input type="radio" name="fieldTeam" value="No - I need yours" defaultChecked disabled={isPending} className="peer appearance-none w-5 h-5 rounded-full border border-[#C5C5D6] checked:border-[#4B4BDB] cursor-pointer transition-colors" />
                     <div className="absolute w-2.5 h-2.5 rounded-full bg-[#4B4BDB] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
                   </div>
                   <span className="text-[13px] font-medium text-[#0D0D26]">No — I need yours</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer group">
                   <div className="relative flex items-center justify-center w-5 h-5">
-                    <input type="radio" name="fieldTeam" className="peer appearance-none w-5 h-5 rounded-full border border-[#C5C5D6] checked:border-[#4B4BDB] cursor-pointer transition-colors" />
+                    <input type="radio" name="fieldTeam" value="Hybrid model" disabled={isPending} className="peer appearance-none w-5 h-5 rounded-full border border-[#C5C5D6] checked:border-[#4B4BDB] cursor-pointer transition-colors" />
                     <div className="absolute w-2.5 h-2.5 rounded-full bg-[#4B4BDB] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
                   </div>
                   <span className="text-[13px] text-[#5D5D88] group-hover:text-[#0D0D26] transition-colors">Hybrid model</span>
@@ -178,10 +200,14 @@ export function DemoFormSection() {
 
             <button 
               type="submit" 
-              className="w-full bg-[#4B4BDB] hover:bg-[#3f3fba] text-white font-medium py-3.5 px-4 rounded-sm transition-colors"
+              disabled={isPending}
+              className="w-full bg-[#4B4BDB] hover:bg-[#3f3fba] text-white font-medium py-3.5 px-4 rounded-sm transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              Send Message
+              {isPending ? "Sending..." : "Send Message"}
             </button>
+            
+            {state?.error && <p className="text-[#FF5B5B] text-[13px] mt-3 font-medium">{state.error}</p>}
+            {showSuccess && <p className="text-[#4ade80] text-[13px] mt-3 font-medium">{state?.message}</p>}
             
           </form>
         </div>
