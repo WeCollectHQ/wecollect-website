@@ -44,7 +44,7 @@ export function HomeHero() {
 
         {/* Buttons */}
         <div className="mt-6 md:mt-8 flex flex-col-reverse md:flex-row items-center justify-center gap-3">
-          <Button href="/signup" variant="secondary" size="lg">
+          <Button href="https://app.wecollect.tech/register" variant="secondary" size="lg">
             Get Started for free
           </Button>
 

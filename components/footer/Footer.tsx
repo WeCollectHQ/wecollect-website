@@ -99,7 +99,7 @@ export function Footer() {
 
             {/* Auth buttons */}
             <div className="mt-6 flex items-center gap-4">
-              <Button href="/signup" variant="secondary" size="md">
+              <Button href="https://app.wecollect.tech/register" variant="secondary" size="md">
                 Sign Up
               </Button>
 
