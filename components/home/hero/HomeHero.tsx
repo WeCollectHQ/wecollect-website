@@ -35,7 +35,7 @@ export function HomeHero() {
         </h1>
 
         {/* Description */}
-        <p className="mt-6 md:mt-8 text-[15px] text-[#1E1E5A] md:text-[20px] font-medium leading-[1.6] md:leading-[1.7] max-w-[950px]">
+        <p className="mt-6 md:mt-8 text-[15px] text-[#1E1E5A] md:text-[20px] font-medium leading-[1.6] md:leading-[1.7] max-w-237.5">
           WeCollect enables organizations data collection and field operations
           across Africa, combining modern technologies and AI-powered analytics
           for faster reporting, actionable insights, and better decisions while
@@ -43,7 +43,7 @@ export function HomeHero() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-6 md:mt-8 flex items-center justify-center gap-3">
+        <div className="mt-6 md:mt-8 flex flex-col-reverse md:flex-row items-center justify-center gap-3">
           <Button href="/signup" variant="secondary" size="lg">
             Get Started for free
           </Button>

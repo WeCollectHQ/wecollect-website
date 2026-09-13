@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { solutionLinks } from "@/constants/navigation";
 import { links } from "./navbar-data";
+import { ChevronDownIcon } from "@/assets/svgs";
 
 export function NavbarLinks() {
   const pathname = usePathname();
@@ -50,30 +51,18 @@ export function NavbarLinks() {
           }`}
           aria-expanded={solutionsOpen}
         >
-          <span>Solutions</span>
+          <span className="relative">
+            Solutions
+            <span
+              className={`absolute -bottom-2 left-0 h-0.75 w-full origin-left bg-[#686890] transition-transform duration-200 ${
+                isSolutionsActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+              }`}
+            />
+          </span>
 
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
+          <ChevronDownIcon
             className={`transition-transform duration-200 ${
               solutionsOpen ? "rotate-180" : ""
-            }`}
-          >
-            <path
-              d="M3.5 5.25L7 8.75L10.5 5.25"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          
-          {/* Top-level underline for Solutions active state */}
-          <span
-            className={`absolute -bottom-2 left-0 h-0.75 w-full origin-left bg-[#686890] transition-transform duration-200 ${
-              isSolutionsActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
             }`}
           />
         </button>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SolutionHero } from "@/components/common/SolutionHero";
 import BlogHeroImage from "@/assets/pngs/blog-hero.png";
 import { Button } from "@/components/common/Button";
+import { NewsletterForm } from "@/components/common/NewsletterForm";
 
 export function BlogHero() {
   return (
@@ -24,20 +25,12 @@ export function BlogHero() {
             Subscribe to WeCollect newsletters
           </label>
 
-          <form
-            className="flex items-center w-full border border-[#E9E9EF] bg-[#151540] p-1 pl-4"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              placeholder="Enter your email..."
-              className="flex-1 bg-transparent text-[14px] text-white placeholder:text-[#686890] outline-none"
-              required
-            />
-            <Button type="submit" variant="secondary" size="sm">
-              Subscribe
-            </Button>
-          </form>
+          <NewsletterForm 
+            formClassName="flex items-center w-full border border-[#E9E9EF] bg-[#151540] p-1 pl-4"
+            inputClassName="flex-1 bg-transparent text-[14px] text-white placeholder:text-[#686890] outline-none"
+            buttonVariant="secondary"
+            buttonSize="sm"
+          />
 
           <p className="text-[11px] text-[#9898B3] mt-3">
             By subscribing, I agree to WeCollect{" "}

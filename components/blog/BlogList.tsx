@@ -3,60 +3,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/common/Container";
-import { ArrowUpRightIcon, SearchIcon } from "@/assets/svgs";
+import {
+  ArrowUpRightIcon,
+  SearchIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+} from "@/assets/svgs";
 import { Button } from "@/components/common/Button";
 import BlogPlaceholder from "@/assets/pngs/blog-placeholder.png";
 import { WordPressPost } from "@/lib/wordpress";
-
-interface BlogPost {
-  id: string;
-  category: string;
-  readTime: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  image: any;
-}
-
-function ArrowLeftIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M12.5 4.5L7 10L12.5 15.5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ArrowRightIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7.5 4.5L13 10L7.5 15.5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export function BlogList({
   initialPosts = [],
@@ -178,7 +133,7 @@ export function BlogList({
                 </div>
 
                 <div className="flex items-center justify-between mb-4">
-                  <span className="bg-[#EEEDFC] text-[#4B4BDB] text-[11px] font-semibold px-2.5 py-1 rounded-[4px]">
+                  <span className="bg-[#EEEDFC] text-[#4B4BDB] text-[11px] font-semibold px-2.5 py-1 rounded-sm">
                     {post.categories[0] || "Blog"}
                   </span>
                   <span className="text-[11px] font-medium text-[#9898B3]">

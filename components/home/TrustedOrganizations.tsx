@@ -141,10 +141,10 @@ export function TrustedOrganizations({
     >
       {/* Label */}
       <div
-        className={`flex h-10 items-center justify-center border-b ${borderClass}`}
+        className={`flex h-10 items-center justify-center border-b pb-10 ${borderClass}`}
       >
         <p
-          className={`text-[3.82px] md:text-[8px] font-medium uppercase leading-[5.46px] md:leading-5 ${textClass}`}
+          className={`text-[8px] md:text-[14px] font-medium uppercase leading-[5.46px] md:leading-5 ${textClass}`}
         >
           Trusted by leading organisations
         </p>

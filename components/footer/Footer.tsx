@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import { NewsletterForm } from "@/components/common/NewsletterForm";
 import { Container } from "@/components/Container";
 import Image from "next/image";
 import { FooterColumn } from "./FooterColumn";
@@ -113,17 +114,13 @@ export function Footer() {
                 Subscribe to WeCollect newsletters
               </p>
 
-              <form className="mt-2 flex h-10 max-w-78.75 items-center bg-[#151540] border border-[#E9E9EF]">
-                <input
-                  type="email"
-                  placeholder="Enter your email..."
-                  className="min-w-0 flex-1 bg-transparent px-2 text-[12px] font-medium leading-5 text-white outline-none placeholder:text-[#686890]"
-                />
-
-                <Button type="submit" size="xs" className="mr-0.75">
-                  Subscribe
-                </Button>
-              </form>
+              <NewsletterForm 
+                formClassName="mt-2 flex h-10 max-w-78.75 items-center bg-[#151540] border border-[#E9E9EF]"
+                inputClassName="min-w-0 flex-1 bg-transparent px-2 text-[12px] font-medium leading-5 text-white outline-none placeholder:text-[#686890]"
+                buttonVariant="primary"
+                buttonSize="xs"
+                buttonClassName="mr-0.75"
+              />
 
               <p className="mt-2 text-[12px] font-medium leading-5 text-[#B9B9CC]">
                 By subscribing, I agree to WeCollect{" "}
