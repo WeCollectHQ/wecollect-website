@@ -1,4 +1,4 @@
-import { HomeHero } from "@/components/home/hero/HomeHero";
+import { HomeHero } from "@/components/home/HomeHero";
 import { DataModality } from "@/components/home/DataModality";
 import { DeploymentModels } from "@/components/home/DeploymentModels";
 import { FAQ } from "@/components/home/FAQ";
