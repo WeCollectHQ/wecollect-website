@@ -18,7 +18,7 @@ export function DemoHero() {
       actions={
         <div className="flex flex-nowrap items-center gap-3">
           <Button
-            href="/contact-us"
+            href="#demo-form"
             variant="secondary"
             size="lg"
             icon={<ArrowUpRightIcon />}

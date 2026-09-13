@@ -12,7 +12,7 @@ import {
 
 export function DemoFormSection() {
   return (
-    <section className="relative w-full">
+    <section id="demo-form" className="relative w-full scroll-mt-16">
       {/* Full-bleed split backgrounds */}
       <div className="absolute inset-0 flex flex-col md:flex-row pointer-events-none z-0">
         <div className="w-full md:w-1/2 bg-[#F8F9FA]"></div>
