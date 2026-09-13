@@ -235,7 +235,7 @@ export function PricingContent() {
                   </div>
 
                   <Button
-                    href="https://app.wecollect.tech/register"
+                    href={p.cta === "Talk to us" ? "/contact-us" : "https://app.wecollect.tech/register"}
                     variant={p.featured ? "primary" : "outline"}
                     className="w-full mb-8 font-semibold"
                     size="lg"
