@@ -35,6 +35,12 @@ function stripHtml(value = "") {
     .replace(/<[^>]*>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
+    .replace(/&#8211;/g, "-")
+    .replace(/&#8212;/g, "--")
+    .replace(/&hellip;/g, "...")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -86,7 +92,7 @@ export function mapWordPressPost(post: any): WordPressPost {
     path: slug ? `/blog/${slug}` : "#",
     wordpressUrl: post?.link || "#",
     content: post?.content?.rendered || "",
-    excerpt: post?.excerpt?.rendered || "",
+    excerpt: stripHtml(post?.excerpt?.rendered || ""),
     authorName,
     categories: categories.length > 0 ? categories : ["Blog"],
     readingTime,

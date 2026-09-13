@@ -145,7 +145,7 @@ export function BlogList({
                   {post.title}
                 </h3>
 
-                <p className="text-[13px] lg:text-[14px] text-[#686890] leading-[1.6] mb-8 flex-1 line-clamp-3">
+                <p className="text-[13px] lg:text-[14px] text-[#686890] leading-[1.6] mb-8 line-clamp-3">
                   {post.excerpt}
                 </p>
 
