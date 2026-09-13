@@ -3,7 +3,7 @@ import { WecollectLogo } from "../Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowUpRightIcon, OpenMenuIcon, CloseMenuIcon } from "@/assets/svgs";
+import { ArrowUpRightIcon, OpenMenuIcon, CloseMenuIcon, ChevronDownIcon } from "@/assets/svgs";
 import { solutionLinks } from "@/constants/navigation";
 import { Button } from "@/components/Button";
 
@@ -100,24 +100,12 @@ export function NavbarMobile() {
                 >
                   <span>Solutions</span>
 
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
+                  <ChevronDownIcon
                     aria-hidden="true"
                     className={`transition-transform duration-200 ${
                       solutionsOpen ? "rotate-180" : ""
                     } ${isSolutionsActive ? "text-[#FFF000]" : "text-[#7777A7]"}`}
-                  >
-                    <path
-                      d="M3.5 5.25L7 8.75L10.5 5.25"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  />
                 </button>
 
                 {solutionsOpen && (
@@ -178,7 +166,7 @@ export function NavbarMobile() {
             {/* Bottom actions */}
             <div className="mt-auto grid grid-cols-2 gap-3.25 h-11.5">
               <Button
-                href="/signin"
+                href="https://app.wecollect.tech/login"
                 size="md"
                 variant="outline-white"
                 onClick={() => setOpen(false)}

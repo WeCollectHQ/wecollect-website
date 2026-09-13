@@ -7,6 +7,7 @@ import {
   OfflineFirstIcon,
   MultiplatformIcon,
   EnterpriseSecurityIcon,
+  ArrowRightSmallIcon,
 } from "@/assets/svgs";
 import PlatformPhoneImage from "@/assets/pngs/platform-phone-image.png";
 
@@ -126,19 +127,7 @@ export function PlatformArchitecture() {
                   <div className="ml-3 flex flex-1 items-center">
                     <div className="h-[6px] flex-1 bg-[#E8E8EF]" />
 
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      className="shrink-0"
-                    >
-                      <path
-                        d="M1 7H12M12 7L7 2M12 7L7 12"
-                        stroke="#E8E8EF"
-                        strokeWidth="2"
-                      />
-                    </svg>
+                    <ArrowRightSmallIcon className="shrink-0 text-[#E8E8EF]" />
                   </div>
                 )}
               </div>

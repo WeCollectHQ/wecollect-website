@@ -6,72 +6,72 @@ import { Container } from "@/components/common/Container";
 const allFaqs = [
   {
     question: "What is WeCollect app used for?",
-    answer: "The WeCollect App helps you and your business collect data on different disciplines and query across Africa.",
+    answer: "The Wecollect App helps you and your business collect data on different disciplines and query across Nigeria.",
   },
   {
     question: "How do I create an account?",
-    answer: "You can create an account by signing up on the WeCollect platform and following the registration steps.",
+    answer: "Firstly, install the WeCollect app on your android or iOS mobile phone. Create an account with just your full name and phone number.",
   },
   {
     question: "Can I customize the questions for my project?",
-    answer: "Yes. You can customize your questions and configure your data collection workflow to fit your project.",
+    answer: "Yes you can customize the questions on the platform to suit your project query.",
   },
   {
     question: "Is my data secure and private?",
-    answer: "WeCollect is designed to keep your collected data secure and accessible only to authorized users.",
+    answer: "Yes your data is secure on the platform.",
   },
   {
     question: "Can I collaborate with others on a data collection project?",
-    answer: "Yes. You can work with other members of your team on your data collection projects.",
+    answer: "Yes you can collaborate with others. All you have to do is share your organisation ID with your field agents who would be collecting your data.",
   },
   {
     question: "How do I add different types of questions (multiple-choice, open-ended, etc)?",
-    answer: "You can use our form builder to select from a variety of question types including multiple-choice, text inputs, photo uploads, and GPS locations.",
+    answer: "Our template is pre-designed in a flexible way that you could customised your respondent’s response type as “short answer”, “paragraph”, multiple-choice, date, time, etc.",
   },
   {
     question: "Is there an option for agents to save progress and continue later?",
-    answer: "Yes, field agents can save incomplete responses locally on their device and resume them before final submission.",
+    answer: "Yes. Data is automatically saved on our server in real time. This makes it possible for agents to continue from where they left off when they return.",
   },
   {
     question: "How do I share my project with participants?",
-    answer: "You can assign projects directly to specific field agents or share unique links for open data collection campaigns.",
+    answer: "You can share your project to your field agents by adding the agents you wish to use on your project. WeCollect would then send them a link to your projects. On installing WeCollect mobile app, field agents would have access to your project.",
   },
   {
     question: "Can I export the collected data in different formats (excel. CSV. etc)?",
-    answer: "Absolutely. All collected data can be exported in standard formats like CSV and Excel for further analysis.",
+    answer: "Yes. your data report can be exported in CSV format from the project manager’s dashboard.",
   },
   {
     question: "Is there a limit to the number of responses I can collect?",
-    answer: "Response limits depend on your current subscription plan. Enterprise plans offer unlimited responses.",
+    answer: "The minimum or maximum number of responses to be collected is determined by the project owner/manager.",
   },
   {
     question: "Is there an offline mode for data collection?",
-    answer: "Yes. The WeCollect mobile app allows agents to collect data offline and automatically syncs when an internet connection is restored.",
+    answer: "Yes. Field agents can collect data offline or in situations where the network is poor. Data is automatically submitted to the server when the network is restored.",
   },
   {
     question: "How do I view the collected data within the app?",
-    answer: "You can view incoming data in real-time through your project dashboard, which includes a tabular view and location map.",
+    answer: "You can view collected data within the app from the “Data” page on the slide menu on the mobile app.",
   },
   {
     question: "Are there any analytics or reporting features available?",
-    answer: "Yes, the dashboard provides built-in analytics, charts, and filtering tools to help you interpret your field data instantly.",
+    answer: "Yes. There are basic analytics on the project manager’s dashboard which gives a comprehensive report of the data that has been collected.",
   },
   {
     question: "What happens if I accidentally delete a survey or data?",
-    answer: "Deleted data can sometimes be recovered within a 30-day window by contacting our support team, but we highly recommend exporting data before deletion.",
+    answer: "Write Us at info@wecollect.tech and we will recover the data you deleted for you.",
   },
   {
     question: "Is the app available on both iOS and Android?",
-    answer: "Yes, the WeCollect field agent app is available for download on both the Apple App Store and Google Play Store.",
+    answer: "The mobile apps are available for download on Google play and App stores.",
   },
   {
-    question: "How do I manage field agents' responses and data?",
-    answer: "Administrators can review, approve, or reject agent submissions directly from the dashboard to maintain data quality.",
+    question: "How do I manage field agents’ responses and data?",
+    answer: "You can decide to approve, decline or export submitted data.",
   },
   {
     question: "Is there a customer support or help centre available?",
-    answer: "Yes, we offer 24/7 support for enterprise clients, alongside a comprehensive help center with guides and tutorials for all users.",
-  }
+    answer: "In a case of incorrect or incomplete data, the project manager can decline such data.",
+  },
 ];
 
 export function FAQList() {

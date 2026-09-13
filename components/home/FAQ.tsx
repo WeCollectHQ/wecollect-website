@@ -10,28 +10,23 @@ import FAQImage from "@/assets/pngs/faq-image.png";
 const faqs = [
   {
     question: "What is WeCollect app used for?",
-    answer:
-      "The WeCollect App helps you and your business collect data on different disciplines and query across Africa.",
+    answer: "The Wecollect App helps you and your business collect data on different disciplines and query across Nigeria.",
   },
   {
     question: "How do I create an account?",
-    answer:
-      "You can create an account by signing up on the WeCollect platform and following the registration steps.",
+    answer: "Firstly, install the WeCollect app on your android or iOS mobile phone. Create an account with just your full name and phone number.",
   },
   {
     question: "Can I customize the questions for my project?",
-    answer:
-      "Yes. You can customize your questions and configure your data collection workflow to fit your project.",
+    answer: "Yes you can customize the questions on the platform to suit your project query.",
   },
   {
     question: "Is my data secure and private?",
-    answer:
-      "WeCollect is designed to keep your collected data secure and accessible only to authorized users.",
+    answer: "Yes your data is secure on the platform.",
   },
   {
     question: "Can I collaborate with others on a data collection project?",
-    answer:
-      "Yes. You can work with other members of your team on your data collection projects.",
+    answer: "Yes you can collaborate with others. All you have to do is share your organisation ID with your field agents who would be collecting your data.",
   },
 ];
 

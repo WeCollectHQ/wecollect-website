@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Container } from "@/components/common/Container";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/assets/svgs";
 
 const testimonials = [
   {
@@ -36,46 +37,6 @@ function StarRating() {
         </span>
       ))}
     </div>
-  );
-}
-
-function ArrowLeftIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M12.5 4.5L7 10L12.5 15.5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ArrowRightIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7.5 4.5L13 10L7.5 15.5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }
 
