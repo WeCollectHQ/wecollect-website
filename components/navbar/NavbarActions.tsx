@@ -5,7 +5,7 @@ import { ArrowUpRightIcon } from "@/assets/svgs";
 export function NavbarActions() {
   return (
     <div className="hidden items-center gap-4 lg:flex">
-      {/* <Link href="/signin">
+      {/* <Link href="https://app.wecollect.tech/login">
         <Button variant="outline" size="md">
           Sign in
         </Button>

@@ -103,7 +103,7 @@ export function Footer() {
                 Sign Up
               </Button>
 
-              <Button href="/signin" variant="outline-white" size="md">
+              <Button href="https://app.wecollect.tech/login" variant="outline-white" size="md">
                 Sign In
               </Button>
             </div>

@@ -166,7 +166,7 @@ export function NavbarMobile() {
             {/* Bottom actions */}
             <div className="mt-auto grid grid-cols-2 gap-3.25 h-11.5">
               <Button
-                href="/signin"
+                href="https://app.wecollect.tech/login"
                 size="md"
                 variant="outline-white"
                 onClick={() => setOpen(false)}
