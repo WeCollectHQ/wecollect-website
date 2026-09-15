@@ -34,7 +34,7 @@ export function HomeHero() {
         </h1>
 
         {/* Description */}
-        <p className="mt-6 md:mt-8 text-[15px] text-[#1E1E5A] md:text-[20px] font-medium leading-[1.6] md:leading-[1.7] max-w-237.5">
+        <p className="mt-6 md:mt-8 text-[15px] text-[#686890] md:text-[20px] font-medium leading-[1.6] md:leading-[1.7] max-w-237.5">
           Wecollect enables organizations data collection and field operations
           across Africa, combining modern technologies and AI-powered analytics
           for faster reporting, actionable insights, and better decisions while
