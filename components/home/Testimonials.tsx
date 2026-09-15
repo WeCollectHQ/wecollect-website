@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "@/components/common/Container";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/assets/svgs";
 
@@ -41,21 +41,29 @@ function StarRating() {
 }
 
 const statsData = [
-  { value: "98%", label: "Trained & Verified Agents" },
-  { value: "37", label: "States Covered" },
-  { value: "300+", label: "LGAs" },
+  { value: "43", label: "Delivered Projects" },
+  { value: "Over 20", label: "Organizations" },
+  { value: "100%", label: "Delivery" },
 ];
 
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const previous = () => {
-    setActiveIndex((current) => Math.max(current - 1, 0));
+    setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length);
   };
 
   const next = () => {
-    setActiveIndex((current) => Math.min(current + 1, testimonials.length - 1));
+    setActiveIndex((current) => (current + 1) % testimonials.length);
   };
+
+  // Auto-play effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [activeIndex]);
 
   // Reusable Carousel Track
   const renderTrack = () => (
@@ -150,18 +158,16 @@ export function Testimonials() {
               <button
                 type="button"
                 onClick={previous}
-                disabled={activeIndex === 0}
                 aria-label="Previous testimonial"
-                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:bg-[#B9B9CC] disabled:hover:bg-[#B9B9CC]"
+                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5]"
               >
                 <ArrowLeftIcon />
               </button>
               <button
                 type="button"
                 onClick={next}
-                disabled={activeIndex === testimonials.length - 1}
                 aria-label="Next testimonial"
-                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:bg-[#B9B9CC] disabled:hover:bg-[#B9B9CC]"
+                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5]"
               >
                 <ArrowRightIcon />
               </button>
