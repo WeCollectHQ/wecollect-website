@@ -22,7 +22,7 @@ const steps = [
     number: "02",
     title: "Assign to your team or ours",
     description:
-      "Deploy your own field team or activate trained WeCollect agents and monitor activity from day one.",
+      "Deploy your own field team or activate trained Wecollect agents and monitor activity from day one.",
     icon: AssignTeamIcon,
   },
   {
@@ -94,7 +94,7 @@ export function HowItWorks() {
                       {step.title}
                     </h3>
 
-                    <p className="mt-2 max-w-[430px] text-[9px] text-[#686890] md:text-[12px] font-medium leading-3.5 md:leading-5">
+                    <p className="mt-2 max-w-107.5 text-[9px] text-[#686890] md:text-[12px] font-medium leading-3.5 md:leading-5">
                       {step.description}
                     </p>
                   </div>
@@ -104,10 +104,10 @@ export function HowItWorks() {
           </div>
 
           {/* Image */}
-          <div className="relative min-h-[360px] md:min-h-0">
+          <div className="relative min-h-[480px] md:min-h-0">
             <Image
               src={HowItWorksImage}
-              alt="WeCollect field operations"
+              alt="Wecollect field operations"
               fill
               className="object-center"
             />
