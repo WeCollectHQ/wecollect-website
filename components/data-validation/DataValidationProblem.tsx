@@ -78,7 +78,7 @@ export function DataValidationProblem() {
       problems={problems}
       problemImage={DataValidationProblemImage}
       problemImageAlt="Field agent validating GPS data"
-      featureTitle="How WeCollect solves verification & reporting"
+      featureTitle="How Wecollect solves verification & reporting"
       features={features}
     />
   );

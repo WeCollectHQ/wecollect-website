@@ -10,7 +10,7 @@ export function ClientProof() {
       logoAlt="IITA"
       image={IitaImage}
       imageAlt="IITA field deployment"
-      description="WeCollect's platform handled the full data collection workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
+      description="Wecollect's platform handled the full data collection workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
     />
   );
 }

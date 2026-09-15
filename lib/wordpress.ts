@@ -1,4 +1,9 @@
-const WORDPRESS_BASE_URL = (process.env.WORDPRESS_BASE_URL || "https://blog.wecollect.tech/wp-json/wp/v2/posts").replace(/["';]/g, "").trim();
+const WORDPRESS_BASE_URL = (
+  process.env.WORDPRESS_BASE_URL ||
+  "https://blog.Wecollect.tech/wp-json/wp/v2/posts"
+)
+  .replace(/["';]/g, "")
+  .trim();
 
 export interface WordPressPost {
   title: string;
@@ -68,7 +73,7 @@ function getFeaturedImage(post: any) {
 
 export function mapWordPressPost(post: any): WordPressPost {
   const slug = post?.slug || "";
-  const authorName = post?._embedded?.author?.[0]?.name || "WeCollect Team";
+  const authorName = post?._embedded?.author?.[0]?.name || "Wecollect Team";
 
   // Extract category names (handling undefined or empty arrays)
   const categoryTerms = post?._embedded?.["wp:term"]?.[0] || [];

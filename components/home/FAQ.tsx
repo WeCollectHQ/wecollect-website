@@ -9,16 +9,19 @@ import FAQImage from "@/assets/pngs/faq-image.png";
 
 const faqs = [
   {
-    question: "What is WeCollect app used for?",
-    answer: "The Wecollect App helps you and your business collect data on different disciplines and query across Nigeria.",
+    question: "What is Wecollect app used for?",
+    answer:
+      "The Wecollect App helps you and your business collect data on different disciplines and query across Nigeria.",
   },
   {
     question: "How do I create an account?",
-    answer: "Firstly, install the WeCollect app on your android or iOS mobile phone. Create an account with just your full name and phone number.",
+    answer:
+      "Firstly, install the Wecollect app on your android or iOS mobile phone. Create an account with just your full name and phone number.",
   },
   {
     question: "Can I customize the questions for my project?",
-    answer: "Yes you can customize the questions on the platform to suit your project query.",
+    answer:
+      "Yes you can customize the questions on the platform to suit your project query.",
   },
   {
     question: "Is my data secure and private?",
@@ -26,7 +29,8 @@ const faqs = [
   },
   {
     question: "Can I collaborate with others on a data collection project?",
-    answer: "Yes you can collaborate with others. All you have to do is share your organisation ID with your field agents who would be collecting your data.",
+    answer:
+      "Yes you can collaborate with others. All you have to do is share your organisation ID with your field agents who would be collecting your data.",
   },
 ];
 
@@ -38,7 +42,7 @@ export function FAQ() {
   };
 
   return (
-    <section className="w-full bg-[#F7F7FF] py-20 md:py-[120px]">
+    <section className="w-full bg-[#F7F7FF] py-20 md:py-30">
       <Container>
         {/* Header */}
         <div className="mx-auto text-center">
@@ -52,7 +56,7 @@ export function FAQ() {
         </div>
 
         {/* Content */}
-        <div className="mx-auto mt-10 grid max-w-[1024px] grid-cols-1 md:mt-12 md:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 md:mt-12 md:grid-cols-2">
           {/* FAQ */}
           <div>
             <div className="border border-[#E9E9EF] bg-white">
@@ -83,11 +87,11 @@ export function FAQ() {
                       >
                         <span className="relative block h-5 w-5">
                           {/* Horizontal */}
-                          <span className="absolute left-0 top-1/2 h-[2px] w-5 -translate-y-1/2 bg-white" />
+                          <span className="absolute left-0 top-1/2h-0.5 w-5 -translate-y-1/2 bg-white" />
 
                           {/* Vertical */}
                           {!isOpen && (
-                            <span className="absolute left-1/2 top-0 h-5 w-[2px] -translate-x-1/2 bg-white" />
+                            <span className="absolute left-1/2 top-0 h-5 w-0.5 -translate-x-1/2 bg-white" />
                           )}
                         </span>
                       </span>
@@ -124,10 +128,10 @@ export function FAQ() {
           </div>
 
           {/* Image */}
-          <div className="relative mt-8 h-[420px] w-full md:mt-0 md:h-auto">
+          <div className="relative mt-8 h-105 w-full md:mt-0 md:h-auto">
             <Image
               src={FAQImage}
-              alt="WeCollect field agent using the platform"
+              alt="Wecollect field agent using the platform"
               fill
               className="object-cover object-center"
             />

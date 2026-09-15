@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -55,7 +54,9 @@ export function NavbarLinks() {
             Solutions
             <span
               className={`absolute -bottom-2 left-0 h-0.75 w-full origin-left bg-[#686890] transition-transform duration-200 ${
-                isSolutionsActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                isSolutionsActive
+                  ? "scale-x-100"
+                  : "scale-x-0 group-hover:scale-x-100"
               }`}
             />
           </span>

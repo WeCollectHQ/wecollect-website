@@ -23,7 +23,7 @@ export function AfricanCoverage() {
       <div className="mx-auto mt-12 w-full max-w-[1920px] md:mt-16 lg:mt-20">
         <Image
           src={AfricaCoverageMapImage}
-          alt="WeCollect coverage across Africa"
+          alt="Wecollect coverage across Africa"
           className="h-auto w-full object-cover"
           sizes="100vw"
         />

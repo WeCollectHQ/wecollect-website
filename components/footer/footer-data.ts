@@ -9,7 +9,7 @@ import {
 export const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/company/wecollect-tech/posts/?feedView=all",
+    href: "https://www.linkedin.com/company/Wecollect-tech/posts/?feedView=all",
     icon: LinkedInIcon,
   },
 
@@ -21,7 +21,7 @@ export const socialLinks = [
 
   {
     label: "Instagram",
-    href: "https://www.instagram.com/wecollect_data",
+    href: "https://www.instagram.com/Wecollect_data",
     icon: InstagramIcon,
   },
 
@@ -33,7 +33,7 @@ export const socialLinks = [
 
   {
     label: "YouTube",
-    href: "https://www.youtube.com/@usewecollect",
+    href: "https://www.youtube.com/@useWecollect",
     icon: YouTubeIcon,
   },
 ];
@@ -46,7 +46,7 @@ export const companyLinks = [
   { label: "Terms of Use", href: "/terms-of-use" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Cookie Policy", href: "/cookie-policy" },
-  { label: "Plans", href: "/plans" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 export const productLinks = [

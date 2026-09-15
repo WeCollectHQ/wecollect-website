@@ -12,9 +12,9 @@ export function PlatformHero() {
           Field process <br /> infrastructure, <br /> built for African ground.
         </>
       }
-      description="WeCollect is not a form tool. It's the full infrastructure layer for field operations — from form design to GIS-validated data in your dashboard."
+      description="Wecollect is not a form tool. It's the full infrastructure layer for field operations — from form design to GIS-validated data in your dashboard."
       image={PlatformHeroImage}
-      imageAlt="WeCollect platform dashboard"
+      imageAlt="Wecollect platform dashboard"
       actions={
         <div className="flex flex-nowrap items-center gap-3">
           <Button
@@ -33,7 +33,7 @@ export function PlatformHero() {
             size="lg"
             className="shrink-0 whitespace-nowrap"
           >
-            Explore Price
+            Pricing
           </Button>
         </div>
       }

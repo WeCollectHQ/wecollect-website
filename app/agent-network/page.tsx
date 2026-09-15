@@ -1,4 +1,4 @@
-import { AfricanCoverage } from "@/components/agent-network/AfricanCoverage";
+// import { AfricanCoverage } from "@/components/agent-network/AfricanCoverage";
 import { AgentNetworkHero } from "@/components/agent-network/AgentNetworkHero";
 import { DeploymentModels } from "@/components/agent-network/DeploymentModels";
 import { DeploymentProcess } from "@/components/agent-network/DeploymentProcess";
@@ -12,7 +12,7 @@ export default function AgentNetworkPage() {
       <DeploymentModels />
       <DeploymentProcess />
       <QualityAssurance />
-      <AfricanCoverage />
+      {/* <AfricanCoverage /> */}
       <FAQ />
     </>
   );

@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export function WecollectLogo() {
   return (
-    <Link href="/" aria-label="WeCollect" className="shrink-0">
+    <Link href="/" aria-label="Wecollect" className="shrink-0">
       <Image
         src={Logo}
-        alt="WeCollect"
+        alt="Wecollect"
         width={100}
         height={20}
         priority
@@ -20,10 +20,10 @@ export function WecollectLogo() {
 
 export function WecollectFooterLogo() {
   return (
-    <Link href="/" aria-label="WeCollect" className="shrink-0">
+    <Link href="/" aria-label="Wecollect" className="shrink-0">
       <Image
         src={FooterLogo}
-        alt="WeCollect"
+        alt="Wecollect"
         width={100}
         height={20}
         priority

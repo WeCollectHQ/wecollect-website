@@ -12,7 +12,7 @@ export default async function BlogPage() {
     <>
       <BlogHero />
       <BlogList initialPosts={initialPosts} />
-      <Testimonials variant="with-stats" />
+      <Testimonials />
     </>
   );
 }

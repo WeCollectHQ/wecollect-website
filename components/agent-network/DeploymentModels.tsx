@@ -26,13 +26,13 @@ const deploymentModels = [
       <>
         Manage your own team with
         <br />
-        WeCollect technology
+        Wecollect technology
       </>
     ),
     description:
       "Full platform access — form builder, GIS validation, live dashboard, automated payments. Deploy to your existing field agents immediately.",
     image: DeploymentPlatformImage,
-    alt: "WeCollect platform dashboard",
+    alt: "Wecollect platform dashboard",
     icon: "platform",
   },
   {
@@ -42,7 +42,7 @@ const deploymentModels = [
     description:
       "No field team? Activate 1,700+ verified agents across 37 states within 48 hours. All managed through the same platform with full GPS tracking and QA.",
     image: DeploymentAgentsImage,
-    alt: "WeCollect field agents",
+    alt: "Wecollect field agents",
     icon: "agents",
   },
   {
@@ -56,9 +56,9 @@ const deploymentModels = [
       </>
     ),
     description:
-      "Use your core team in priority areas. Extend with WeCollect agents wherever you need additional coverage. One unified dashboard for both.",
+      "Use your core team in priority areas. Extend with Wecollect agents wherever you need additional coverage. One unified dashboard for both.",
     image: DeploymentHybridImage,
-    alt: "WeCollect agents working with a client team",
+    alt: "Wecollect agents working with a client team",
     icon: "hybrid",
   },
 ];
@@ -87,10 +87,10 @@ export function DeploymentModels() {
       <Container>
         <div
           className="
-            min-h-[640px]
+            min-h-160
             py-16
             md:py-20
-            lg:py-[70px]
+            lg:py-17.5
           "
         >
           {/* HEADER */}
@@ -131,11 +131,11 @@ export function DeploymentModels() {
               mt-8
               flex
               w-full
-              max-w-[650px]
+              max-w-162.5
               border
               border-[#E3E3ED]
               bg-white
-              p-[3px]
+              p-0.75
             "
           >
             {deploymentModels.map((model, index) => {
@@ -191,17 +191,17 @@ export function DeploymentModels() {
               md:justify-between
               md:gap-12
               lg:mt-8
-              lg:gap-[80px]
+              lg:gap-20
             "
           >
             {/* LEFT */}
             <div
               className="
                 w-full
-                max-w-[440px]
+                max-w-110
                 shrink-0
                 md:w-[42%]
-                lg:w-[440px]
+                lg:w-110
               "
             >
               {/* Icon */}
@@ -215,7 +215,7 @@ export function DeploymentModels() {
                   font-merriweather
                   text-[20px]
                   font-bold
-                  leading-[1.25]
+                  leading-tight
                   tracking-[-1%]
                   text-[#0D0D26]
                   md:text-[25px]
@@ -229,7 +229,7 @@ export function DeploymentModels() {
               <p
                 className="
                   mt-5
-                  max-w-[430px]
+                  max-w-107.5
                   text-[14px]
                   font-medium
                   leading-[1.65]
@@ -259,16 +259,16 @@ export function DeploymentModels() {
               className="
                 relative
                 w-full
-                max-w-[650px]
+                max-w-162.5
                 overflow-hidden
                 md:w-[58%]
-                lg:max-w-[650px]
+                lg:max-w-162.5
               "
             >
               <div
                 className="
                   relative
-                  aspect-[1.5/1]
+                  aspect-1.5/1
                   w-full
                 "
               >

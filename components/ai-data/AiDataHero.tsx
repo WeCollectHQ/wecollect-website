@@ -6,9 +6,9 @@ export function AiDataHero() {
     <SolutionHero
       eyebrow="AI Data"
       title="Ground-truth data for AI built on Africa."
-      description="WeCollect is the verified data layer that trains the models defining Africa's AI future — voice, vision, geospatial, and survey at scale."
+      description="Wecollect is the verified data layer that trains the models defining Africa's AI future — voice, vision, geospatial, and survey at scale."
       image={AiDataHeroImage}
-      imageAlt="WeCollect field agents collecting AI training data"
+      imageAlt="Wecollect field agents collecting AI training data"
     />
   );
 }

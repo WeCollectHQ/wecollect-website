@@ -12,9 +12,9 @@ export function DemoHero() {
           Let's talk about your <br /> Field Operations
         </>
       }
-      description="Whether you're collecting data, managing field teams, or verifying activity across multiple locations, we're here to help. Tell us what you're working on, and we'll show you how WeCollect can help you run smarter, more reliable field operations."
+      description="Whether you're collecting data, managing field teams, or verifying activity across multiple locations, we're here to help. Tell us what you're working on, and we'll show you how Wecollect can help you run smarter, more reliable field operations."
       image={DemoHeroImage}
-      imageAlt="WeCollect demo hero"
+      imageAlt="Wecollect demo hero"
       actions={
         <div className="flex flex-nowrap items-center gap-3">
           <Button

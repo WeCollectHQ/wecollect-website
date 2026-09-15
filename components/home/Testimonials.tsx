@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "@/components/common/Container";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/assets/svgs";
 
@@ -15,7 +15,7 @@ const testimonials = [
     company: "Client Company",
     name: "Jane Doe, Project Manager",
     quote:
-      "WeCollect made our field operation much easier to manage. The data was reliable, well structured, and delivered exactly when we needed it.",
+      "Wecollect made our field operation much easier to manage. The data was reliable, well structured, and delivered exactly when we needed it.",
   },
   {
     company: "Partner Organization",
@@ -40,28 +40,32 @@ function StarRating() {
   );
 }
 
-interface TestimonialsProps {
-  variant?: "default" | "with-stats";
-}
-
 const statsData = [
-  { value: "98%", label: "Trained & Verified Agents" },
-  { value: "37", label: "States Covered" },
-  { value: "300+", label: "LGAs" },
+  { value: "43", label: "Delivered Projects" },
+  { value: "Over 20", label: "Organizations" },
+  { value: "100%", label: "Delivery" },
 ];
 
-export function Testimonials({ variant = "default" }: TestimonialsProps = {}) {
+export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const previous = () => {
-    setActiveIndex((current) => Math.max(current - 1, 0));
+    setActiveIndex(
+      (current) => (current - 1 + testimonials.length) % testimonials.length,
+    );
   };
 
   const next = () => {
-    setActiveIndex((current) => Math.min(current + 1, testimonials.length - 1));
+    setActiveIndex((current) => (current + 1) % testimonials.length);
   };
 
-  const isWithStats = variant === "with-stats";
+  // Auto-play effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % testimonials.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [activeIndex]);
 
   // Reusable Carousel Track
   const renderTrack = () => (
@@ -73,9 +77,7 @@ export function Testimonials({ variant = "default" }: TestimonialsProps = {}) {
         {testimonials.map((item) => (
           <article
             key={item.company}
-            className={`w-full shrink-0 ${
-              isWithStats ? "px-8 py-8 md:px-10 md:py-12" : "border border-[#E9E9EF] px-8 py-8 md:px-8 md:py-9"
-            }`}
+            className="w-full shrink-0 px-8 py-8 md:px-10 md:py-12"
           >
             <StarRating />
             <p className="mt-6 text-[14px] font-medium leading-6 text-[#686890] md:text-[16px] md:leading-6.5">
@@ -96,7 +98,7 @@ export function Testimonials({ variant = "default" }: TestimonialsProps = {}) {
   );
 
   return (
-    <section className="w-full bg-white py-[120px] md:py-[150px] border-y border-[#E9E9EF]">
+    <section className="w-full bg-white py-30 md:py-37.5 border-y border-[#E9E9EF]">
       <Container>
         {/* Header */}
         <div className="text-center">
@@ -109,29 +111,28 @@ export function Testimonials({ variant = "default" }: TestimonialsProps = {}) {
         </div>
 
         {/* Content Wrapper */}
-        <div className={`mx-auto mt-10 md:mt-12 ${isWithStats ? "w-full" : "max-w-[634px]"}`}>
-          {isWithStats ? (
-            <div className="grid md:grid-cols-[250px_1fr] border border-[#E9E9EF]">
-              {/* Left Stats Sidebar */}
-              <div className="bg-[#F8F9FB] flex flex-col divide-y divide-[#E9E9EF] border-r border-[#E9E9EF]">
-                {statsData.map((stat) => (
-                  <div key={stat.label} className="p-6 md:p-8 flex flex-col justify-center grow">
-                    <h4 className="text-[20px] md:text-[24px] font-bold text-[#0D0D26] font-merriweather">
-                      {stat.value}
-                    </h4>
-                    <p className="text-[12px] md:text-[13px] font-medium text-[#7F7FA8] mt-2">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Right Carousel Track */}
-              {renderTrack()}
+        <div className="mx-auto mt-10 md:mt-12 w-full">
+          <div className="grid md:grid-cols-[250px_1fr] border border-[#E9E9EF]">
+            {/* Left Stats Sidebar */}
+            <div className="bg-[#F8F9FB] flex flex-col divide-y divide-[#E9E9EF] border-r border-[#E9E9EF]">
+              {statsData.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="p-6 md:p-8 flex flex-col justify-center grow"
+                >
+                  <h4 className="text-[20px] md:text-[24px] font-bold text-[#0D0D26] font-merriweather">
+                    {stat.value}
+                  </h4>
+                  <p className="text-[12px] md:text-[13px] font-medium text-[#7F7FA8] mt-2">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
-          ) : (
-            renderTrack()
-          )}
+
+            {/* Right Carousel Track */}
+            {renderTrack()}
+          </div>
 
           {/* Controls */}
           <div className="mt-3 flex items-center justify-between">
@@ -146,7 +147,9 @@ export function Testimonials({ variant = "default" }: TestimonialsProps = {}) {
                   aria-current={activeIndex === index}
                   className={[
                     "h-1.5 transition-all duration-300",
-                    activeIndex === index ? "w-8 bg-[#4B4BDB]" : "w-1.5 bg-[#B9B9CC]",
+                    activeIndex === index
+                      ? "w-8 bg-[#4B4BDB]"
+                      : "w-1.5 bg-[#B9B9CC]",
                   ].join(" ")}
                 />
               ))}
@@ -157,18 +160,16 @@ export function Testimonials({ variant = "default" }: TestimonialsProps = {}) {
               <button
                 type="button"
                 onClick={previous}
-                disabled={activeIndex === 0}
                 aria-label="Previous testimonial"
-                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:bg-[#B9B9CC] disabled:hover:bg-[#B9B9CC]"
+                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5]"
               >
                 <ArrowLeftIcon />
               </button>
               <button
                 type="button"
                 onClick={next}
-                disabled={activeIndex === testimonials.length - 1}
                 aria-label="Next testimonial"
-                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5] disabled:cursor-not-allowed disabled:bg-[#B9B9CC] disabled:hover:bg-[#B9B9CC]"
+                className="flex h-9 w-9 items-center justify-center text-white transition-colors cursor-pointer bg-[#4B4BDB] hover:bg-[#3838C5]"
               >
                 <ArrowRightIcon />
               </button>

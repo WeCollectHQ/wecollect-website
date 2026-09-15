@@ -77,7 +77,7 @@ export function AiDataProblem() {
       problems={problems}
       problemImage={AiDataProblemImage}
       problemImageAlt="Field worker collecting AI data"
-      featureTitle="How WeCollect solves data problem with AI."
+      featureTitle="How Wecollect solves data problem with AI."
       features={features}
     />
   );

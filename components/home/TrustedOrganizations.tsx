@@ -12,8 +12,8 @@ import cway from "@/assets/pngs/cway.jpg";
 import unfpa from "@/assets/svgs/unfpa.svg";
 import microsoft from "@/assets/svgs/microsoft.svg";
 import kadunaElect from "@/assets/svgs/kaduna-elect.svg";
-import cgiar from "@/assets/pngs/cgiar.jpg";
-import iita from "@/assets/pngs/iita.jpg";
+// import cgiar from "@/assets/pngs/cgiar.jpg";
+import iita from "@/assets/pngs/iita.png";
 import lagos from "@/assets/pngs/lagos.jpg";
 import noah from "@/assets/pngs/noah.jpg";
 
@@ -62,10 +62,10 @@ const trustedOrganizations = [
     name: "Kaduna Elect",
     logo: kadunaElect,
   },
-  {
-    name: "CGIAR",
-    logo: cgiar,
-  },
+  // {
+  //   name: "CGIAR",
+  //   logo: cgiar,
+  // },
   {
     name: "IITA",
     logo: iita,
@@ -146,22 +146,22 @@ export function TrustedOrganizations({
         <p
           className={`text-[8px] md:text-[14px] font-medium uppercase leading-[5.46px] md:leading-5 ${textClass}`}
         >
-          Trusted by leading organisations
+          Trusted by Over 20 Leading Organisations
         </p>
       </div>
 
       {/* Logo carousel */}
       <div
-        className={`relative h-16 md:h-18 lg:h-16 overflow-hidden border-b ${borderClass}`}
+        className={`bg-white relative h-16 md:h-18 lg:h-16 overflow-hidden border-b border-[#1E1E5A]`}
       >
         {/* Left fade */}
         <div
-          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 md:w-20 bg-linear-to-r ${fadeLeftClass}`}
+          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 md:w-20 bg-linear-to-r from-white to-transparent`}
         />
 
         {/* Right fade */}
         <div
-          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 md:w-20 bg-linear-to-l ${fadeRightClass}`}
+          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 md:w-20 bg-linear-to-l from-white to-transparent`}
         />
 
         {/* Animated track */}
@@ -173,7 +173,7 @@ export function TrustedOrganizations({
             (organization, index) => (
               <div
                 key={`${organization.name}-${index}`}
-                className={`flex h-full w-35 md:w-40 lg:w-42.5 shrink-0 items-center justify-center border-r px-6 ${borderClass}`}
+                className={`flex h-full w-35 md:w-40 lg:w-42.5 shrink-0 items-center justify-center border-r px-6 border-[#1E1E5A]`}
               >
                 <Image
                   src={organization.logo}

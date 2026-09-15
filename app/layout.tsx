@@ -68,53 +68,65 @@ const helveticaNeue = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wecollect.tech'),
+  metadataBase: new URL("https://Wecollect.tech"),
   title: {
-    default: 'WeCollect | Run field operations and data collection in Africa',
-    template: '%s | WeCollect',
+    default: "Wecollect | Run field operations and data collection in Africa",
+    template: "%s | Wecollect",
   },
-  description: 'WeCollect enables organizations to run field operations and gather trusted data across Africa, combining scalable technology and AI-powered analytics.',
-  keywords: ['field data collection Africa', 'KoboToolbox alternative', 'survey data collection Nigeria', 'field agent management platform', 'CAPI data collection tool'],
+  description:
+    "Wecollect enables organizations to run field operations and gather trusted data across Africa, combining scalable technology and AI-powered analytics.",
+  keywords: [
+    "field data collection Africa",
+    "KoboToolbox alternative",
+    "survey data collection Nigeria",
+    "field agent management platform",
+    "CAPI data collection tool",
+  ],
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://wecollect.tech',
-    siteName: 'WeCollect',
-    title: 'WeCollect | Data Collection & Field Operations in Africa',
-    description: 'Combining scalable technology and AI-powered analytics for faster reporting, actionable insights, and better decisions.',
+    type: "website",
+    locale: "en_US",
+    url: "https://Wecollect.tech",
+    siteName: "Wecollect",
+    title: "Wecollect | Data Collection & Field Operations in Africa",
+    description:
+      "Combining scalable technology and AI-powered analytics for faster reporting, actionable insights, and better decisions.",
     images: [
       {
-        url: '/og-image.jpg', // You will need to create and place this in the public folder
+        url: "/og-image.jpg", // You will need to create and place this in the public folder
         width: 1200,
         height: 630,
-        alt: 'WeCollect Platform',
+        alt: "Wecollect Platform",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'WeCollect | Field Data Infrastructure',
-    description: 'Run your own field team, or let ours run it for you. Either way, you get the same platform underneath.',
-    creator: '@Wecollectdata',
+    card: "summary_large_image",
+    title: "Wecollect | Field Data Infrastructure",
+    description:
+      "Run your own field team, or let ours run it for you. Either way, you get the same platform underneath.",
+    creator: "@Wecollectdata",
   },
 };
-
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "WeCollect",
-  "url": "https://wecollect.tech",
-  "logo": "https://wecollect.tech/logo.png",
-  "sameAs": [
-    "https://www.linkedin.com/company/wecollect-tech/",
+  name: "Wecollect",
+  url: "https://Wecollect.tech",
+  logo: "https://Wecollect.tech/logo.png",
+  sameAs: [
+    "https://www.linkedin.com/company/Wecollect-tech/",
     "https://twitter.com/Wecollectdata",
-    "https://www.instagram.com/wecollect_data/",
-    "https://web.facebook.com/Wecollectintel"
-  ]
+    "https://www.instagram.com/Wecollect_data/",
+    "https://web.facebook.com/Wecollectintel",
+  ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"

@@ -48,11 +48,11 @@ export function DataModality() {
       <div className="pointer-events-none absolute inset-0 bg-[#075C79]/20" />
 
       <Container className="relative z-10">
-        <div className="grid min-h-[820px] items-center gap-12 py-20 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:gap-[70px] lg:py-28">
+        <div className="grid min-h-205 items-center gap-12 py-20 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:gap-17.5 lg:py-28">
           {/* LEFT — DATA MODALITIES */}
-          <div className="w-full max-w-[580px]">
+          <div className="w-full max-w-145">
             {/* Card header */}
-            <div className="flex h-[90px] items-center bg-[#30308A]/80 px-8 md:h-[105px] md:px-10">
+            <div className="flex h-22.5 items-center bg-[#30308A]/80 px-8 md:h-26.25 md:px-10">
               <h3 className="font-merriweather text-[22px] font-bold leading-7 md:text-[26px] md:leading-8">
                 Data modalities{" "}
                 <span className="font-normal text-white/50">
@@ -66,7 +66,7 @@ export function DataModality() {
               {modalities.map((modality) => (
                 <div
                   key={modality.title}
-                  className="flex min-h-[240px] flex-col bg-white text-center"
+                  className="flex min-h-60 flex-col bg-white text-center"
                 >
                   {/* Image */}
                   <div className="relative w-full">
@@ -95,7 +95,7 @@ export function DataModality() {
           </div>
 
           {/* RIGHT — CONTENT */}
-          <div className="max-w-[470px]">
+          <div className="max-w-117.5">
             {/* Eyebrow */}
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 shrink-0 rounded-full bg-[#FDE93D]" />
@@ -114,7 +114,7 @@ export function DataModality() {
 
             {/* Description */}
             <p className="mt-6 text-[14px] font-medium leading-5.5 text-[#B9B9CC] md:text-[15px] md:leading-6">
-              WeCollect is the ground-truth data layer for AI built on Africa.
+              Wecollect is the ground-truth data layer for AI built on Africa.
               Our verified, geo-tagged field data trains the models that will
               define the continent&apos;s AI future.
             </p>

@@ -22,14 +22,14 @@ export function PlatformShowcase() {
             md:tracking-[-1%]
           "
         >
-          WeCollect Platform
+          Wecollect Platform
         </h2>
 
         {/* Platform image */}
-        <div className="mx-auto mt-10 w-full max-w-[900px] md:mt-12 lg:max-w-[1000px]">
+        <div className="mx-auto mt-10 w-full max-w-225 md:mt-12 lg:max-w-250">
           <Image
             src={PlatformImage}
-            alt="WeCollect Platform"
+            alt="Wecollect Platform"
             width={1000}
             height={650}
             priority

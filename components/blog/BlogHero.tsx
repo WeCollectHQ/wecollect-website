@@ -18,14 +18,14 @@ export function BlogHero() {
       }
       description="Practical guides for organisations running field operations and collecting data across Africa."
       image={BlogHeroImage}
-      imageAlt="WeCollect blog hero"
+      imageAlt="Wecollect blog hero"
       actions={
         <div className="flex flex-col w-full max-w-110">
           <label className="text-[12px] text-[#BDBDD7] mb-2.5 font-medium">
-            Subscribe to WeCollect newsletters
+            Subscribe to Wecollect newsletters
           </label>
 
-          <NewsletterForm 
+          <NewsletterForm
             formClassName="flex items-center w-full border border-[#E9E9EF] bg-[#151540] p-1 pl-4"
             inputClassName="flex-1 bg-transparent text-[14px] text-white placeholder:text-[#686890] outline-none"
             buttonVariant="secondary"
@@ -33,7 +33,7 @@ export function BlogHero() {
           />
 
           <p className="text-[11px] text-[#9898B3] mt-3">
-            By subscribing, I agree to WeCollect{" "}
+            By subscribing, I agree to Wecollect{" "}
             <Link href="/privacy-policy" className="text-[#4B4BDB] underline">
               Privacy Policy
             </Link>
