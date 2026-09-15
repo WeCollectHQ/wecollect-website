@@ -152,16 +152,16 @@ export function TrustedOrganizations({
 
       {/* Logo carousel */}
       <div
-        className={`relative h-16 md:h-18 lg:h-16 overflow-hidden border-b ${borderClass}`}
+        className={`bg-white relative h-16 md:h-18 lg:h-16 overflow-hidden border-b border-[#1E1E5A]`}
       >
         {/* Left fade */}
         <div
-          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 md:w-20 bg-linear-to-r ${fadeLeftClass}`}
+          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 md:w-20 bg-gradient-to-r from-white to-transparent`}
         />
 
         {/* Right fade */}
         <div
-          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 md:w-20 bg-linear-to-l ${fadeRightClass}`}
+          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 md:w-20 bg-gradient-to-l from-white to-transparent`}
         />
 
         {/* Animated track */}
@@ -173,7 +173,7 @@ export function TrustedOrganizations({
             (organization, index) => (
               <div
                 key={`${organization.name}-${index}`}
-                className={`flex h-full w-35 md:w-40 lg:w-42.5 shrink-0 items-center justify-center border-r px-6 ${borderClass}`}
+                className={`flex h-full w-35 md:w-40 lg:w-42.5 shrink-0 items-center justify-center border-r px-6 border-[#1E1E5A]`}
               >
                 <Image
                   src={organization.logo}
