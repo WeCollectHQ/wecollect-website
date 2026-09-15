@@ -30,13 +30,12 @@ export function HomeHero() {
         {/* Heading */}
         <h1 className="mt-6 md:mt-8 font-merriweather font-bold text-[36px] text-[#4747D6] md:text-[64px] lg:text-[80px] leading-[1.15] md:leading-[1.15] tracking-[-0.02em] w-full">
           Run field operations and
-          <br className="hidden md:block" />
-          data collection in Africa
+          <br className="hidden md:block" /> data collection in Africa
         </h1>
 
         {/* Description */}
         <p className="mt-6 md:mt-8 text-[15px] text-[#1E1E5A] md:text-[20px] font-medium leading-[1.6] md:leading-[1.7] max-w-237.5">
-          WeCollect enables organizations data collection and field operations
+          Wecollect enables organizations data collection and field operations
           across Africa, combining modern technologies and AI-powered analytics
           for faster reporting, actionable insights, and better decisions while
           maintaining high data quality.
@@ -44,7 +43,11 @@ export function HomeHero() {
 
         {/* Buttons */}
         <div className="mt-6 md:mt-8 flex flex-col-reverse md:flex-row items-center justify-center gap-3">
-          <Button href="https://app.wecollect.tech/register" variant="secondary" size="lg">
+          <Button
+            href="https://app.wecollect.tech/register"
+            variant="secondary"
+            size="lg"
+          >
             Get Started for free
           </Button>
 
@@ -59,10 +62,10 @@ export function HomeHero() {
         </div>
 
         {/* Dashboard + Phone */}
-        <div className="relative mx-auto mt-15 md:mt-28 lg:mt-24 w-full max-w-200">
+        <div className="relative mx-auto mt-15 md:mt-28 lg:mt-24 w-full max-w-[1024px]">
           <Image
             src={HomeHeroImage}
-            alt="WeCollect platform dashboard and mobile app"
+            alt="Wecollect platform dashboard and mobile app"
             className="h-auto w-full"
             priority
           />
