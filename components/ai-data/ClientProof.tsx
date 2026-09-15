@@ -12,7 +12,7 @@ export function ClientProof() {
       logoHeight={28}
       image={AiDataClientProofImage}
       imageAlt="AI data client deployment"
-      description="WeCollect's platform handled the full data validation workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
+      description="Wecollect's platform handled the full data validation workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
     />
   );
 }

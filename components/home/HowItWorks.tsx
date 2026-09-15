@@ -78,7 +78,7 @@ export function HowItWorks() {
                 <div
                   key={step.number}
                   className={[
-                    "relative flex flex-1 min-h-27.5 md:min-h-[112px] overflow-hidden border-[#E3E3EE] bg-white px-4 md:px-5 py-5 md:py-6",
+                    "relative flex flex-1 min-h-27.5 md:min-h-28 overflow-hidden border-[#E3E3EE] bg-white px-4 md:px-5 py-5 md:py-6",
                     index !== 0 ? "border-t" : "",
                   ].join(" ")}
                 >
@@ -104,7 +104,7 @@ export function HowItWorks() {
           </div>
 
           {/* Image */}
-          <div className="relative min-h-[480px] md:min-h-0">
+          <div className="relative min-h-120 md:min-h-0">
             <Image
               src={HowItWorksImage}
               alt="Wecollect field operations"

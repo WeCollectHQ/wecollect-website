@@ -78,7 +78,7 @@ export function VerificationOverview() {
       problems={problems}
       problemImage={VerificationProblemImage}
       problemImageAlt="Field agent verifying an address"
-      featureTitle="How WeCollect solves verification & reporting"
+      featureTitle="How Wecollect solves verification & reporting"
       features={features}
     />
   );

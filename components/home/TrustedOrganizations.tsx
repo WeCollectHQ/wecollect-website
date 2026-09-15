@@ -12,8 +12,8 @@ import cway from "@/assets/pngs/cway.jpg";
 import unfpa from "@/assets/svgs/unfpa.svg";
 import microsoft from "@/assets/svgs/microsoft.svg";
 import kadunaElect from "@/assets/svgs/kaduna-elect.svg";
-import cgiar from "@/assets/pngs/cgiar.jpg";
-import iita from "@/assets/pngs/iita.jpg";
+// import cgiar from "@/assets/pngs/cgiar.jpg";
+import iita from "@/assets/pngs/iita.png";
 import lagos from "@/assets/pngs/lagos.jpg";
 import noah from "@/assets/pngs/noah.jpg";
 
@@ -62,10 +62,10 @@ const trustedOrganizations = [
     name: "Kaduna Elect",
     logo: kadunaElect,
   },
-  {
-    name: "CGIAR",
-    logo: cgiar,
-  },
+  // {
+  //   name: "CGIAR",
+  //   logo: cgiar,
+  // },
   {
     name: "IITA",
     logo: iita,
@@ -146,7 +146,7 @@ export function TrustedOrganizations({
         <p
           className={`text-[8px] md:text-[14px] font-medium uppercase leading-[5.46px] md:leading-5 ${textClass}`}
         >
-          Trusted by leading organisations
+          Trusted by Over 20 Leading Organisations
         </p>
       </div>
 
@@ -156,12 +156,12 @@ export function TrustedOrganizations({
       >
         {/* Left fade */}
         <div
-          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 md:w-20 bg-gradient-to-r from-white to-transparent`}
+          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 md:w-20 bg-linear-to-r from-white to-transparent`}
         />
 
         {/* Right fade */}
         <div
-          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 md:w-20 bg-gradient-to-l from-white to-transparent`}
+          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 md:w-20 bg-linear-to-l from-white to-transparent`}
         />
 
         {/* Animated track */}

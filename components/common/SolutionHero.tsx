@@ -43,7 +43,7 @@ export function SolutionHero({
           className="
             relative
             flex
-            min-h-[660px]
+            min-h-165
             flex-col
             justify-center
             gap-12
@@ -51,9 +51,9 @@ export function SolutionHero({
             md:flex-row
             md:items-center
             md:gap-16
-            lg:min-h-[663px]
-            lg:gap-[105px]
-            lg:py-[70px]
+            lg:min-h-165.75
+            lg:gap-26.25
+            lg:py-17.5
           "
         >
           {/* LEFT CONTENT */}
@@ -62,10 +62,10 @@ export function SolutionHero({
               relative
               z-10
               w-full
-              max-w-[570px]
+              max-w-142.5
               shrink-0
-              md:w-[52%]
-              lg:w-[540px]
+              md:w-130
+              lg:w-135
             "
           >
             {/* Eyebrow */}
@@ -92,11 +92,11 @@ export function SolutionHero({
             <h1
               className="
                 mt-8
-                max-w-[620px]
+                max-w-155
                 font-merriweather
                 text-[42px]
                 font-bold
-                leading-[1.12]
+                leading-tight
                 tracking-[-1.5%]
                 text-[#F8F8FF]
                 sm:text-[48px]
@@ -112,7 +112,7 @@ export function SolutionHero({
             <p
               className="
                 mt-8
-                max-w-[590px]
+                max-w-147.5
                 text-[17px]
                 font-medium
                 leading-[1.65]
@@ -146,9 +146,9 @@ export function SolutionHero({
               relative
               z-10
               w-full
-              max-w-[555px]
-              md:w-[48%]
-              lg:max-w-[555px]
+              max-w-162.5
+              md:w-120
+              lg:max-w-162.5
             "
           >
             <div className="relative aspect-square w-full overflow-hidden">

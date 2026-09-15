@@ -3,7 +3,12 @@ import { WecollectLogo } from "../Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ArrowUpRightIcon, OpenMenuIcon, CloseMenuIcon, ChevronDownIcon } from "@/assets/svgs";
+import {
+  ArrowUpRightIcon,
+  OpenMenuIcon,
+  CloseMenuIcon,
+  ChevronDownIcon,
+} from "@/assets/svgs";
 import { solutionLinks } from "@/constants/navigation";
 import { Button } from "@/components/Button";
 
@@ -119,7 +124,9 @@ export function NavbarMobile() {
                           onClick={() => setOpen(false)}
                           className={[
                             "flex min-h-8.75 items-center",
-                            isActive ? "border-[#FFF000] text-[#FFF000] bg-[#30308A]" : "border-[#4B4B7B] bg-[#272776] text-[#E9E9EF]",
+                            isActive
+                              ? "border-[#FFF000] text-[#FFF000] bg-[#30308A]"
+                              : "border-[#4B4B7B] bg-[#272776] text-[#E9E9EF]",
                             "border px-3",
                             "text-[14px] font-medium leading-[1.2]",
                             "transition-colors hover:bg-[#E9E9EF]/5",
@@ -166,7 +173,7 @@ export function NavbarMobile() {
             {/* Bottom actions */}
             <div className="mt-auto grid grid-cols-2 gap-3.25 h-11.5">
               <Button
-                href="https://app.wecollect.tech/login"
+                href="https://app.Wecollect.tech/login"
                 size="md"
                 variant="outline-white"
                 onClick={() => setOpen(false)}

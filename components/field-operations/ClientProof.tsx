@@ -12,7 +12,7 @@ export function ClientProof() {
       logoHeight={28}
       image={ClientProofImage}
       imageAlt="CWAY field operations deployment"
-      description="WeCollect's platform handled the full field operations workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
+      description="Wecollect's platform handled the full field operations workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
     />
   );
 }

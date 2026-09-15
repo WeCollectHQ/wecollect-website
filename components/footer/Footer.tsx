@@ -49,7 +49,7 @@ export function Footer() {
           </h2>
 
           <p className="mt-4 md:mt-6 text-[14px] text-[#B9B9CC] md:text-[16px] lg:text-[16px] font-medium leading-5 md:leading-6.5">
-            Book a 30-minute demo and discover how WeCollect helps you plan,
+            Book a 30-minute demo and discover how Wecollect helps you plan,
             deploy, verify, and manage field <br className="hidden lg:block" />{" "}
             operations with confidence. Get answers tailored to your use case
             and a clear deployment roadmap.
@@ -99,11 +99,19 @@ export function Footer() {
 
             {/* Auth buttons */}
             <div className="mt-6 flex items-center gap-4">
-              <Button href="https://app.wecollect.tech/register" variant="secondary" size="md">
+              <Button
+                href="https://app.Wecollect.tech/register"
+                variant="secondary"
+                size="md"
+              >
                 Sign Up
               </Button>
 
-              <Button href="https://app.wecollect.tech/login" variant="outline-white" size="md">
+              <Button
+                href="https://app.Wecollect.tech/login"
+                variant="outline-white"
+                size="md"
+              >
                 Sign In
               </Button>
             </div>
@@ -111,10 +119,10 @@ export function Footer() {
             {/* Newsletter */}
             <div className="mt-6">
               <p className="text-[12px] font-medium leading-5 text-[#B9B9CC]">
-                Subscribe to WeCollect newsletters
+                Subscribe to Wecollect newsletters
               </p>
 
-              <NewsletterForm 
+              <NewsletterForm
                 formClassName="mt-2 flex h-10 max-w-78.75 items-center bg-[#151540] border border-[#E9E9EF]"
                 inputClassName="min-w-0 flex-1 bg-transparent px-2 text-[12px] font-medium leading-5 text-white outline-none placeholder:text-[#686890]"
                 buttonVariant="primary"
@@ -123,7 +131,7 @@ export function Footer() {
               />
 
               <p className="mt-2 text-[12px] font-medium leading-5 text-[#B9B9CC]">
-                By subscribing, I agree to WeCollect{" "}
+                By subscribing, I agree to Wecollect{" "}
                 <Link
                   href="/privacy-policy"
                   className="text-[#4747D6] underline underline-offset-2"
@@ -154,7 +162,7 @@ export function Footer() {
           <Container className="flex flex-col-reverse lg:flex-row gap-8 py-8 lg:py-9.5 lg:items-center lg:justify-between">
             {/* Copyright */}
             <p className="text-[12px] text-[#B9B9CC] font-medium leading-5">
-              © All rights reserved, WeCollect, 2026
+              © All rights reserved, Wecollect, 2026
             </p>
 
             {/* App buttons */}

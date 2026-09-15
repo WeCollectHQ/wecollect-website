@@ -50,7 +50,9 @@ export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const previous = () => {
-    setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length);
+    setActiveIndex(
+      (current) => (current - 1 + testimonials.length) % testimonials.length,
+    );
   };
 
   const next = () => {
@@ -96,7 +98,7 @@ export function Testimonials() {
   );
 
   return (
-    <section className="w-full bg-white py-[120px] md:py-[150px] border-y border-[#E9E9EF]">
+    <section className="w-full bg-white py-30 md:py-37.5 border-y border-[#E9E9EF]">
       <Container>
         {/* Header */}
         <div className="text-center">

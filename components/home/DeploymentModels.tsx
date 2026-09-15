@@ -9,7 +9,7 @@ import DeploymentBgImage from "@/assets/pngs/deployment-models-bg-image.webp";
 const features = [
   "Trained, ranked and re-deployed on repeat programs",
   "Task-linked payments and a transparent audit trail",
-  "Managed by WeCollect field ops — you see the results",
+  "Managed by Wecollect field ops — you see the results",
 ];
 
 export function DeploymentModels() {
@@ -28,9 +28,9 @@ export function DeploymentModels() {
       <div className="pointer-events-none absolute inset-0 bg-[#0D0D26]/35" />
 
       <Container className="relative z-10">
-        <div className="grid min-h-[828px] items-center gap-12 py-20 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:py-24 lg:grid-cols-[1fr_1.08fr] lg:gap-[82px] lg:py-28">
+        <div className="grid min-h-207 items-center gap-12 py-20 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:py-24 lg:grid-cols-[1fr_1.08fr] lg:gap-20.5 lg:py-28">
           {/* LEFT CONTENT */}
-          <div className="max-w-[390px]">
+          <div className="max-w-97.5">
             {/* Eyebrow */}
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 shrink-0 rounded-full bg-[#FDE93D]" />
@@ -48,7 +48,7 @@ export function DeploymentModels() {
             </h2>
 
             {/* Description */}
-            <p className="mt-6 max-w-[370px] text-[14px] font-medium leading-5.5 text-[#B9B9CC] md:text-[15px] md:leading-6">
+            <p className="mt-6 max-w-92.5 text-[14px] font-medium leading-5.5 text-[#B9B9CC] md:text-[15px] md:leading-6">
               The platform works with or without our agents. But when you need
               boots on the ground, our trained, verified network is ready.
             </p>
@@ -98,10 +98,10 @@ export function DeploymentModels() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative mx-auto w-full max-w-[518px]">
+          <div className="relative mx-auto w-full max-w-129.5">
             <Image
               src={AgentTeamImage}
-              alt="WeCollect field agents team"
+              alt="Wecollect field agents team"
               width={518}
               height={519}
               priority

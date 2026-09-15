@@ -11,8 +11,8 @@ export function ClientProof() {
       logoWidth={105}
       logoHeight={32}
       image={DataValidationClientImage}
-      imageAlt="WeCollect data validation field deployment"
-      description="WeCollect's platform handled the full data validation workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
+      imageAlt="Wecollect data validation field deployment"
+      description="Wecollect's platform handled the full data validation workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
     />
   );
 }

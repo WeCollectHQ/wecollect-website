@@ -12,7 +12,7 @@ export function AgentNetworkHero() {
       }
       description="1,700+ trained and verified field agents across 15+ African Nations — available on demand, managed through the same platform as your own team."
       image={AgentNetworkHeroImage}
-      imageAlt="WeCollect field agent network"
+      imageAlt="Wecollect field agent network"
     />
   );
 }

@@ -1,6 +1,6 @@
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
-import { 
+import {
   ArrowUpRightIcon,
   FormBuilderIcon,
   GisValidationIcon,
@@ -13,7 +13,7 @@ import {
   ConversationalQueryIcon,
   FeatureBulletIcon,
   ProhibitedIcon,
-  ThickCheckIcon
+  ThickCheckIcon,
 } from "@/assets/svgs";
 
 const capabilities = [
@@ -77,37 +77,37 @@ const comparisons = [
   {
     feature: "Real-time visibility",
     traditional: "None / delayed",
-    wecollect: "Live GPS tracking",
+    Wecollect: "Live GPS tracking",
   },
   {
     feature: "Data quality control",
     traditional: "Manual spot checks",
-    wecollect: "AI-assisted auto-QA",
+    Wecollect: "AI-assisted auto-QA",
   },
   {
     feature: "Fraud prevention",
     traditional: "None",
-    wecollect: "GIS + photo evidence",
+    Wecollect: "GIS + photo evidence",
   },
   {
     feature: "Geo-verification",
     traditional: "Not possible",
-    wecollect: "Geofencing required",
+    Wecollect: "Geofencing required",
   },
   {
     feature: "Agent deployment",
     traditional: "WhatsApp / calls",
-    wecollect: "In-app deployment",
+    Wecollect: "In-app deployment",
   },
   {
     feature: "Reporting speed",
     traditional: "Days to weeks",
-    wecollect: "Instant dashboard",
+    Wecollect: "Instant dashboard",
   },
   {
     feature: "Scalability",
     traditional: "Breaks at scale",
-    wecollect: "Built for 10M+ records",
+    Wecollect: "Built for 10M+ records",
   },
 ];
 
@@ -117,7 +117,7 @@ export function PlatformCapabilities() {
       {/* CAPABILITIES */}
       <div className="border-b border-[#E9E9EF]">
         <Container>
-          <div className="py-20 md:py-24 lg:py-[88px]">
+          <div className="py-20 md:py-24 lg:py-22">
             {/* Header */}
             <div className="flex items-end justify-between gap-8">
               <div>
@@ -157,7 +157,7 @@ export function PlatformCapabilities() {
               {capabilities.map((capability) => (
                 <div
                   key={capability.title}
-                  className="min-h-[212px] border-b border-r border-[#E9E9EF] p-7 md:p-8"
+                  className="min-h-53 border-b border-r border-[#E9E9EF] p-7 md:p-8"
                 >
                   <div className="text-[#0D0D26]">{capability.icon}</div>
 
@@ -165,7 +165,7 @@ export function PlatformCapabilities() {
                     {capability.title}
                   </h3>
 
-                  <p className="mt-3 max-w-[240px] text-[12px] font-medium leading-5 text-[#686890] md:text-[13px]">
+                  <p className="mt-3 max-w-60 text-[12px] font-medium leading-5 text-[#686890] md:text-[13px]">
                     {capability.description}
                   </p>
                 </div>
@@ -178,16 +178,16 @@ export function PlatformCapabilities() {
       {/* WHY WE COLLECT */}
       <div>
         <Container>
-          <div className="py-20 md:py-24 lg:py-[88px]">
+          <div className="py-20 md:py-24 lg:py-22">
             {/* Header */}
             <div className="flex items-end justify-between gap-8">
               <div>
                 <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3] md:text-[12px]">
-                  Why WeCollect
+                  Why Wecollect
                 </p>
 
                 <h2 className="mt-3 font-merriweather text-[28px] font-bold leading-9 tracking-[-0.5%] text-[#0D0D26] md:text-[40px] md:leading-[1.2] md:tracking-[-1%]">
-                  What changes when you use the WeCollect?
+                  What changes when you use the Wecollect?
                 </h2>
               </div>
 
@@ -215,9 +215,9 @@ export function PlatformCapabilities() {
 
             {/* Comparison table */}
             <div className="mt-10 overflow-x-auto border border-[#E9E9EF]">
-              <table className="w-full min-w-[700px] border-collapse">
+              <table className="w-full min-w-175 border-collapse">
                 <thead>
-                  <tr className="h-[40px]">
+                  <tr className="h-10">
                     <th className="w-[30%] border-b border-r border-[#E9E9EF] px-7 text-left text-[10px] font-bold uppercase text-[#9898B3]">
                       Feature
                     </th>
@@ -227,7 +227,7 @@ export function PlatformCapabilities() {
                     </th>
 
                     <th className="w-[40%] border-b border-[#E9E9EF] px-7 text-left text-[10px] font-bold uppercase text-[#9898B3]">
-                      WeCollect
+                      Wecollect
                     </th>
                   </tr>
                 </thead>
@@ -261,7 +261,7 @@ export function PlatformCapabilities() {
                         </div>
                       </td>
 
-                      {/* WeCollect */}
+                      {/* Wecollect */}
                       <td className="border-b border-[#E9E9EF] bg-[#4B4BDE] px-7 py-4">
                         <div className="flex items-center gap-3">
                           <span className="shrink-0 flex items-center justify-center">
@@ -269,7 +269,7 @@ export function PlatformCapabilities() {
                           </span>
 
                           <span className="text-[12px] font-medium text-white md:text-[13px]">
-                            {comparison.wecollect}
+                            {comparison.Wecollect}
                           </span>
                         </div>
                       </td>

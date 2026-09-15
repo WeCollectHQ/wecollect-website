@@ -13,8 +13,8 @@ export const solutionLinks = [
     mobileFullWidth: true,
   },
   {
-    label: "Data Validation",
-    href: "/solutions/data-validation",
+    label: "Monitoring and Evaluation",
+    href: "/solutions/monitoring&evaluation",
   },
   {
     label: "AI Data",

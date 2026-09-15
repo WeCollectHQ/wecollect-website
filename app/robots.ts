@@ -1,12 +1,12 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/dashboard/', '/admin/'],
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/dashboard/", "/admin/"],
     },
-    sitemap: 'https://wecollect.tech/sitemap.xml',
-  }
+    sitemap: "https://Wecollect.tech/sitemap.xml",
+  };
 }

@@ -78,7 +78,7 @@ export function FieldOperationsProblem() {
       problems={problems}
       problemImage={FieldOperationsProblemImage}
       problemImageAlt="Field agent using a mobile device"
-      featureTitle="How WeCollect solves field operations."
+      featureTitle="How Wecollect solves field operations."
       features={features}
     />
   );

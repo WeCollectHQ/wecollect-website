@@ -62,7 +62,7 @@ export function HomeHero() {
         </div>
 
         {/* Dashboard + Phone */}
-        <div className="relative mx-auto mt-15 md:mt-28 lg:mt-24 w-full max-w-[1024px]">
+        <div className="relative mx-auto mt-15 md:mt-10 w-full max-w-5xl">
           <Image
             src={HomeHeroImage}
             alt="Wecollect platform dashboard and mobile app"

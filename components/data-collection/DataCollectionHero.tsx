@@ -12,7 +12,7 @@ export function DataCollectionHero() {
       }
       description="Deploy custom surveys, capture media, and track field teams in real time — even when the internet goes down."
       image={DataCollectionHeroImage}
-      imageAlt="WeCollect field agent collecting data"
+      imageAlt="Wecollect field agent collecting data"
     />
   );
 }

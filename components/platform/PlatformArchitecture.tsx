@@ -107,7 +107,7 @@ export function PlatformArchitecture() {
             <div
               key={step.number}
               className={[
-                "relative min-h-[190px] overflow-hidden bg-white p-6 md:min-h-[190px] md:p-7",
+                "relative min-h-47.5 overflow-hidden bg-white p-6 md:min-h-47.5 md:p-7",
                 index % 3 !== 0 ? "lg:border-l" : "",
                 index >= 3 ? "lg:border-t" : "",
                 index % 2 !== 0 ? "sm:border-l lg:border-l" : "",
@@ -125,7 +125,7 @@ export function PlatformArchitecture() {
                 {/* Arrow on steps 01 - 05 */}
                 {index < flowSteps.length - 1 && (
                   <div className="ml-3 flex flex-1 items-center">
-                    <div className="h-[6px] flex-1 bg-[#E8E8EF]" />
+                    <div className="h-1.5 flex-1 bg-[#E8E8EF]" />
 
                     <ArrowRightSmallIcon className="shrink-0 text-[#E8E8EF]" />
                   </div>
@@ -138,7 +138,7 @@ export function PlatformArchitecture() {
                   {step.title}
                 </h3>
 
-                <p className="mt-3 max-w-[280px] text-[13px] font-medium leading-5 text-[#686890] md:text-[14px] md:leading-5.5">
+                <p className="mt-3 max-w-70 text-[13px] font-medium leading-5 text-[#686890] md:text-[14px] md:leading-5.5">
                   {step.description}
                 </p>
               </div>
@@ -156,7 +156,7 @@ export function PlatformArchitecture() {
               <div
                 key={feature.title}
                 className={[
-                  "min-h-[185px] p-6 md:p-7 lg:min-h-[190px]",
+                  "min-h-46.25 p-6 md:p-7 lg:min-h-47.5",
                   index !== 0 ? "border-t" : "",
                   "border-[#E5E5EE]",
                 ].join(" ")}
@@ -167,7 +167,7 @@ export function PlatformArchitecture() {
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 max-w-[500px] text-[13px] font-medium leading-5 text-[#686890] md:text-[14px] md:leading-5.5">
+                <p className="mt-3 max-w-125 text-[13px] font-medium leading-5 text-[#686890] md:text-[14px] md:leading-5.5">
                   {feature.description}
                 </p>
               </div>
@@ -175,10 +175,10 @@ export function PlatformArchitecture() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative min-h-[500px] overflow-hidden bg-[#6FA9D4] lg:min-h-full">
+          <div className="relative min-h-125 overflow-hidden bg-[#6FA9D4] lg:min-h-full">
             <Image
               src={PlatformPhoneImage}
-              alt="WeCollect field data collection on mobile"
+              alt="Wecollect field data collection on mobile"
               fill
               className="object-cover object-center"
             />
