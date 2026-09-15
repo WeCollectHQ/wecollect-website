@@ -1,5 +1,5 @@
 import { AboutHero } from "@/components/about/AboutHero";
-import { WhyWeCollect } from "@/components/about/WhyWeCollect";
+import { WhyWecollect } from "@/components/about/WhyWeCollect";
 import { TrustedOrganizations } from "@/components/home/TrustedOrganizations";
 import { VisionSection } from "@/components/about/VisionSection";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -17,14 +17,17 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <WhyWeCollect />
-      
+      <WhyWecollect />
+
       <TrustedOrganizations variant="light">
         <div className="w-full">
           <Container>
             <div className="grid grid-cols-2 lg:grid-cols-4 border-x border-b border-[#E9E9EF] divide-x divide-y lg:divide-y-0 divide-[#E9E9EF]">
               {stats.map((stat) => (
-                <div key={stat.label} className="flex flex-col items-center justify-center h-24 md:h-32 text-center p-4">
+                <div
+                  key={stat.label}
+                  className="flex flex-col items-center justify-center h-24 md:h-32 text-center p-4"
+                >
                   <h3 className="font-merriweather text-[24px] md:text-[28px] font-bold text-[#0D0D26] mb-1">
                     {stat.value}
                   </h3>
@@ -39,8 +42,8 @@ export default function AboutPage() {
       </TrustedOrganizations>
 
       <VisionSection />
-      
-      <Testimonials variant="with-stats" />
+
+      <Testimonials />
 
       <FAQ />
     </>
