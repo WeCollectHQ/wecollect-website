@@ -49,7 +49,7 @@ export function FourPillars() {
             Four pillars. One platform.
           </h2>
 
-          <p className="mt-8 md:mt-4 text-[16px] text-[#1E1E5A] md:text-[18px] font-medium leading-6.5 md:leading-7.5">
+          <p className="mt-8 md:mt-4 text-[16px] text-[#686890] md:text-[18px] font-medium leading-6.5 md:leading-7.5">
             Wecollect powers every phase of your field operation from data
             collection to verified output.
           </p>
