@@ -1,7 +1,5 @@
 "use server";
 
-import { Resend } from "resend";
-
 export async function subscribeToNewsletter(prevState: any, formData: FormData) {
   try {
     const email = formData.get("email") as string;
@@ -10,26 +8,40 @@ export async function subscribeToNewsletter(prevState: any, formData: FormData) 
       return { error: "Please enter a valid email address.", success: false };
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    const apiKey = process.env.BREVO_API_KEY;
+    const listId = process.env.BREVO_LIST_ID;
     
-    if (!apiKey || apiKey === "re_dummy_key_replace_me" || !audienceId || audienceId === "dummy_audience_id_replace_me") {
-      // Simulate success for dummy env mode
-      console.log("Simulated newsletter subscription for:", email);
-      
-      // Artificial delay to show loading state
+    // Check if we are in dummy mode or missing keys
+    if (!apiKey || apiKey === "xkeysib-dummy-key" || !listId || listId === "1") {
+      console.log("Simulated Brevo newsletter subscription for:", email);
       await new Promise(resolve => setTimeout(resolve, 1000));
       return { success: true, message: "Thanks for subscribing (Dummy Mode)!" };
     }
 
-    const resend = new Resend(apiKey);
-    const { error } = await resend.contacts.create({
-      email,
-      audienceId,
+    // Call Brevo API directly
+    const response = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "api-key": apiKey,
+      },
+      body: JSON.stringify({
+        email: email,
+        listIds: [parseInt(listId, 10)], // Brevo expects an array of integer list IDs
+        updateEnabled: true // If the contact exists, just add them to the list without throwing an error
+      }),
     });
 
-    if (error) {
-      console.error("Resend error:", error);
+    if (!response.ok) {
+      const data = await response.json();
+      console.error("Brevo error:", data);
+      
+      // Handle already subscribed graceful failure just in case updateEnabled doesn't cover all cases
+      if (data.code === "duplicate_parameter") {
+        return { success: true, message: "You're already subscribed!" };
+      }
+      
       return { error: "Failed to subscribe. Please try again later.", success: false };
     }
 
