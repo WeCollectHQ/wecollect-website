@@ -6,22 +6,22 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@/assets/svgs";
 
 const testimonials = [
   {
-    company: "Techpoint",
-    name: "Yinka, Team Lead, Techpoint",
+    company: "Techpoint Africa",
+    name: "Yinka, CEO, Intelpoint",
     quote:
       "Overall, I'm very satisfied with the service. The respondents represented a solid and engaged audience, and the results were highly insightful. I'll definitely recommend it.",
   },
   {
-    company: "Client Company",
-    name: "Jane Doe, Project Manager",
+    company: "FPMPN",
+    name: "Obi Mercy, PM, FPMPN",
     quote:
-      "Wecollect made our field operation much easier to manage. The data was reliable, well structured, and delivered exactly when we needed it.",
+      "I was glad to see that I could use a one-stop software for my project, without having to worry about how to find field enumerators across Nigeria. WeCollect saved me the stress.",
   },
   {
-    company: "Partner Organization",
-    name: "John Doe, Operations Lead",
+    company: "Kaduna Electric",
+    name: "Ibrahim Kolapo, GIS Consultant",
     quote:
-      "The quality of the field data and the speed of delivery exceeded our expectations. We were able to make better decisions with confidence.",
+      "The WeCollect team brought not only strong technical expertise but also a deep understanding of field realities in northern Nigeria. The mobile data collection process was seamless, and the geotagging accuracy helped us map customer distribution and infrastructure gaps with far greater clarity than we previously had.",
   },
 ];
 
@@ -84,9 +84,7 @@ export function Testimonials() {
               {item.quote}
             </p>
             <div className="mt-8 flex flex-col gap-1">
-              <p className="text-[14px] font-medium leading-5 text-[#0D0D26]">
-                {item.company}
-              </p>
+              
               <p className="text-[12px] font-medium leading-5 text-[#0D0D26]">
                 {item.name}
               </p>
