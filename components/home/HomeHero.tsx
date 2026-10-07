@@ -29,8 +29,9 @@ export function HomeHero() {
 
         {/* Heading */}
         <h1 className="mt-6 md:mt-8 font-merriweather font-bold text-[36px] text-[#4747D6] md:text-[64px] lg:text-[80px] leading-[1.15] md:leading-[1.15] tracking-[-0.02em] w-full">
-          Run field operations and
-          <br className="hidden md:block" /> data collection in Africa
+          Execute field operations and
+          <br className="hidden lg:block" /> ground data collection at the{" "}
+          <br className="hidden lg:block" /> speed of now
         </h1>
 
         {/* Description */}
