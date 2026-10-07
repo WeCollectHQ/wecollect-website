@@ -7,7 +7,7 @@ const allFaqs = [
   {
     question: "What is Wecollect app used for?",
     answer:
-      "The Wecollect App helps you and your business collect data on different disciplines and query across Nigeria.",
+      "WeCollect App is a tool that accelerates data collection and delivery to individuals and organizations, across diverse business and geographical domains in Africa.",
   },
   {
     question: "How do I create an account?",
@@ -21,7 +21,8 @@ const allFaqs = [
   },
   {
     question: "Is my data secure and private?",
-    answer: "Yes your data is secure on the platform.",
+    answer:
+      "Data privacy is at the core of our WeCollect Systems. Our operations and technology are guided by critical data management principles, in adherence to extant national and international data protection standards.",
   },
   {
     question: "Can I collaborate with others on a data collection project?",

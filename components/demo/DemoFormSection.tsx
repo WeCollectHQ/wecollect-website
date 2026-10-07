@@ -223,7 +223,7 @@ export function DemoFormSection() {
                       <div className="absolute w-2.5 h-2.5 rounded-full bg-[#4B4BDB] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
                     </div>
                     <span className="text-[13px] text-[#5D5D88] group-hover:text-[#0D0D26] transition-colors">
-                      Yes — I have a team
+                      Yes - I have a Field team
                     </span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer group">
@@ -238,8 +238,8 @@ export function DemoFormSection() {
                       />
                       <div className="absolute w-2.5 h-2.5 rounded-full bg-[#4B4BDB] opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
                     </div>
-                    <span className="text-[13px] font-medium text-[#0D0D26]">
-                      No — I need yours
+                    <span className="text-[13px] font-medium text-[#5D5D88]">
+                      No - I need your Field Team
                     </span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer group">

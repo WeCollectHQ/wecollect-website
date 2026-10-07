@@ -86,7 +86,8 @@ export function NavbarLinks() {
                     <Link
                       key={solution.href}
                       href={solution.href}
-                      className={`flex h-9.75 items-center border border-[#E2E2EA] px-2.5 text-[14px] font-medium transition-colors hover:bg-[#F7F7FF] hover:text-[#4946D3] ${
+                      // className={`flex h-9.75 items-center border border-[#E2E2EA] px-2.5 text-[14px] font-medium transition-colors hover:bg-[#F7F7FF] hover:text-[#4946D3] ${
+                      className={`flex h-9.75 items-center px-2.5 text-[14px] font-medium transition-colors hover:bg-[#F7F7FF] hover:text-[#4946D3] ${
                         isActive
                           ? "bg-[#F7F7FF] text-[#4946D3] border-l-[3px] border-l-[#4946D3]"
                           : "text-[#555584]"
