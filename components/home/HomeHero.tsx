@@ -28,10 +28,10 @@ export function HomeHero() {
         </div>
 
         {/* Heading */}
-        <h1 className="mt-6 md:mt-8 font-merriweather font-bold text-[36px] text-[#4747D6] md:text-[64px] lg:text-[80px] leading-[1.15] md:leading-[1.15] tracking-[-0.02em] w-full">
-          Execute field operations and
-          <br className="hidden lg:block" /> ground data collection at the{" "}
-          <br className="hidden lg:block" /> speed of now
+        <h1 className="mt-6 md:mt-8 font-merriweather font-bold text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] xl:text-[76px] leading-[1.12] tracking-[-0.02em] max-w-5xl mx-auto">
+          Execute field operations and ground data collection{" "}
+          <br className="hidden md:inline" />
+          at the speed of now
         </h1>
 
         {/* Description */}
