@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
 import { ArrowUpRightIcon } from "@/assets/svgs";
+import { Reveal } from "@/components/common/Reveal";
 
 import PlatformHeroBgImage from "@/assets/pngs/platform-hero-bg-image.webp";
 
@@ -69,79 +70,91 @@ export function SolutionHero({
             "
           >
             {/* Eyebrow */}
-            <div
-              className="
-                inline-flex
-                items-center
-                gap-2
-                bg-[#292970]
-                px-4
-                py-2.5
-                text-[11px]
-                font-medium
-                uppercase
-                text-[#FFF000]
-              "
-            >
-              <span className="h-2.5 w-2.5 rounded-full bg-[#FFF000]" />
+            <Reveal delay={0.05} direction="up" distance={12}>
+              <div
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  bg-[#292970]
+                  px-4
+                  py-2.5
+                  text-[11px]
+                  font-medium
+                  uppercase
+                  text-[#FFF000]
+                "
+              >
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FFF000]" />
 
-              <span>{eyebrow}</span>
-            </div>
+                <span>{eyebrow}</span>
+              </div>
+            </Reveal>
 
             {/* Heading */}
-            <h1
-              className="
-                mt-8
-                max-w-155
-                font-merriweather
-                text-[42px]
-                font-bold
-                leading-tight
-                tracking-[-1.5%]
-                text-[#F8F8FF]
-                sm:text-[48px]
-                md:text-[52px]
-                lg:text-[50px]
-                xl:text-[52px]
-              "
-            >
-              {title}
-            </h1>
+            <Reveal delay={0.15} direction="up" distance={18}>
+              <h1
+                className="
+                  mt-8
+                  max-w-155
+                  font-merriweather
+                  text-[42px]
+                  font-bold
+                  leading-tight
+                  tracking-[-1.5%]
+                  text-[#F8F8FF]
+                  sm:text-[48px]
+                  md:text-[52px]
+                  lg:text-[50px]
+                  xl:text-[52px]
+                "
+              >
+                {title}
+              </h1>
+            </Reveal>
 
             {/* Description */}
-            <p
-              className="
-                mt-8
-                max-w-147.5
-                text-[17px]
-                font-medium
-                leading-[1.65]
-                text-[#BDBDD7]
-                md:text-[18px]
-              "
-            >
-              {description}
-            </p>
+            <Reveal delay={0.25} direction="up" distance={18}>
+              <p
+                className="
+                  mt-8
+                  max-w-147.5
+                  text-[17px]
+                  font-medium
+                  leading-[1.65]
+                  text-[#BDBDD7]
+                  md:text-[18px]
+                "
+              >
+                {description}
+              </p>
+            </Reveal>
 
             {/* CTA */}
-            <div className="mt-8">
-              {actions ? (
-                actions
-              ) : (
-                <Button
-                  href={primaryButtonHref}
-                  variant="secondary"
-                  size="lg"
-                  icon={<ArrowUpRightIcon />}
-                >
-                  {primaryButtonText}
-                </Button>
-              )}
-            </div>
+            <Reveal delay={0.35} direction="up" distance={14}>
+              <div className="mt-8">
+                {actions ? (
+                  actions
+                ) : (
+                  <Button
+                    href={primaryButtonHref}
+                    variant="secondary"
+                    size="lg"
+                    icon={<ArrowUpRightIcon />}
+                    className="hover:translate-y-[-2px] transition-transform duration-200"
+                  >
+                    {primaryButtonText}
+                  </Button>
+                )}
+              </div>
+            </Reveal>
           </div>
 
           {/* RIGHT IMAGE */}
-          <div
+          <Reveal
+            delay={0.2}
+            direction="up"
+            distance={24}
             className="
               relative
               z-10
@@ -157,10 +170,10 @@ export function SolutionHero({
                 alt={imageAlt}
                 fill
                 priority
-                className="object-cover"
+                className="object-cover transition-transform duration-700 hover:scale-103"
               />
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

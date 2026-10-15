@@ -34,6 +34,8 @@ const faqs = [
   },
 ];
 
+import { Reveal } from "@/components/common/Reveal";
+
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -46,19 +48,23 @@ export function FAQ() {
       <Container>
         {/* Header */}
         <div className="mx-auto text-center">
-          <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3] md:text-[12px]">
-            FAQ
-          </p>
+          <Reveal delay={0.05} direction="up" distance={14}>
+            <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3] md:text-[12px]">
+              FAQ
+            </p>
+          </Reveal>
 
-          <h2 className="mt-4 font-merriweather text-[28px] font-bold leading-9 tracking-[-0.5%] text-[#0D0D26] md:text-[40px] md:leading-12 md:tracking-[-1%]">
-            Our Users already asked, and We answered
-          </h2>
+          <Reveal delay={0.15} direction="up" distance={20}>
+            <h2 className="mt-4 font-merriweather text-[28px] font-bold leading-9 tracking-[-0.5%] text-[#0D0D26] md:text-[40px] md:leading-12 md:tracking-[-1%]">
+              Our Users already asked, and We answered
+            </h2>
+          </Reveal>
         </div>
 
         {/* Content */}
         <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 md:mt-12 md:grid-cols-2">
           {/* FAQ */}
-          <div>
+          <Reveal delay={0.2} direction="up" distance={20}>
             <div className="border border-[#E9E9EF] bg-white">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
@@ -66,33 +72,36 @@ export function FAQ() {
                 return (
                   <div
                     key={faq.question}
-                    className="border-b border-[#E9E9EF] last:border-b-0"
+                    className="border-b border-[#E9E9EF] last:border-b-0 transition-colors duration-200"
                   >
                     <button
                       type="button"
                       onClick={() => toggleFAQ(index)}
-                      className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left md:px-6"
+                      className="group flex w-full items-center justify-between gap-6 px-6 py-5 text-left cursor-pointer transition-colors duration-200 hover:bg-[#F9F9FD]"
                       aria-expanded={isOpen}
                     >
-                      <span className="text-[15px] font-medium leading-6 text-[#0D0D26] md:text-[16px]">
+                      <span className="text-[15px] font-bold md:font-medium leading-6 text-[#0D0D26] md:text-[16px]">
                         {faq.question}
                       </span>
 
-                      {/* Toggle */}
+                      {/* Animated + to - toggle */}
                       <span
                         className={[
                           "flex h-9 w-9 shrink-0 items-center justify-center text-white transition-colors duration-200",
-                          isOpen ? "bg-[#B9B9CC]" : "bg-[#4B4BDB]",
+                          isOpen ? "bg-[#B9B9CC]" : "bg-[#4B4BDB] hover:bg-[#3838C5]",
                         ].join(" ")}
                       >
-                        <span className="relative block h-5 w-5">
-                          {/* Horizontal */}
-                          <span className="absolute left-0 top-1/2h-0.5 w-5 -translate-y-1/2 bg-white" />
+                        <span className="relative block h-4 w-4">
+                          {/* Horizontal line (always visible for both + and -) */}
+                          <span className="absolute left-0 top-1/2 -mt-[1px] h-[2px] w-4 bg-white" />
 
-                          {/* Vertical */}
-                          {!isOpen && (
-                            <span className="absolute left-1/2 top-0 h-5 w-0.5 -translate-x-1/2 bg-white" />
-                          )}
+                          {/* Vertical line (collapses to leave a clean minus) */}
+                          <span
+                            className={[
+                              "absolute left-1/2 top-0 -ml-[1px] h-4 w-[2px] bg-white transition-all duration-200 ease-out origin-center",
+                              isOpen ? "scale-y-0 opacity-0" : "scale-y-100 opacity-100",
+                            ].join(" ")}
+                          />
                         </span>
                       </span>
                     </button>
@@ -107,7 +116,7 @@ export function FAQ() {
                       ].join(" ")}
                     >
                       <div className="overflow-hidden">
-                        <p className="px-6 pb-6 pr-20 text-[13px] font-medium leading-5 text-[#686890]">
+                        <p className="px-6 pb-6 pr-12 text-[13px] font-medium leading-6 text-[#686890]">
                           {faq.answer}
                         </p>
                       </div>
@@ -120,22 +129,27 @@ export function FAQ() {
             {/* See all */}
             <a
               href="/faqs"
-              className="mt-7 inline-flex items-center gap-2 px-3 text-[13px] font-medium text-[#4B4BDB]"
+              className="group mt-7 inline-flex items-center gap-2 px-3 text-[13px] font-medium text-[#4B4BDB] hover:text-[#3838C5] transition-colors"
             >
               <span>See all</span>
-              <ArrowUpRightIcon className="h-4 w-4" />
+              <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-          </div>
+          </Reveal>
 
           {/* Image */}
-          <div className="relative mt-8 h-105 w-full md:mt-0 md:h-auto">
+          <Reveal
+            delay={0.3}
+            direction="up"
+            distance={24}
+            className="relative mt-8 h-105 w-full md:mt-0 md:h-auto overflow-hidden group"
+          >
             <Image
               src={FAQImage}
               alt="Wecollect field agent using the platform"
               fill
-              className="object-cover object-center"
+              className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
             />
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>
