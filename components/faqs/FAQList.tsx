@@ -127,17 +127,20 @@ export function FAQList() {
                     <span
                       className={[
                         "flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center text-white transition-colors duration-200",
-                        isOpen ? "bg-[#B9B9CC]" : "bg-[#4B4BDB]",
+                        isOpen ? "bg-[#B9B9CC]" : "bg-[#4B4BDB] hover:bg-[#3838C5]",
                       ].join(" ")}
                     >
                       <span className="relative block h-4 w-4 md:h-5 md:w-5">
                         {/* Horizontal */}
-                        <span className="absolute left-0 top-1/2 h-0.5 w-4 md:w-5 -translate-y-1/2 bg-white" />
+                        <span className="absolute left-0 top-1/2 h-[2px] w-4 md:w-5 -translate-y-1/2 bg-white" />
 
                         {/* Vertical */}
-                        {!isOpen && (
-                          <span className="absolute left-1/2 top-0 h-4 w-0.5 md:h-5 md:w-0.5 -translate-x-1/2 bg-white" />
-                        )}
+                        <span
+                          className={[
+                            "absolute left-1/2 top-0 -ml-[1px] h-4 md:h-5 w-[2px] bg-white transition-all duration-200 ease-out origin-center",
+                            isOpen ? "scale-y-0 opacity-0" : "scale-y-100 opacity-100",
+                          ].join(" ")}
+                        />
                       </span>
                     </span>
                   </button>
