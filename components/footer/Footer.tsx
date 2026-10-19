@@ -168,10 +168,29 @@ export function Footer() {
             {/* App buttons */}
             <div className="flex items-center gap-4">
               {/* Google Play */}
-              <GooglePlayIcon />
+              <a
+                href="https://play.google.com/store/apps/details?id=com.wecollectapp.tech&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get it on Google Play"
+                className="transition-opacity hover:opacity-80"
+              >
+                <GooglePlayIcon />
+              </a>
 
-              {/* App Store */}
-              <AppleStoreIcon />
+              {/* App Store - coming soon */}
+              <div
+                className="relative cursor-not-allowed"
+                aria-label="App Store version coming soon"
+                aria-disabled="true"
+              >
+                <div className="opacity-50 grayscale pointer-events-none">
+                  <AppleStoreIcon />
+                </div>
+                <span className="absolute -top-2 -right-2 rounded-full bg-amber-500 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow">
+                  Coming soon
+                </span>
+              </div>
             </div>
           </Container>
         </section>

@@ -138,7 +138,7 @@ export function DemoFormSection() {
                       WhatsApp also works
                     </h4>
                     <p className="text-[13px] text-[#5D5D88]">
-                      +234 816 360 8315
+                      +234 810 449 8990
                     </p>
                   </div>
                 </div>
