@@ -1,0 +1,45 @@
+"use client";
+
+import Link from "next/link";
+import { SolutionHero } from "@/components/common/SolutionHero";
+import BlogHeroImage from "@/assets/pngs/blog-hero.png";
+import { Button } from "@/components/common/Button";
+import { NewsletterForm } from "@/components/common/NewsletterForm";
+
+export function BlogHero() {
+  return (
+    <SolutionHero
+      eyebrow="Blog"
+      title={
+        <>
+          Insights on field <br className="hidden md:block" /> operations and
+          data.
+        </>
+      }
+      description="Practical guides for organisations running field operations and collecting data across Africa."
+      image={BlogHeroImage}
+      imageAlt="Wecollect blog hero"
+      actions={
+        <div className="flex flex-col w-full max-w-110">
+          <label className="text-[12px] text-[#BDBDD7] mb-2.5 font-medium">
+            Subscribe to Wecollect newsletters
+          </label>
+
+          <NewsletterForm
+            formClassName="flex items-center w-full border border-[#E9E9EF] bg-[#151540] p-1 pl-4"
+            inputClassName="flex-1 bg-transparent text-[14px] text-white placeholder:text-[#686890] outline-none"
+            buttonVariant="secondary"
+            buttonSize="sm"
+          />
+
+          <p className="text-[11px] text-[#9898B3] mt-3">
+            By subscribing, I agree to Wecollect{" "}
+            <Link href="/privacy-policy" className="text-[#4B4BDB] underline">
+              Privacy Policy
+            </Link>
+          </p>
+        </div>
+      }
+    />
+  );
+}

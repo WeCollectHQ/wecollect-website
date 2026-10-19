@@ -1,0 +1,290 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+import { Button } from "@/components/common/Button";
+import { Container } from "@/components/common/Container";
+import {
+  ArrowUpRightIcon,
+  PlatformIcon,
+  AgentsIcon,
+  HybridIcon,
+} from "@/assets/svgs";
+
+import DeploymentPlatformImage from "@/assets/pngs/deployment-platform.png";
+
+// Replace these with the actual filenames in your project
+import DeploymentAgentsImage from "@/assets/pngs/deployment-agents.png";
+import DeploymentHybridImage from "@/assets/pngs/deployment-hybrid.png";
+
+const deploymentModels = [
+  {
+    id: "platform",
+    label: "Platform Only",
+    title: (
+      <>
+        Manage your own team with
+        <br />
+        Wecollect technology
+      </>
+    ),
+    description:
+      "Full platform access — form builder, GIS validation, live dashboard, automated payments. Deploy to your existing field agents immediately.",
+    image: DeploymentPlatformImage,
+    alt: "Wecollect platform dashboard",
+    icon: "platform",
+  },
+  {
+    id: "agents",
+    label: "Platform + Our Agents",
+    title: <>Deploy our trained agents</>,
+    description:
+      "No field team? Activate 1,700+ verified agents across 37 states within 48 hours. All managed through the same platform with full GPS tracking and QA.",
+    image: DeploymentAgentsImage,
+    alt: "Wecollect field agents",
+    icon: "agents",
+  },
+  {
+    id: "hybrid",
+    label: "Hybrid",
+    title: (
+      <>
+        Your team + our agents. One
+        <br />
+        dashboard.
+      </>
+    ),
+    description:
+      "Use your core team in priority areas. Extend with Wecollect agents wherever you need additional coverage. One unified dashboard for both.",
+    image: DeploymentHybridImage,
+    alt: "Wecollect agents working with a client team",
+    icon: "hybrid",
+  },
+];
+
+function ModelIcon({ type }: { type: string }) {
+  if (type === "agents") {
+    return <AgentsIcon />;
+  }
+
+  if (type === "hybrid") {
+    return <HybridIcon />;
+  }
+
+  return <PlatformIcon />;
+}
+
+export function DeploymentModels() {
+  const [activeModel, setActiveModel] = useState("platform");
+
+  const currentModel =
+    deploymentModels.find((model) => model.id === activeModel) ??
+    deploymentModels[0];
+
+  return (
+    <section className="bg-[#F6F6FD] text-[#0D0D26]">
+      <Container>
+        <div
+          className="
+            min-h-160
+            py-16
+            md:py-20
+            lg:py-17.5
+          "
+        >
+          {/* HEADER */}
+          <div className="text-center">
+            <p
+              className="
+                text-[10px]
+                font-medium
+                uppercase
+                leading-4
+                text-[#9898B3]
+              "
+            >
+              Deployment Models
+            </p>
+
+            <h2
+              className="
+                mt-3
+                font-merriweather
+                text-[30px]
+                font-bold
+                leading-[1.2]
+                tracking-[-1%]
+                text-[#0D0D26]
+                md:text-[34px]
+                lg:text-[38px]
+              "
+            >
+              Choose the model that fits.
+            </h2>
+          </div>
+
+          {/* TABS */}
+          <div
+            className="
+              mx-auto
+              mt-8
+              flex
+              w-full
+              max-w-162.5
+              border
+              border-[#E3E3ED]
+              bg-white
+              p-0.75
+            "
+          >
+            {deploymentModels.map((model, index) => {
+              const isActive = activeModel === model.id;
+              const isNextActive =
+                deploymentModels[index + 1]?.id === activeModel;
+              const showRightBorder =
+                index !== deploymentModels.length - 1 &&
+                !isActive &&
+                !isNextActive;
+
+              return (
+                <button
+                  key={model.id}
+                  type="button"
+                  onClick={() => setActiveModel(model.id)}
+                  className={`
+                    flex-1
+                    cursor-pointer
+                    px-2
+                    py-2.5
+                    text-[13px]
+                    font-medium
+                    transition-colors
+                    duration-200
+                    md:px-3
+                    md:py-3.5
+                    md:text-[15px]
+                    ${showRightBorder ? "border-r border-[#E3E3ED]" : ""}
+                    ${
+                      isActive
+                        ? "bg-[#C9C8F4] text-[#0D0D26]"
+                        : "bg-white text-[#686890] hover:bg-[#FAFAFF]"
+                    }
+                  `}
+                >
+                  {model.label}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* CONTENT */}
+          <div
+            className="
+              mt-8
+              flex
+              flex-col
+              items-center
+              gap-10
+              md:flex-row
+              md:items-center
+              md:justify-between
+              md:gap-12
+              lg:mt-8
+              lg:gap-20
+            "
+          >
+            {/* LEFT */}
+            <div
+              className="
+                w-full
+                max-w-110
+                shrink-0
+                md:w-[42%]
+                lg:w-110
+              "
+            >
+              {/* Icon */}
+              <div className="mb-6">
+                <ModelIcon type={currentModel.icon} />
+              </div>
+
+              {/* Title */}
+              <h3
+                className="
+                  font-merriweather
+                  text-[20px]
+                  font-bold
+                  leading-tight
+                  tracking-[-1%]
+                  text-[#0D0D26]
+                  md:text-[25px]
+                  lg:text-[25px]
+                "
+              >
+                {currentModel.title}
+              </h3>
+
+              {/* Description */}
+              <p
+                className="
+                  mt-5
+                  max-w-107.5
+                  text-[14px]
+                  font-medium
+                  leading-[1.65]
+                  text-[#6E6E98]
+                  md:text-[16px]
+                "
+              >
+                {currentModel.description}
+              </p>
+
+              {/* CTA */}
+              <div className="mt-7">
+                <Button
+                  href="/demo"
+                  variant="primary"
+                  size="lg"
+                  icon={<ArrowUpRightIcon />}
+                  // className="shrink-0"
+                >
+                  Book a Demo
+                </Button>
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div
+              className="
+                relative
+                w-full
+                max-w-162.5
+                overflow-hidden
+                md:w-[58%]
+                lg:max-w-162.5
+              "
+            >
+              <div
+                className="
+                  relative
+                  aspect-1.5/1
+                  w-full
+                "
+              >
+                <Image
+                  key={currentModel.id}
+                  src={currentModel.image}
+                  alt={currentModel.alt}
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}

@@ -1,0 +1,18 @@
+import { ClientProof as SharedClientProof } from "@/components/common/ClientProof";
+
+import DataValidationClientImage from "@/assets/pngs/data-validation-client-proof.png";
+import UsaidLogo from "@/assets/pngs/usaid.png";
+
+export function ClientProof() {
+  return (
+    <SharedClientProof
+      logo={UsaidLogo}
+      logoAlt="USAID"
+      logoWidth={105}
+      logoHeight={32}
+      image={DataValidationClientImage}
+      imageAlt="Wecollect data validation field deployment"
+      description="Wecollect's platform handled the full data validation workflow — from form design to validated data delivery. Real-time supervision, GIS validation, and automated QA throughout."
+    />
+  );
+}
