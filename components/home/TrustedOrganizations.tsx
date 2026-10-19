@@ -1,81 +1,76 @@
 "use client";
 import Image from "next/image";
-import lespinalist from "@/assets/pngs/lespinalist.jpg";
-import mapbox from "@/assets/svgs/mapbox.svg";
-import barnksforte from "@/assets/pngs/barnksforte.jpg";
-import intelpoint from "@/assets/svgs/intelpoint.svg";
-import awsStartups from "@/assets/svgs/aws-startups.svg";
-import bigCabal from "@/assets/pngs/big-cabal.jpg";
-import usaid from "@/assets/svgs/usaid.svg";
-import cway from "@/assets/pngs/cway.jpg";
-import unfpa from "@/assets/svgs/unfpa.svg";
-import microsoft from "@/assets/svgs/microsoft.svg";
-import kadunaElect from "@/assets/svgs/kaduna-elect.svg";
-// import cgiar from "@/assets/pngs/cgiar.jpg";
+import usaid from "@/assets/pngs/usaid.png";
+import techpoint from "@/assets/pngs/techpoint.png";
+import noah from "@/assets/pngs/noah.png";
+import bigCabal from "@/assets/pngs/big-cabal.png";
 import iita from "@/assets/pngs/iita.png";
-import lagos from "@/assets/pngs/lagos.jpg";
-import noah from "@/assets/pngs/noah.jpg";
+import cway from "@/assets/pngs/cway.png";
+import barnksforte from "@/assets/pngs/barnksforte.png";
+import lbc from "@/assets/pngs/lbc.png";
+import kgen from "@/assets/pngs/kgen.png";
+import viamo from "@/assets/pngs/viamo.png";
+import theWorldBank from "@/assets/pngs/the-world-bank.png";
+import fantein from "@/assets/pngs/fantein.png";
+import lapo from "@/assets/pngs/lapo.png";
+import npc from "@/assets/pngs/npc.png";
 
 const trustedOrganizations = [
   {
-    name: "Lespinalist",
-    logo: lespinalist,
+    name: "USAID",
+    logo: usaid,
   },
   {
-    name: "Mapbox",
-    logo: mapbox,
+    name: "Techpoint",
+    logo: techpoint,
   },
   {
-    name: "Barnksforte",
-    logo: barnksforte,
-  },
-  {
-    name: "Intelpoint",
-    logo: intelpoint,
-  },
-  {
-    name: "AWS Startups",
-    logo: awsStartups,
+    name: "Noah",
+    logo: noah,
   },
   {
     name: "BigCabal",
     logo: bigCabal,
   },
   {
-    name: "USAID",
-    logo: usaid,
+    name: "IITA",
+    logo: iita,
   },
   {
     name: "Cway",
     logo: cway,
   },
   {
-    name: "UNFPA",
-    logo: unfpa,
+    name: "Barnksforte",
+    logo: barnksforte,
   },
   {
-    name: "Microsoft",
-    logo: microsoft,
+    name: "LBC",
+    logo: lbc,
   },
   {
-    name: "Kaduna Elect",
-    logo: kadunaElect,
-  },
-  // {
-  //   name: "CGIAR",
-  //   logo: cgiar,
-  // },
-  {
-    name: "IITA",
-    logo: iita,
+    name: "Kgen",
+    logo: kgen,
   },
   {
-    name: "Lagos",
-    logo: lagos,
+    name: "Viamo",
+    logo: viamo,
   },
   {
-    name: "Noah",
-    logo: noah,
+    name: "The World Bank",
+    logo: theWorldBank,
+  },
+  {
+    name: "Fantein",
+    logo: fantein,
+  },
+  {
+    name: "Lapo",
+    logo: lapo,
+  },
+  {
+    name: "NPC",
+    logo: npc,
   },
 ];
 
@@ -114,18 +109,12 @@ export function TrustedOrganizations({
       </Reveal>
 
       {/* Logo carousel */}
-      <div
-        className="marquee-container group bg-white relative h-16 md:h-18 lg:h-16 overflow-hidden border-b border-[#1E1E5A]"
-      >
+      <div className="marquee-container group bg-white relative h-16 md:h-18 lg:h-16 overflow-hidden border-b border-[#1E1E5A]">
         {/* Left fade mask */}
-        <div
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 md:w-28 bg-gradient-to-r from-white via-white/80 to-transparent"
-        />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 md:w-28 bg-gradient-to-r from-white via-white/80 to-transparent" />
 
         {/* Right fade mask */}
-        <div
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 md:w-28 bg-gradient-to-l from-white via-white/80 to-transparent"
-        />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 md:w-28 bg-gradient-to-l from-white via-white/80 to-transparent" />
 
         {/* Animated track with pause on hover */}
         <div className="animate-marquee flex h-full items-center">

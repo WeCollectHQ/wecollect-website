@@ -1,7 +1,7 @@
 import { ClientProof as SharedClientProof } from "@/components/common/ClientProof";
 
 import ClientProofImage from "@/assets/pngs/field-operations-client-proof.png";
-import cwaylogo from "@/assets/pngs/cway.jpg";
+import cwaylogo from "@/assets/pngs/cway.png";
 
 export function ClientProof() {
   return (
