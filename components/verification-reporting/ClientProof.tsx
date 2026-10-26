@@ -1,6 +1,6 @@
 import { ClientProof as SharedClientProof } from "@/components/common/ClientProof";
 
-import KadunaElectricImage from "@/assets/pngs/kaduna-electric.png";
+import KadunaElectricImage from "@/assets/pngs/kaduna-electric.webp";
 import KadunaElectricLogo from "@/assets/svgs/kaduna-elect.svg";
 
 export function ClientProof() {

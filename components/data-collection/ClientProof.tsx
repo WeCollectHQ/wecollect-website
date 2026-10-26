@@ -1,7 +1,7 @@
 import { ClientProof as SharedClientProof } from "@/components/common/ClientProof";
 
-import IitaImage from "@/assets/pngs/iita-image.png";
-import iitaLogo from "@/assets/pngs/iita.png";
+import IitaImage from "@/assets/pngs/iita-image.webp";
+import iitaLogo from "@/assets/pngs/iita.webp";
 
 export function ClientProof() {
   return (

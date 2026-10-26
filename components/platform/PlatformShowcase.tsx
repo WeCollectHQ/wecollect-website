@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/common/Container";
-import PlatformImage from "@/assets/pngs/platform-image.png";
+import PlatformImage from "@/assets/pngs/platform-image.webp";
 
 export function PlatformShowcase() {
   return (

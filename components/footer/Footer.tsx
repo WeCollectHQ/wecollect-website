@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/Button";
 import { NewsletterForm } from "@/components/common/NewsletterForm";
 import { Container } from "@/components/Container";
-import Image from "next/image";
 import { FooterColumn } from "./FooterColumn";
 import DesktopBgImage from "@/assets/pngs/footer-desktop-bg-image.webp";
 import MobileBgImage from "@/assets/pngs/footer-mobile-bg-image.webp";

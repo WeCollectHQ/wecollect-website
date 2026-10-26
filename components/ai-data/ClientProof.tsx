@@ -1,6 +1,6 @@
 import { ClientProof as SharedClientProof } from "@/components/common/ClientProof";
 
-import AiDataClientProofImage from "@/assets/pngs/ai-data-client-proof.png";
+import AiDataClientProofImage from "@/assets/pngs/ai-data-client-proof.webp";
 import AiDataClientProofLogo from "@/assets/svgs/ai-data-client-proof-logo.svg";
 
 export function ClientProof() {

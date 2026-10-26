@@ -4,10 +4,10 @@ import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
 import { ArrowUpRightIcon } from "@/assets/svgs";
 import DataModalityBgImage from "@/assets/pngs/data-modality-bg-image.webp";
-import VoiceAudioImage from "@/assets/pngs/voice-audio.png";
-import VisionImagesImage from "@/assets/pngs/vision-images.png";
-import GeospatialImage from "@/assets/pngs/geospatial.png";
-import SurveyTextImage from "@/assets/pngs/survey-text.png";
+import VoiceAudioImage from "@/assets/pngs/voice-audio.webp";
+import VisionImagesImage from "@/assets/pngs/vision-images.webp";
+import GeospatialImage from "@/assets/pngs/geospatial.webp";
+import SurveyTextImage from "@/assets/pngs/survey-text.webp";
 
 const modalities = [
   {
@@ -189,7 +189,7 @@ export function DataModality() {
                   variant="primary"
                   size="lg"
                   icon={<ArrowUpRightIcon />}
-                  className="shrink-0 hover:translate-y-[-2px] transition-transform duration-200"
+                  className="shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
                 >
                   Explore AI Data
                 </Button>
@@ -198,7 +198,7 @@ export function DataModality() {
                   href="/demo"
                   variant="outline-white"
                   size="lg"
-                  className="shrink-0 whitespace-nowrap hover:translate-y-[-2px] transition-transform duration-200"
+                  className="shrink-0 whitespace-nowrap hover:-translate-y-0.5 transition-transform duration-200"
                 >
                   Book a Demo
                 </Button>

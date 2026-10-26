@@ -51,7 +51,7 @@ export function QualityAssurance() {
   return (
     <section className="bg-white text-[#0D0D26]">
       <Container>
-        <div className="py-[60px] md:py-[80px]">
+        <div className="py-15 md:py-37.5">
           {/* Heading */}
           <div className="mb-10">
             <p className="text-[10px] font-bold uppercase leading-4 tracking-wide text-[#9898B3]">
@@ -69,7 +69,7 @@ export function QualityAssurance() {
               <div
                 key={feature.title}
                 className="
-                  min-h-[220px]
+                  min-h-55
                   border-b
                   border-r
                   border-[#E6E4E8]
@@ -79,11 +79,11 @@ export function QualityAssurance() {
               >
                 <div className="mb-6 text-[#0D0D26]">{feature.icon}</div>
 
-                <h3 className="max-w-[280px] text-[16px] font-bold leading-6 text-[#0D0D26] md:text-[18px]">
+                <h3 className="max-w-55 text-[16px] font-bold leading-6 text-[#0D0D26] md:text-[18px]">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 max-w-[280px] text-[13px] font-medium leading-[1.65] text-[#5C5C87] md:text-[14px]">
+                <p className="mt-3 max-w-55 text-[13px] font-medium leading-[1.65] text-[#5C5C87] md:text-[14px]">
                   {feature.description}
                 </p>
               </div>

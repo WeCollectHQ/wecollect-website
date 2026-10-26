@@ -1,7 +1,7 @@
 import { Button } from "@/components/common/Button";
 import { SolutionHero } from "@/components/common/SolutionHero";
 import { ArrowUpRightIcon } from "@/assets/svgs";
-import PlatformHeroImage from "@/assets/pngs/platform-hero-image.png";
+import PlatformHeroImage from "@/assets/pngs/platform-hero-image.webp";
 
 export function PlatformHero() {
   return (

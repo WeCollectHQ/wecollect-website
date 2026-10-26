@@ -1,8 +1,8 @@
 import { IncludedServices as SharedIncludedServices } from "@/components/common/IncludedServices";
-import SurveyCensusImage from "@/assets/pngs/survey-census.png";
-import KapStudiesImage from "@/assets/pngs/kap-studies.png";
-import MeDataCollectionImage from "@/assets/pngs/me-data-collection.png";
-import BeneficiaryTrackingImage from "@/assets/pngs/beneficiary-tracking.png";
+import SurveyCensusImage from "@/assets/pngs/survey-census.webp";
+import KapStudiesImage from "@/assets/pngs/kap-studies.webp";
+import MeDataCollectionImage from "@/assets/pngs/me-data-collection.webp";
+import BeneficiaryTrackingImage from "@/assets/pngs/beneficiary-tracking.webp";
 
 export function IncludedServices() {
   return (

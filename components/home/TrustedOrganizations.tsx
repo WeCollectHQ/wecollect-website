@@ -1,19 +1,19 @@
 "use client";
 import Image from "next/image";
-import usaid from "@/assets/pngs/usaid.png";
-import techpoint from "@/assets/pngs/techpoint.png";
-import noah from "@/assets/pngs/noah.png";
-import bigCabal from "@/assets/pngs/big-cabal.png";
-import iita from "@/assets/pngs/iita.png";
-import cway from "@/assets/pngs/cway.png";
-import barnksforte from "@/assets/pngs/barnksforte.png";
-import lbc from "@/assets/pngs/lbc.png";
-import kgen from "@/assets/pngs/kgen.png";
-import viamo from "@/assets/pngs/viamo.png";
-import theWorldBank from "@/assets/pngs/the-world-bank.png";
-import fantein from "@/assets/pngs/fantein.png";
-import lapo from "@/assets/pngs/lapo.png";
-import npc from "@/assets/pngs/npc.png";
+import usaid from "@/assets/pngs/usaid.webp";
+import techpoint from "@/assets/pngs/techpoint.webp";
+import noah from "@/assets/pngs/noah.webp";
+import bigCabal from "@/assets/pngs/big-cabal.webp";
+import iita from "@/assets/pngs/iita.webp";
+import cway from "@/assets/pngs/cway.webp";
+import barnksforte from "@/assets/pngs/barnksforte.webp";
+import lbc from "@/assets/pngs/lbc.webp";
+import kgen from "@/assets/pngs/kgen.webp";
+import viamo from "@/assets/pngs/viamo.webp";
+import theWorldBank from "@/assets/pngs/the-world-bank.webp";
+import fantein from "@/assets/pngs/fantein.webp";
+import lapo from "@/assets/pngs/lapo.webp";
+import npc from "@/assets/pngs/npc.webp";
 
 const trustedOrganizations = [
   {
@@ -111,10 +111,10 @@ export function TrustedOrganizations({
       {/* Logo carousel */}
       <div className="marquee-container group bg-white relative h-16 md:h-18 lg:h-16 overflow-hidden border-b border-[#1E1E5A]">
         {/* Left fade mask */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 md:w-28 bg-gradient-to-r from-white via-white/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 md:w-28 bg-linear-to-r from-white via-white/80 to-transparent" />
 
         {/* Right fade mask */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 md:w-28 bg-gradient-to-l from-white via-white/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 md:w-28 bg-linear-to-l from-white via-white/80 to-transparent" />
 
         {/* Animated track with pause on hover */}
         <div className="animate-marquee flex h-full items-center">
@@ -127,7 +127,7 @@ export function TrustedOrganizations({
                 <Image
                   src={organization.logo}
                   alt={organization.name}
-                  className="h-auto max-h-11 w-auto max-w-36 object-contain opacity-85 transition-opacity duration-300 group-hover:opacity-70 hover:!opacity-100"
+                  className="h-auto max-h-11 w-auto max-w-36 object-contain opacity-85 transition-opacity duration-300 group-hover:opacity-70 hover:!opacity-100!"
                 />
               </div>
             ),

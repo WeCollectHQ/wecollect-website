@@ -1,5 +1,5 @@
 import { SolutionHero } from "@/components/common/SolutionHero";
-import AgentNetworkHeroImage from "@/assets/pngs/agent-network-hero.png";
+import AgentNetworkHeroImage from "@/assets/pngs/agent-network-hero.webp";
 
 export function AgentNetworkHero() {
   return (

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { SolutionHero } from "@/components/common/SolutionHero";
-import BlogHeroImage from "@/assets/pngs/blog-hero.png";
+import BlogHeroImage from "@/assets/pngs/blog-hero.webp";
 import { Button } from "@/components/common/Button";
 import { NewsletterForm } from "@/components/common/NewsletterForm";
 

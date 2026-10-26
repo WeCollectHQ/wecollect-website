@@ -2,9 +2,8 @@
 import React, { useState } from "react";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
-import heroPic from "@/assets/pngs/pop-sweet.png";
 import Image from "next/image";
-import saleBoy from "@/assets/pngs/sales-boy.png";
+import saleBoy from "@/assets/pngs/sales-boy.webp";
 import * as Yup from "yup";
 import axios from "axios";
 import { Formik } from "formik";

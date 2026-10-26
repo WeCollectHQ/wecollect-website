@@ -1,7 +1,7 @@
 import { ClientProof as SharedClientProof } from "@/components/common/ClientProof";
 
-import DataValidationClientImage from "@/assets/pngs/data-validation-client-proof.png";
-import UsaidLogo from "@/assets/pngs/usaid.png";
+import DataValidationClientImage from "@/assets/pngs/data-validation-client-proof.webp";
+import UsaidLogo from "@/assets/pngs/usaid.webp";
 
 export function ClientProof() {
   return (

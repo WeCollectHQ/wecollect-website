@@ -9,7 +9,7 @@ import {
   EnterpriseSecurityIcon,
   ArrowRightSmallIcon,
 } from "@/assets/svgs";
-import PlatformPhoneImage from "@/assets/pngs/platform-phone-image.png";
+import PlatformPhoneImage from "@/assets/pngs/platform-phone-image.webp";
 
 const flowSteps = [
   {

@@ -14,7 +14,7 @@ import {
   FacebookIcon,
   YouTubeIcon,
 } from "@/assets/svgs";
-import BlogPlaceholder from "@/assets/pngs/blog-placeholder.png";
+import BlogPlaceholder from "@/assets/pngs/blog-placeholder.webp";
 
 export default async function BlogDetailPage(props: {
   params: Promise<{ slug: string }>;

@@ -1,5 +1,5 @@
 import { SolutionOverview } from "@/components/common/SolutionOverview";
-import FieldOperationsProblemImage from "@/assets/pngs/field-operations-problem.png";
+import FieldOperationsProblemImage from "@/assets/pngs/field-operations-problem.webp";
 import {
   FieldFragmentedIcon,
   TransparencyIcon,

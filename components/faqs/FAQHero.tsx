@@ -15,7 +15,7 @@ export function FAQHero() {
       />
 
       <Container>
-        <div className="relative z-10 flex min-h-[200px] md:min-h-[250px] flex-col items-center justify-center py-16 md:py-20 text-center">
+        <div className="relative z-10 flex min-h-50 md:min-h-62.5 flex-col items-center justify-center py-16 md:py-20 text-center">
           <h1 className="font-merriweather text-[32px] sm:text-[36px] md:text-[44px] lg:text-[48px] font-bold leading-tight tracking-[-1%] text-white">
             Frequently Asked Questions
           </h1>

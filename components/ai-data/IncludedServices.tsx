@@ -1,9 +1,9 @@
 import { IncludedServices as SharedIncludedServices } from "@/components/common/IncludedServices";
 
-import VoiceAudioImage from "@/assets/pngs/voice-audio-collection.png";
-import AnnotationImage from "@/assets/pngs/annotation-labelling.png";
-import VisualDataImage from "@/assets/pngs/visual-data-collection.png";
-import GeospatialImage from "@/assets/pngs/geospatial-ground-truth.png";
+import VoiceAudioImage from "@/assets/pngs/voice-audio-collection.webp";
+import AnnotationImage from "@/assets/pngs/annotation-labelling.webp";
+import VisualDataImage from "@/assets/pngs/visual-data-collection.webp";
+import GeospatialImage from "@/assets/pngs/geospatial-ground-truth.webp";
 
 export function IncludedServices() {
   return (

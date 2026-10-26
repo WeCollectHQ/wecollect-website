@@ -1,5 +1,5 @@
 import { SolutionHero } from "@/components/common/SolutionHero";
-import VerificationHeroImage from "@/assets/pngs/verification-reporting-hero.png";
+import VerificationHeroImage from "@/assets/pngs/verification-reporting-hero.webp";
 
 export function VerificationHero() {
   return (

@@ -1585,21 +1585,21 @@ export function VerificationFraudRiskIcon() {
       <path
         d="M19.2173 22L21.3042 19.9131L23.3912 22"
         stroke="#0D0D26"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M26.1737 15.043L14.3477 12.9561V31.7387L26.1737 37.9995L37.9998 31.7387V12.9561L26.1737 15.043Z"
         stroke="#0D0D26"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M29.6522 11.5652V6L17.8261 8.08696L6 6V24.7826L11.6362 27.767M33.1304 22L31.0435 19.913L28.9565 22M20.6087 28.9565L26.1586 31.8421L31.7391 28.9565"
         stroke="#0D0D26"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

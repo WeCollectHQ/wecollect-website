@@ -1,5 +1,5 @@
 import { SolutionHero } from "@/components/common/SolutionHero";
-import DemoHeroImage from "@/assets/pngs/demo-hero.png";
+import DemoHeroImage from "@/assets/pngs/demo-hero.webp";
 import { Button } from "@/components/common/Button";
 import { ArrowUpRightIcon } from "@/assets/svgs/index";
 

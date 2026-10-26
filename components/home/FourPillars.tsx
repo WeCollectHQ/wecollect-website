@@ -108,7 +108,7 @@ export function FourPillars() {
               href="/solutions/ai-data"
               size="lg"
               icon={<ArrowUpRightIcon />}
-              className="mt-6 hover:translate-y-[-2px] transition-transform duration-200"
+              className="mt-6 hover:-translate-y-0.5 transition-transform duration-200"
             >
               Explore AI Data
             </Button>

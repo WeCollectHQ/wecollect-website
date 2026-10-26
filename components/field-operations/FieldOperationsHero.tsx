@@ -1,5 +1,5 @@
 import { SolutionHero } from "@/components/common/SolutionHero";
-import FieldOperationsHeroImage from "@/assets/pngs/field-operations-hero-image.png";
+import FieldOperationsHeroImage from "@/assets/pngs/field-operations-hero-image.webp";
 
 export function FieldOperationsHero() {
   return (

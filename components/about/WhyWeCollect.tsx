@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import { ArrowUpRightIcon } from "@/assets/svgs";
-import WhyWecollectImage from "@/assets/pngs/why-wecollect.png";
+import WhyWecollectImage from "@/assets/pngs/why-wecollect.webp";
 
 export function WhyWecollect() {
   return (

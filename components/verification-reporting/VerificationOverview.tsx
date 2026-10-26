@@ -1,4 +1,4 @@
-import VerificationProblemImage from "@/assets/pngs/verification-problem.png";
+import VerificationProblemImage from "@/assets/pngs/verification-problem.webp";
 import { SolutionOverview } from "@/components/common/SolutionOverview";
 import {
   VerificationFraudRiskIcon,
