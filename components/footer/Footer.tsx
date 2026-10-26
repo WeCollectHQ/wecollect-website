@@ -166,28 +166,28 @@ export function Footer() {
             </p>
 
             {/* App buttons */}
-            <div className="flex items-center gap-4">
+            <div className="grid grid-cols-2 gap-3 w-full max-w-sm sm:max-w-none sm:flex sm:w-auto sm:items-center sm:gap-4">
               {/* Google Play */}
               <a
                 href="https://play.google.com/store/apps/details?id=com.wecollectapp.tech&hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get it on Google Play"
-                className="transition-opacity hover:opacity-80"
+                className="w-full sm:w-auto transition-opacity hover:opacity-80"
               >
-                <GooglePlayIcon />
+                <GooglePlayIcon className="w-full h-auto sm:w-[180px] sm:h-[52px] cursor-pointer" />
               </a>
 
               {/* App Store - coming soon */}
               <div
-                className="relative cursor-not-allowed"
+                className="relative w-full sm:w-auto cursor-not-allowed"
                 aria-label="App Store version coming soon"
                 aria-disabled="true"
               >
-                <div className="opacity-50 grayscale pointer-events-none">
-                  <AppleStoreIcon />
+                <div className="opacity-50 grayscale pointer-events-none w-full">
+                  <AppleStoreIcon className="w-full h-auto sm:w-[180px] sm:h-[52px]" />
                 </div>
-                <span className="absolute -top-2 -right-2 rounded-full bg-amber-500 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow">
+                <span className="absolute -top-2 right-1 sm:-right-2 rounded-full bg-amber-500 px-2 py-0.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wide text-white shadow">
                   Coming soon
                 </span>
               </div>

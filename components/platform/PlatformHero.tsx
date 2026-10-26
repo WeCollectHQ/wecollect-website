@@ -16,13 +16,13 @@ export function PlatformHero() {
       image={PlatformHeroImage}
       imageAlt="Wecollect platform dashboard"
       actions={
-        <div className="flex flex-nowrap items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <Button
             href="/demo"
             variant="secondary"
             size="lg"
             icon={<ArrowUpRightIcon />}
-            className="shrink-0"
+            className="w-full sm:w-auto shrink-0"
           >
             Book a Demo
           </Button>
@@ -31,7 +31,7 @@ export function PlatformHero() {
             href="/pricing"
             variant="outline-white"
             size="lg"
-            className="shrink-0 whitespace-nowrap"
+            className="w-full sm:w-auto shrink-0 whitespace-nowrap"
           >
             Pricing
           </Button>

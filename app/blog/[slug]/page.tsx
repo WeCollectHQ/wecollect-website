@@ -66,6 +66,7 @@ export default async function BlogDetailPage(props: {
             fill
             className="object-cover"
             priority
+            unoptimized={Boolean(post.image)}
           />
         </div>
         {/* MAIN CONTENT AREA */}
@@ -182,6 +183,7 @@ export default async function BlogDetailPage(props: {
                         alt={recentPost.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        unoptimized={Boolean(recentPost.image)}
                       />
                     </div>
                     <div className="flex items-center justify-between mt-2">

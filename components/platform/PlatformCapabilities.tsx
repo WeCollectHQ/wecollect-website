@@ -119,7 +119,7 @@ export function PlatformCapabilities() {
         <Container>
           <div className="py-20 md:py-24 lg:py-22">
             {/* Header */}
-            <div className="flex items-end justify-between gap-8">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8">
               <div>
                 <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3] md:text-[12px]">
                   Capabilities
@@ -135,22 +135,11 @@ export function PlatformCapabilities() {
                 variant="primary"
                 size="lg"
                 icon={<ArrowUpRightIcon />}
-                className="hidden shrink-0 md:flex"
+                className="w-fit shrink-0"
               >
                 Book a Demo
               </Button>
             </div>
-
-            {/* Mobile CTA */}
-            <Button
-              href="/demo"
-              variant="primary"
-              size="lg"
-              icon={<ArrowUpRightIcon />}
-              className="mt-6 md:hidden"
-            >
-              Book a Demo
-            </Button>
 
             {/* Feature grid */}
             <div className="mt-10 grid grid-cols-1 border-l border-t border-[#E9E9EF] sm:grid-cols-2 lg:grid-cols-3">
@@ -180,7 +169,7 @@ export function PlatformCapabilities() {
         <Container>
           <div className="py-20 md:py-24 lg:py-22">
             {/* Header */}
-            <div className="flex items-end justify-between gap-8">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8">
               <div>
                 <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3] md:text-[12px]">
                   Why Wecollect
@@ -196,22 +185,11 @@ export function PlatformCapabilities() {
                 variant="primary"
                 size="lg"
                 icon={<ArrowUpRightIcon />}
-                className="hidden shrink-0 md:flex"
+                className="w-fit shrink-0"
               >
                 Book a Demo
               </Button>
             </div>
-
-            {/* Mobile CTA */}
-            <Button
-              href="/demo"
-              variant="primary"
-              size="lg"
-              icon={<ArrowUpRightIcon />}
-              className="mt-6 md:hidden"
-            >
-              Book a Demo
-            </Button>
 
             {/* Comparison table */}
             <div className="mt-10 overflow-x-auto border border-[#E9E9EF]">

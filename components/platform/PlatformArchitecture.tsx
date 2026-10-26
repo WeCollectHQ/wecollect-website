@@ -77,7 +77,7 @@ export function PlatformArchitecture() {
         {/* =========================================
             ARCHITECTURE HEADER
         ========================================= */}
-        <div className="flex items-end justify-between gap-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8">
           <div>
             <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3] md:text-[12px]">
               Architecture
@@ -93,7 +93,7 @@ export function PlatformArchitecture() {
             variant="primary"
             size="lg"
             icon={<ArrowUpRightIcon />}
-            className="shrink-0"
+            className="w-fit shrink-0"
           >
             Book a Demo
           </Button>

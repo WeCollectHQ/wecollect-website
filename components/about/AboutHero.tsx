@@ -17,13 +17,13 @@ export function AboutHero() {
       image={AboutHeroImage}
       imageAlt="Wecollect about hero"
       actions={
-        <div className="flex flex-nowrap items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <Button
             href="/contact-us"
             variant="secondary"
             size="lg"
             icon={<ArrowUpRightIcon />}
-            className="shrink-0"
+            className="w-full sm:w-auto shrink-0"
           >
             Contact Us
           </Button>
