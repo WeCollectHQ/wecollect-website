@@ -22,6 +22,8 @@ export function DeploymentModels() {
         alt=""
         fill
         priority
+        sizes="100vw"
+        unoptimized
         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
       />
 

@@ -31,14 +31,16 @@ export function HomeHero() {
   const nextWordDelay = () => delay(WORD_START + wordIndex++ * WORD_STAGGER);
 
   return (
-    <section className="relative overflow-hidden bg-[#FFFFF] text-[#4747D6]">
+    <section className="relative overflow-hidden bg-white text-[#4747D6]">
       {/* Background */}
       <Image
         src={HomeHeroBgImage}
         alt=""
         fill
         priority
-        className="absolute inset-0 h-full w-full object-cover object-top"
+        sizes="100vw"
+        unoptimized
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top"
       />
 
       <Container className="relative z-10 pt-20 md:pt-24 lg:pt-28 flex flex-col items-center text-center">

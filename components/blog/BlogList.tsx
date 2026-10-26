@@ -129,6 +129,7 @@ export function BlogList({
                     alt={post.title}
                     fill
                     className="object-cover"
+                    unoptimized={Boolean(post.image)}
                   />
                 </div>
 
