@@ -166,7 +166,7 @@ export function Footer() {
             </p>
 
             {/* App buttons */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               {/* Google Play */}
               <a
                 href="https://play.google.com/store/apps/details?id=com.wecollectapp.tech&hl=en"
@@ -175,7 +175,7 @@ export function Footer() {
                 aria-label="Get it on Google Play"
                 className="transition-opacity hover:opacity-80"
               >
-                <GooglePlayIcon />
+                <GooglePlayIcon className="h-10 sm:h-[52px] w-auto cursor-pointer" />
               </a>
 
               {/* App Store - coming soon */}
@@ -185,9 +185,9 @@ export function Footer() {
                 aria-disabled="true"
               >
                 <div className="opacity-50 grayscale pointer-events-none">
-                  <AppleStoreIcon />
+                  <AppleStoreIcon className="h-10 sm:h-[52px] w-auto" />
                 </div>
-                <span className="absolute -top-2 -right-2 rounded-full bg-amber-500 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow">
+                <span className="absolute -top-2 -right-1 sm:-right-2 rounded-full bg-amber-500 px-2 py-0.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wide text-white shadow">
                   Coming soon
                 </span>
               </div>
