@@ -1,9 +1,8 @@
 import { IncludedServices as SharedIncludedServices } from "@/components/common/IncludedServices";
-
-import AddressValidationImage from "@/assets/pngs/address-validation.png";
-import SiteVisitReportingImage from "@/assets/pngs/site-visit-reporting.png";
-import KycFieldChecksImage from "@/assets/pngs/kyc-field-checks.png";
-import AssetVerificationImage from "@/assets/pngs/asset-verification.png";
+import AddressValidationImage from "@/assets/pngs/address-validation.webp";
+import SiteVisitReportingImage from "@/assets/pngs/site-visit-reporting.webp";
+import KycFieldChecksImage from "@/assets/pngs/kyc-field-checks.webp";
+import AssetVerificationImage from "@/assets/pngs/asset-verification.webp";
 
 export function IncludedServices() {
   return (

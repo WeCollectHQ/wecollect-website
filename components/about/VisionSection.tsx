@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import { ArrowUpRightIcon } from "@/assets/svgs";
-import VisionPlatformImage from "@/assets/pngs/vision-platform.png";
+import VisionPlatformImage from "@/assets/pngs/vision-platform.webp";
 
 export function VisionSection() {
   return (
@@ -12,7 +12,7 @@ export function VisionSection() {
           <span className="text-[10px] md:text-[12px] font-bold uppercase tracking-widest text-[#7F7FA8] mb-4">
             VISION
           </span>
-          <h2 className="font-merriweather text-[32px] md:text-[40px] lg:text-[48px] font-bold text-[#0D0D26] leading-tight max-w-[800px]">
+          <h2 className="font-merriweather text-[32px] md:text-[40px] lg:text-[48px] font-bold text-[#0D0D26] leading-tight max-w-200">
             Turn every field action into structured, verified data.
           </h2>
         </div>
@@ -22,7 +22,7 @@ export function VisionSection() {
         <Container>
           <div className="grid lg:grid-cols-2">
             {/* LEFT COLUMN - IMAGE */}
-            <div className="relative w-full h-[300px] md:h-[450px] lg:h-auto min-h-[400px] border-b lg:border-b-0 lg:border-r border-[#E7E7EF]">
+            <div className="relative w-full h-75 md:h-112.5 lg:h-auto min-h-100 border-b lg:border-b-0 lg:border-r border-[#E7E7EF]">
               <Image
                 src={VisionPlatformImage}
                 alt="Vision Platform"
@@ -32,11 +32,11 @@ export function VisionSection() {
             </div>
 
             {/* RIGHT COLUMN - TEXT */}
-            <div className="bg-[#F8F9FB] p-8 md:p-12 lg:p-16 xl:p-[72px] flex flex-col items-center justify-center text-center">
-              <p className="text-[#5D5D88] text-[15px] md:text-[17px] leading-[1.7] mb-8 font-medium max-w-[480px]">
-                The field infrastructure we're building today is the ground-truth
-                data layer the AI economy will run on tomorrow. Built here, for
-                here — and defensible everywhere else.
+            <div className="bg-[#F8F9FB] p-8 md:p-12 lg:p-16 xl:p-18 flex flex-col items-center justify-center text-center">
+              <p className="text-[#5D5D88] text-[15px] md:text-[17px] leading-[1.7] mb-8 font-medium max-w-120">
+                The field infrastructure we're building today is the
+                ground-truth data layer the AI economy will run on tomorrow.
+                Built here, for here — and defensible everywhere else.
               </p>
 
               <Button

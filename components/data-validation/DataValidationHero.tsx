@@ -1,5 +1,5 @@
 import { SolutionHero } from "@/components/common/SolutionHero";
-import DataValidationHeroImage from "@/assets/pngs/data-validation-hero.png";
+import DataValidationHeroImage from "@/assets/pngs/data-validation-hero.webp";
 
 export function DataValidationHero() {
   return (

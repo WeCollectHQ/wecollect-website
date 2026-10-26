@@ -53,7 +53,7 @@ export function DeploymentProcess() {
       />
 
       <Container>
-        <div className="relative py-[60px] md:py-[150px]">
+        <div className="relative py-15 md:py-37.5">
           {/* Heading */}
           <div className="text-center">
             <p className="text-[10px] font-bold uppercase leading-4 text-[#8C8410] tracking-wide">
@@ -95,7 +95,7 @@ export function DeploymentProcess() {
               <div
                 key={step.title}
                 className={`
-                  min-h-[220px]
+                  min-h-55
                   border-b
                   border-r
                   border-[#E6E4D8]
@@ -120,7 +120,7 @@ export function DeploymentProcess() {
                   {step.title}
                 </h3>
 
-                <p className="mt-3 max-w-[220px] text-[13px] font-medium leading-[1.65] text-[#5C5C87] md:text-[14px]">
+                <p className="mt-3 max-w-55 text-[13px] font-medium leading-[1.65] text-[#5C5C87] md:text-[14px]">
                   {step.description}
                 </p>
               </div>

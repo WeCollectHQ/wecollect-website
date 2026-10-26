@@ -1,5 +1,5 @@
 import { SolutionOverview } from "@/components/common/SolutionOverview";
-import AiDataProblemImage from "@/assets/pngs/ai-data-problem.png";
+import AiDataProblemImage from "@/assets/pngs/ai-data-problem.webp";
 import {
   ContextGapIcon,
   TransparencyIcon,

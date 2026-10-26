@@ -1,5 +1,5 @@
 import { SolutionHero } from "@/components/common/SolutionHero";
-import DataCollectionHeroImage from "@/assets/pngs/data-collection-hero-image.png";
+import DataCollectionHeroImage from "@/assets/pngs/data-collection-hero-image.webp";
 
 export function DataCollectionHero() {
   return (

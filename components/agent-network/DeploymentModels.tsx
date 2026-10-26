@@ -1,8 +1,6 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
-
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
 import {
@@ -12,11 +10,9 @@ import {
   HybridIcon,
 } from "@/assets/svgs";
 
-import DeploymentPlatformImage from "@/assets/pngs/deployment-platform.png";
-
-// Replace these with the actual filenames in your project
-import DeploymentAgentsImage from "@/assets/pngs/deployment-agents.png";
-import DeploymentHybridImage from "@/assets/pngs/deployment-hybrid.png";
+import DeploymentPlatformImage from "@/assets/pngs/deployment-platform.webp";
+import DeploymentAgentsImage from "@/assets/pngs/deployment-agents.webp";
+import DeploymentHybridImage from "@/assets/pngs/deployment-hybrid.webp";
 
 const deploymentModels = [
   {

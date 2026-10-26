@@ -1,9 +1,9 @@
 import { IncludedServices as SharedIncludedServices } from "@/components/common/IncludedServices";
 
-import FieldSalesManagementImage from "@/assets/pngs/field-sales-management.png";
-import MerchandisingAuditsImage from "@/assets/pngs/merchandising-audits.png";
-import ActivationTrackingImage from "@/assets/pngs/activation-tracking.png";
-import RouteCoverageImage from "@/assets/pngs/route-coverage.png";
+import FieldSalesManagementImage from "@/assets/pngs/field-sales-management.webp";
+import MerchandisingAuditsImage from "@/assets/pngs/merchandising-audits.webp";
+import ActivationTrackingImage from "@/assets/pngs/activation-tracking.webp";
+import RouteCoverageImage from "@/assets/pngs/route-coverage.webp";
 
 export function IncludedServices() {
   return (

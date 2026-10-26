@@ -10,7 +10,7 @@ import {
   ArrowRightIcon,
 } from "@/assets/svgs";
 import { Button } from "@/components/common/Button";
-import BlogPlaceholder from "@/assets/pngs/blog-placeholder.png";
+import BlogPlaceholder from "@/assets/pngs/blog-placeholder.webp";
 import { WordPressPost } from "@/lib/wordpress";
 
 export function BlogList({

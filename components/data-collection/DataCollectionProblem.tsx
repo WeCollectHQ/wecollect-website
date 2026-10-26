@@ -1,5 +1,5 @@
 import { SolutionOverview } from "@/components/common/SolutionOverview";
-import DataCollectionProblemImage from "@/assets/pngs/data-collection-problem-image.png";
+import DataCollectionProblemImage from "@/assets/pngs/data-collection-problem-image.webp";
 import {
   SlowOperationsIcon,
   NoTransparencyIcon,

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/common/Container";
-import AfricaCoverageMapImage from "@/assets/pngs/africa-coverage-map.png";
+import AfricaCoverageMapImage from "@/assets/pngs/africa-coverage-map.webp";
 
 export function AfricanCoverage() {
   return (

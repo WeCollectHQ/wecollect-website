@@ -35,9 +35,9 @@ export function IncludedServices({
   return (
     <section className="bg-[#FFFDF0] text-[#0D0D26]">
       <Container>
-        <div className="flex min-h-[310px] flex-col gap-10 py-16 md:min-h-[340px] md:flex-row md:items-center md:gap-12 md:py-20 lg:gap-[100px] lg:py-[65px]">
+        <div className="flex min-h-77.5 flex-col gap-10 py-16 md:min-h-85 md:flex-row md:items-center md:gap-12 md:py-20 lg:gap-25 lg:py-16.25">
           {/* LEFT CONTENT */}
-          <div className="w-full shrink-0 md:w-[190px] lg:w-[210px]">
+          <div className="w-full shrink-0 md:w-47.5 lg:w-52.5">
             <p className="text-[10px] font-medium uppercase leading-4 text-[#9898B3]">
               {eyebrow}
             </p>
@@ -69,14 +69,19 @@ export function IncludedServices({
               border-l
               border-t
               border-[#E6E4D8]
-              md:max-w-[650px]
-              lg:max-w-[690px]
+              md:max-w-162.5
+              lg:max-w-172.5
             "
             style={{ minHeight: 300 }}
           >
             {/* --- SERVICE 1 (Col 1) --- */}
             <div className="relative col-start-1 row-start-1 row-span-2 overflow-hidden border-b border-r border-[#E6E4D8]">
-              <Image src={services[0].image} alt={services[0].title} fill className="object-cover" />
+              <Image
+                src={services[0].image}
+                alt={services[0].title}
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="col-start-1 row-start-3 flex items-center bg-[#FFFDF0] border-r border-[#E6E4D8] px-4 py-3 md:px-5">
               <span className="text-[11px] font-medium leading-5 text-[#0D0D26] md:text-[13px]">
@@ -91,12 +96,22 @@ export function IncludedServices({
               </span>
             </div>
             <div className="relative col-start-2 row-start-2 row-span-2 overflow-hidden border-r border-[#E6E4D8]">
-              <Image src={services[1].image} alt={services[1].title} fill className="object-cover" />
+              <Image
+                src={services[1].image}
+                alt={services[1].title}
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* --- SERVICE 3 (Col 3) --- */}
             <div className="relative col-start-3 row-start-1 row-span-2 overflow-hidden border-b border-r border-[#E6E4D8]">
-              <Image src={services[2].image} alt={services[2].title} fill className="object-cover" />
+              <Image
+                src={services[2].image}
+                alt={services[2].title}
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="col-start-3 row-start-3 flex items-center bg-[#FFFDF0] border-r border-[#E6E4D8] px-4 py-3 md:px-5">
               <span className="text-[11px] font-medium leading-5 text-[#0D0D26] md:text-[13px]">
@@ -111,7 +126,12 @@ export function IncludedServices({
               </span>
             </div>
             <div className="relative col-start-4 row-start-2 row-span-2 overflow-hidden border-r border-[#E6E4D8]">
-              <Image src={services[3].image} alt={services[3].title} fill className="object-cover" />
+              <Image
+                src={services[3].image}
+                alt={services[3].title}
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>

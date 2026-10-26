@@ -1,9 +1,8 @@
 import Image from "next/image";
-
 import { CheckIcon, ArrowUpRightIcon } from "@/assets/svgs";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
-import AgentTeamImage from "@/assets/pngs/agent-team.png";
+import AgentTeamImage from "@/assets/pngs/agent-team.webp";
 import DeploymentBgImage from "@/assets/pngs/deployment-models-bg-image.webp";
 
 const features = [
@@ -96,7 +95,7 @@ export function DeploymentModels() {
                   variant="primary"
                   size="lg"
                   icon={<ArrowUpRightIcon />}
-                  className="shrink-0 hover:translate-y-[-2px] transition-transform duration-200"
+                  className="shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
                 >
                   Book a Demo
                 </Button>
@@ -105,7 +104,7 @@ export function DeploymentModels() {
                   href="/agent-network"
                   variant="outline-white"
                   size="lg"
-                  className="shrink-0 hover:translate-y-[-2px] transition-transform duration-200"
+                  className="shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
                 >
                   Learn about the network
                 </Button>

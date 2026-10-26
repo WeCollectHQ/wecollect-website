@@ -1,5 +1,5 @@
 import { SolutionOverview } from "@/components/common/SolutionOverview";
-import DataValidationProblemImage from "@/assets/pngs/data-validation-problem.png";
+import DataValidationProblemImage from "@/assets/pngs/data-validation-problem.webp";
 import {
   ValidationDataIntegrityIcon,
   TransparencyIcon,

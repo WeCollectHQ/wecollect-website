@@ -64,7 +64,7 @@ export function HowItWorks() {
               href="/platform"
               size="lg"
               icon={<ArrowUpRightIcon />}
-              className="w-fit hover:translate-y-[-2px] transition-transform duration-200"
+              className="w-fit hover:-translate-y-0.5 transition-transform duration-200"
             >
               See Platform
             </Button>

@@ -1,11 +1,9 @@
 "use client";
-
-import { useState } from "react";
 import Image from "next/image";
-
+import { useState } from "react";
 import { Container } from "@/components/common/Container";
 import { ArrowUpRightIcon } from "@/assets/svgs";
-import FAQImage from "@/assets/pngs/faq-image.png";
+import FAQImage from "@/assets/pngs/faq-image.webp";
 
 const faqs = [
   {
@@ -88,18 +86,22 @@ export function FAQ() {
                       <span
                         className={[
                           "flex h-9 w-9 shrink-0 items-center justify-center text-white transition-colors duration-200",
-                          isOpen ? "bg-[#B9B9CC]" : "bg-[#4B4BDB] hover:bg-[#3838C5]",
+                          isOpen
+                            ? "bg-[#B9B9CC]"
+                            : "bg-[#4B4BDB] hover:bg-[#3838C5]",
                         ].join(" ")}
                       >
                         <span className="relative block h-4 w-4">
                           {/* Horizontal line (always visible for both + and -) */}
-                          <span className="absolute left-0 top-1/2 -mt-[1px] h-[2px] w-4 bg-white" />
+                          <span className="absolute left-0 top-1/2 -mt-px h-0.5 w-4 bg-white" />
 
                           {/* Vertical line (collapses to leave a clean minus) */}
                           <span
                             className={[
-                              "absolute left-1/2 top-0 -ml-[1px] h-4 w-[2px] bg-white transition-all duration-200 ease-out origin-center",
-                              isOpen ? "scale-y-0 opacity-0" : "scale-y-100 opacity-100",
+                              "absolute left-1/2 top-0 -ml-px h-4 w-0.5 bg-white transition-all duration-200 ease-out origin-center",
+                              isOpen
+                                ? "scale-y-0 opacity-0"
+                                : "scale-y-100 opacity-100",
                             ].join(" ")}
                           />
                         </span>

@@ -1,9 +1,9 @@
 import { IncludedServices as SharedIncludedServices } from "@/components/common/IncludedServices";
 
-import GisValidationImage from "@/assets/pngs/gis-validation.png";
-import AiOutputVerificationImage from "@/assets/pngs/ai-output-verification.png";
-import QaCleaningImage from "@/assets/pngs/qa-cleaning.png";
-import GeofenceComplianceImage from "@/assets/pngs/geofence-compliance.png";
+import GisValidationImage from "@/assets/pngs/gis-validation.webp";
+import AiOutputVerificationImage from "@/assets/pngs/ai-output-verification.webp";
+import QaCleaningImage from "@/assets/pngs/qa-cleaning.webp";
+import GeofenceComplianceImage from "@/assets/pngs/geofence-compliance.webp";
 
 export function IncludedServices() {
   return (
