@@ -183,13 +183,13 @@ export function DataModality() {
 
             {/* Buttons */}
             <Reveal delay={0.45} direction="up" distance={16}>
-              <div className="mt-8 flex flex-nowrap items-center gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <Button
                   href="/solutions/ai-data"
                   variant="primary"
                   size="lg"
                   icon={<ArrowUpRightIcon />}
-                  className="shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
+                  className="w-full sm:w-auto shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
                 >
                   Explore AI Data
                 </Button>
@@ -198,7 +198,7 @@ export function DataModality() {
                   href="/demo"
                   variant="outline-white"
                   size="lg"
-                  className="shrink-0 whitespace-nowrap hover:-translate-y-0.5 transition-transform duration-200"
+                  className="w-full sm:w-auto shrink-0 whitespace-nowrap hover:-translate-y-0.5 transition-transform duration-200"
                 >
                   Book a Demo
                 </Button>

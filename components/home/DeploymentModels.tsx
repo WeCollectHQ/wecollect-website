@@ -89,13 +89,13 @@ export function DeploymentModels() {
 
             {/* Buttons */}
             <Reveal delay={0.5} direction="up" distance={16}>
-              <div className="mt-8 flex flex-nowrap items-center gap-2">
+              <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <Button
                   href="/demo"
                   variant="primary"
                   size="lg"
                   icon={<ArrowUpRightIcon />}
-                  className="shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
+                  className="w-full sm:w-auto shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
                 >
                   Book a Demo
                 </Button>
@@ -104,7 +104,7 @@ export function DeploymentModels() {
                   href="/agent-network"
                   variant="outline-white"
                   size="lg"
-                  className="shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
+                  className="w-full sm:w-auto shrink-0 hover:-translate-y-0.5 transition-transform duration-200"
                 >
                   Learn about the network
                 </Button>
