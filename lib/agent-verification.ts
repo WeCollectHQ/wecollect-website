@@ -32,32 +32,33 @@ export function formatDate(dateStr?: string): string {
   }
 }
 
-export async function fetchAgentVerification(id: string): Promise<VerificationResponse> {
+export async function fetchAgentVerification(
+  id: string,
+): Promise<VerificationResponse> {
   const cleanId = id.trim();
   if (!cleanId) {
     return { success: false, error: "Please enter a valid Agent ID or Code." };
   }
 
-  const API_BASE_URL =
-    process.env.API_URL ||
-    process.env.NEXT_PUBLIC_API_URL ||
-    (process.env.NODE_ENV === "production"
-      ? "https://api.wecollect.tech"
-      : "http://localhost:8081");
+  const API_BASE_URL = process.env.API_URL;
 
   try {
-    const res = await fetch(`${API_BASE_URL}/v1/f/pr/${encodeURIComponent(cleanId)}`, {
-      cache: "no-store",
-      headers: {
-        Accept: "application/json",
+    const res = await fetch(
+      `${API_BASE_URL}/v1/f/pr/${encodeURIComponent(cleanId)}`,
+      {
+        cache: "no-store",
+        headers: {
+          Accept: "application/json",
+        },
       },
-    });
+    );
 
     if (!res.ok) {
       if (res.status === 404) {
         return {
           success: false,
-          error: "No registered field agent was found matching this ID or Code.",
+          error:
+            "No registered field agent was found matching this ID or Code.",
         };
       }
       return {
